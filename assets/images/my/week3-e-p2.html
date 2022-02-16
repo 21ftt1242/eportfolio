@@ -3,37 +3,104 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Week 3 ePortfolio part 2</title>
+	<title>Muhd Ghazali | Week 3-e Part 2</title>
 </head>
 <body>
+	
 <h3>Registration for Covid-19 Volunteer - C19-Team</h3>
 <form method="" action="">
-<table>
-Fullname
-Email
-Date you can start
-Morning shift preference
-Evening shift perference
-How many hours you can work? In multiple of 3
-Distance you willing to commute to volunteer center?
-
-You currency perference for payment?
-You will be given daily meals
-I agree to all terms and conditions
-Prove you are not robot
-For more informaton, visit MOH website
-
+<table border="1"  cellpadding="10">
+<tr>
+	<td>Fullname</td>
+	<td><input type="text" name="Name" id="name"> </td>
+</tr>
+<tr>
+	<td>Email</td>
+	<td><input type="text" name="Email" id="email"> </td>
+</tr>
+<tr>
+	<td>Date you can start</td>
+	<td><input type="date" name="month" id="month"> </td>
+</tr>
+<tr>
+	<td>Morning shift preference</td>
+	<td><input type="time" name="morningtime" id="time1"> </td>
+</tr>
+<tr>
+	<td>Evening shift perference</td>
+	<td><input type="time" name="eveningtime" id="time2"> </td>
+</tr>
+<tr>
+	<td>How many hours you can work? In multiple of 3</td>
+	<td><input type="number" name="number" id="number" step="3" min="3"> </td>
+</tr>
+<tr>
+	<td>Distance you willing to commute to volunteer center?</td>
+	<td>
+		<label>1<input type="range" name="range" id="range" min="1" max="15">15</label>
+	</td>
+</tr>
+<tr>
+	<td>You currency perference for payment?</td>
+	<td>
+	<input type="radio" name="currency" id="pound"><label for="pounds">&pound;</label>
+	<input type="radio" name="currency" id="yen"><label for="yen">&yen;</label>
+	<input type="radio" name="currency" id="euro"><label for="euro">&euro;</label>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<textarea cols="40" rows="8" placeholder="Type your home address"></textarea>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<s>You will be given daily meals</s>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<input type="checkbox" name="checkbox1" checked disabled><label>I agree to all terms and conditions
+</label>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<label>Prove you are not robot: 10 < 20?</label><input type="checkbox" name="checkbox2">
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<input type="submit" name="submit" value="Volunteer now!">
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		<input type="reset" name="reset" value="Start over">
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+		For more informaton, visit MOH <a href="https://www.moh.gov.bn/">website</a>
+	</td>
+</tr>
 </table>
 </form>
 
+<hr>
+
 <p>Denzel Washington once said...</p>
 
-At the end of the day it’s not about what you have or even what you’ve accomplished… it’s about who you’ve lifted up, who you’ve made better. It’s about what you’ve given back.
+<blockquote><b>&ldquo;At the end of the day it’s not about what you have or even what you’ve accomplished… it’s about who you’ve lifted up, who you’ve made better. It’s about what you’ve given back.&rdquo;</b>
+</blockquote>
 
+<pre>
 So roses are red, violets are blue
 It's all in my head, no matter what I do
 So roses are red, violets are blue
 It's all in my head, no matter what I do
+</pre>
 
+<!-- <pre> means preformatted text, where what you type in the HTML is what you get -->
 </body>
 </html>
