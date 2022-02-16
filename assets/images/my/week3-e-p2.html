@@ -6,17 +6,17 @@
 	<title>Muhd Ghazali | Week 3-e Part 2</title>
 </head>
 <body>
-	
-<h3>Registration for Covid-19 Volunteer - C19-Team</h3>
+
+<h3>Registration for Covid-19 Volunteer - &#174; C19-Team</h3>
 <form method="" action="">
 <table border="1"  cellpadding="10">
 <tr>
 	<td>Fullname</td>
-	<td><input type="text" name="Name" id="name"> </td>
+	<td><input type="text" name="Name" id="name" maxlength="30"> </td>
 </tr>
 <tr>
 	<td>Email</td>
-	<td><input type="text" name="Email" id="email"> </td>
+	<td><input type="email" name="Email" id="email"> </td>
 </tr>
 <tr>
 	<td>Date you can start</td>
@@ -32,12 +32,12 @@
 </tr>
 <tr>
 	<td>How many hours you can work? In multiple of 3</td>
-	<td><input type="number" name="number" id="number" step="3" min="3"> </td>
+	<td><input type="number" name="number" id="number" step="3" min="3" max="9"> </td>
 </tr>
 <tr>
 	<td>Distance you willing to commute to volunteer center?</td>
 	<td>
-		<label>1<input type="range" name="range" id="range" min="1" max="15">15</label>
+		<label>1<input type="range" name="range" value="3" id="range" min="1" max="15">15</label>
 	</td>
 </tr>
 <tr>
@@ -50,7 +50,7 @@
 </tr>
 <tr>
 	<td colspan="2" align="center">
-		<textarea cols="40" rows="8" placeholder="Type your home address"></textarea>
+		<textarea cols="40" rows="6" placeholder="Type your home address"></textarea>
 	</td>
 </tr>
 <tr>
@@ -81,7 +81,7 @@
 </tr>
 <tr>
 	<td colspan="2" align="center">
-		For more informaton, visit MOH <a href="https://www.moh.gov.bn/">website</a>
+		For more informaton, visit MOH <a href="https://www.moh.gov.bn/" target="_blank">website</a>
 	</td>
 </tr>
 </table>
