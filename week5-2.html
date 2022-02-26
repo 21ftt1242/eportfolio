@@ -14,6 +14,9 @@
         p{font-style:  italic; color: red;} /*red, italic*/
         p{line-height:  2em;} /*red, 2em, italic, 2em*/
 
+        div p{color:  red}
+        div>p{color:  red}
+
         /* css, cascading overwrites itself and all merges into one*/
 
         /* 
@@ -32,5 +35,20 @@
 <p>another paragraph </p>
 <u>I'm underline</u>
 <p>Yet another P</p>
+
+<div>
+    <h2>I am H2</h2>
+    <h3>I am H3</h3>
+    <h3>yet another h3</h3>
+
+    <p>Im a P in a div</p>
+    <p>Im also P in a div</p>
+
+    <span>
+
+        <p>I am a child of span</p>
+    </span>
+</div>
+<p>I'm outside P</p>
 </body>
 </html>
