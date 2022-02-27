@@ -8,8 +8,24 @@
 <body>
 	<!-- set form action to https://lms.pb.edu.bn/qwerty/displaypost.php 
 		hint: this form accepts file! so configure the form correctly-->
-<form action="" method="">
-<h3>Select the village</h3>
+<form action="https://lms.pb.edu.bn/qwerty/displaypost.php " method="">
+<h3 for="village-choice">Select the village</h3>
+
+<input list="village" id="village-choice" name="village-choice" />
+
+<datalist id="village">
+    <option value="Berakas A">
+    <option value="Lambak">
+    <option value="Labu Estate">
+    <option value="Birau">
+    <option value="Luagan Duduk">
+    <option value="Kuala Belait">
+    <option value="Lamunin">
+    <option value="Subok">
+    <option value="Pengakalan Batu">
+    <option value="Selangan">
+</datalist>
+
 <!-- use datalist element for the list of villages 
 	Berakas A
 	Lambak
@@ -29,7 +45,7 @@ DO NOT CHANGE THE values of the NAME attributes in each element!!!
 -->
 
 <h3>Enter A WORD at least 6 characters. The word must not contain lowercase or uppercase  t, h, s </h3>
-<input type="text" pattern="" name="word"><br>
+<input type="text" pattern="[a-z]{2}[0-9]{4}" name="word"><br>
 
 <h3>Replace the min, max and step attributes to equivalent pattern. change type to text</h3>
 <input type="number" name="numbers" min="3" max="12" step="3"><br>
