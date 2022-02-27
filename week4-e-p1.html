@@ -8,7 +8,12 @@
 <body>
 	<!-- set form action to https://lms.pb.edu.bn/qwerty/displaypost.php 
 		hint: this form accepts file! so configure the form correctly-->
-<form action="https://lms.pb.edu.bn/qwerty/displaypost.php " method="">
+
+		<!-- The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.-->
+
+		<!-- enctype multipart form-data is used when a form requires binary data, like the contents of a file, to be uploaded -->
+
+<form action="https://lms.pb.edu.bn/qwerty/displaypost.php" method="post" enctype= "multipart form-data">
 <h3 for="village-choice">Select the village</h3>
 
 <input list="village" id="village-choice" name="village-choice" />
@@ -45,13 +50,14 @@ DO NOT CHANGE THE values of the NAME attributes in each element!!!
 -->
 
 <h3>Enter A WORD at least 6 characters. The word must not contain lowercase or uppercase  t, h, s </h3>
-<input type="text" pattern="[a-z]{2}[0-9]{4}" name="word"><br>
+<input type="text" pattern="[A-za-z^TtHhSs]{6}" name="word"><br>
 
 <h3>Replace the min, max and step attributes to equivalent pattern. change type to text</h3>
-<input type="number" name="numbers" min="3" max="12" step="3"><br>
+<input type="text" pattern="(3|6|9|12)" name="numbers"><br> 
+<!-- accepts min of 3 and max of 12, but only in multiples of 3 -->
 
 <h3>Upload your latest picture for class listing!</h3>
-<input type="file" name="selfie"><br>	
+<input type="file" name="selfie" accept=".png, .jpg, .gif"><br>	
 
 <h3>Try the \W pattern! write your finding in self reflection</h3>
 <input type="text" pattern="\W{3,}" name="W-sample"><br>
