@@ -15,7 +15,8 @@
 <!-- for this first iframe element, insert this video https://youtu.be/mlO1N-uP5wI into your first iframe. 
 	use the youtube default settings for iframe -->
 
-<iframe></iframe>
+<!-- To use youtube videos, we must have an /embed/ before the link itself -->
+<iframe width="560" height="315" frameBorder="0" src="https://www.youtube.com/embed/mlO1N-uP5wI"></iframe> <br>
 
 <!-- 
 for this second iframe, set the src to https://lms.pb.edu.bn/qwerty/script.html
@@ -24,8 +25,25 @@ set the sandbox value to sandbox="allow-scripts" - what happen?
 set the sandbox value to sandbox="allow-scripts allow-modals" - what happen? 
 WRITE YOUR FINDINGS IN THE SELF REFLECTION.
 -->
+
+<!-- when the src is just the link:
+		I can click the "click me to display alert" and a pop up alert pops up and says "You have been selected!"
+
+		I can hover the bottom text and a huge text in pink can be seen saying "I am your master!" 
+
+	when using allow-scripts:
+		When I click the "click me to display alert", there are now no pop-up alerts
+
+		But I can still hover the text to see the magic
+
+	when using allow-scripts allow-modals:
+		When I click the "click me to display alert", there are now no pop-up alerts
+
+		But I can still hover the text to see the magic
+	-->
+
 <!-- frame #2 -->
-<iframe></iframe>
+<iframe src="https://lms.pb.edu.bn/qwerty/script.html" sandbox="allow-scripts allow-modals" width="450" height="350"></iframe><br>
 
 <!-- 
 for this third iframe, set the src to https://lms.pb.edu.bn/qwerty/post-default.html
