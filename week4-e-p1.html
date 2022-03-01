@@ -57,7 +57,7 @@ DO NOT CHANGE THE values of the NAME attributes in each element!!!
 <!-- accepts min of 3 and max of 12, but only in multiples of 3 -->
 
 <h3>Upload your latest picture for class listing!</h3>
-<input type="file" name="selfie" accept=".png, .jpg, .gif"><br>	
+<input type="file" name="selfie" accept="image/jpg, image/jpeg, image/png, image/gif"><br>	
 
 <h3>Try the \W pattern! write your finding in self reflection</h3>
 <input type="text" pattern="\W{3,}" name="W-sample"><br>
@@ -66,11 +66,7 @@ DO NOT CHANGE THE values of the NAME attributes in each element!!!
 
 <!-- WRITE THE REQUIRED PATTERN -->
 <h3>Last but not least.. Enter a sentence, mininum 10 characters and maximum 30 characters. Allow: numbers, alphabet lowercase & uppercase, spaces and question mark</h3>
-<<<<<<< HEAD
 <input type="text" pattern="[A-Za-z\d\s?]{10,30}" name="wsdot-sample" size="30"><br>
-=======
-<input type="text" pattern="\w\s{10,30}" name="wsdot-sample" size="30"><br>
->>>>>>> 34a55d93377f74d90d1d4a875df7dbc3fd5a017b
 
 <!-- so what's hidden? write your finding in reflection -->
 <input type="hidden" value="bwep2022">
