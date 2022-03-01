@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+		<style type="text/css">
+			img{width: 300px;height: 250px;}
+			.fs{font-size: 2em}
+			.dc{color: darkcyan;}
+			
+			/*.cn{font-family: "courier new"}*/
+
+			input[type="text"],h3{font-family: "courier new"}
+			/*look for an input element that is type text*/
+
+			/*.samewidth{width: 200px;}*/
+			input[class]{width: 200px;}
+			/*look for input element that has attribute class, then
+			it'll apply 200px*/
+
+			/*li.italic{font-style:italic }*/
+			li:nth-child(even){font-style: italic;}
+			/*
+			pseudoclass selector
+
+			checks in the list and, every even number it applies italic
+			(even) for even no. (odd) for odd no.
+
+			if (3n)
+			it will check in the list for multiples of 3 and only applies for the multiple of 3
+
+			can also put mathematics, plus(+) and minus(-)
+			*/
+
+			input{display: block;}
+			
+/*			.turq{border: 3px solid turquoise;}*/
+			img[src^="assets/images/my/"]{border: 3px solid turquoise;}
+
+			/*.border{border: 1px solid;}*/
+			div, h3, .border{border: 1px solid;}
+			
+			/*.navy{border-color: navy}*/
+			input[class~="border"]{border-color: navy}
+			/*
+			~= means it will look for a certain word
+
+			 it will look for an input element that has class attribute AND the class has the word "border"
+
+			if found, make border color = navy
+			*/
+
+			div{width: 150px;height: 100px;}
+			#d1{padding: 10px; box-sizing: border-box;}
+			
+			/* border-box means that the box will resize everything inside, including the padding, to fit the div's assigned size (which is 150x100 according to above) */
+
+			/*by default, a div is content-box*/
+
+			/*#d2{display: none;}*/
+			/*#d2{visibility: hidden;}*/
+			#d2{padding: 50px;}
+
+			/*"display: none: will remove the div and will not take up the space
+			if "visibility: hidden", but will also take up the space*/
+
+			#d3{margin-left: 10px;}
+			
+			/*margin is the outside*/
+
+		</style>
+	
+</head>
+<body>
+<p class="fs dc">Here is my favorite pictures</p>
+<img src="assets/images/th/t-1.jpg" alt="">
+<!-- <img src="assets/images/my/m-1.jpg" class="turq" alt=""> 
+<img src="assets/images/my/m-2.jpg" class="turq" alt=""> -->
+<img src="assets/images/my/m-1.jpg" alt=""> 
+<img src="assets/images/my/m-2.jpg" alt="">
+<img src="assets/images/th/t-2.jpg" alt="">
+<p>Just a form</p>
+<form action="">
+	<input type="text" class="border" placeholder="name" name="fullname">
+	<input type="text" class="border" placeholder="fone" name="fone">
+	<input type="email" class="samewidth border navy" placeholder="email" name="email">
+	<input type="number" class="samewidth border navy" name="captcha" placeholder="5x2">
+	<input type="submit">
+</form>
+<h3 class="cn border">here is list of my songs</h3>
+<ol class="dc">
+	<li>Dimana janji mu dulu</li>
+	<li>Insan ku sayang menghilang</li>
+	<li>Resah kerinduan</li>
+	<li >Mengusung rindu</li>
+	<li>Malam semakin dingin</li>
+	<li>Haruskah kita berpisah</li>
+	<li>Salah apa aku</li>
+	<li>Salam terakhir</li>
+</ol>
+
+<p>Can you tell the difference?</p>
+
+<div id="d1">
+	<p>I'm a border-box</p>
+</div>
+
+<div id="d2">
+	<p>I'm a content-box</p>
+</div>
+
+<div id="d3">
+	<p>Another div</p>
+</div>
+
+</body>
+</html>

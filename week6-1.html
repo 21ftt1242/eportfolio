@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Muhd Ghazali | Week 6-1</title>
+    <style type="text/css">
+        /*using id, element or class selector ONLY*/
+        
+        img{width: 300px; height: 200px;}
+        li{color: darkcyan;}
+        h3{font-family: Courier New; border: 1px solid}
+
+        .solidturquoise{border: 3px solid turquoise;}
+        .formCSS{width: 200px; border: 1px solid navy; display: block;}
+        .italic1{font-style: italic;}
+
+        #darkcyan{color: darkcyan; font-size:  2em;}
+        #font1{font-family: Courier New;}
+
+        img[src^="assets/images/my"]{border: 3px solid turquoise;}
+
+        /* Attribute selector
+        
+        attribute selector uses [] square brackets
+        ^= means "and it starts with"
+
+        The CSS attribute selector matches elements based on the presence or value of a given attribut
+         */
+        
+    </style>
+    
+</head>
+<body>
+<p id="darkcyan">Here is my favorite pictures</p> <!-- 2em darkcyan -->
+
+<!-- all images 300x200 -->
+<img src="assets/images/th/t-1.jpg" alt="">
+<img src="assets/images/my/m-1.jpg" alt="" > <!-- 3px solid turquoise -->
+<img src="assets/images/my/m-2.jpg" alt="" > <!-- 3px solid turquoise -->
+<img src="assets/images/th/t-2.jpg" alt="">
+
+<p>Just a form</p>
+
+<form action="">
+    <input type="text"  placeholder="name" name="fullname" class="formCSS" id="font1"><!-- courier new, width 200px, border 1px solid, border color navy -->
+    <input type="text"  placeholder="fone" name="fone" class="formCSS" id="font1"><!-- courier new, width 200px, border 1px solid, border color navy -->
+    <input type="email"  placeholder="email" name="email" class="formCSS"> <!-- width 200px border 1px solid, border color navy -->
+    <input type="number" name="captcha" placeholder="5x2" class="formCSS"> <!-- width 200px border 1px solid, border color navy -->
+    <input type="submit" value="Submit">
+</form>
+
+<h3>here is list of my songs</h3> <!-- courier new border 1px solid -->
+<ol> 
+<!--    all list will be darkcyan -->
+    <li>Dimana janji mu dulu</li>
+    <li class="italic1">Insan ku sayang menghilang</li> <!-- italic -->
+    <li>Resah kerinduan</li>
+    <li class="italic1">Mengusung rindu</li> <!-- italic -->
+    <li>Malam semakin dingin</li>
+    <li class="italic1">Haruskah kita berpisah</li><!-- italic -->
+    <li>Salah apa aku</li>
+    <li class="italic1">Salam terakhir</li><!-- italic -->
+</ol>
+</body>
+</html>
