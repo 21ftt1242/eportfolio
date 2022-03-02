@@ -6,11 +6,34 @@
     <title></title>
     <style type="text/css">  
      .parent-element {
+        position: relative;
         height: 150px;
         padding:   10px;
         background-color: #81adc8;
     }
+
+    /*position have 4 possible values: 
+
+        default is static
+        - relative
+        - absolute
+        - fixed
+        - sticky
+    */
+    /* When using static, the top, right, bottom and left values have no effects
+
+    When using absolute, it will follow the parent element's position
+
+    when you use position element, it will search for the parent, if there are no parents, it will follow the html file content
+
+    Absolute is the element that will not follow the normal document flow. Absolute looks for the immediate parent, 
+
+    fixed is positione dto normal flow of html, creats new stacking context;
+     */
     .main-element {
+        position: absolute;
+        left: 0;
+        bottom: 0;
         background-color: yellow;
         padding: 10px;
     }

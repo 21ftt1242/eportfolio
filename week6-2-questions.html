@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">  
+
+    #main{
+        padding: 20px;
+        background-color: grey;
+        height: 250px;
+        position: relative;
+    }
+    #main div{
+        padding: 5px;
+    }
+    
+    #one,#three{
+        background-color: cyan;
+        height: 50px; 
+    }
+
+    #two{
+        background-color: darkmagenta;
+        height: 100px;
+        /*position: relative;*/
+    }
+
+    #two1{
+        background-color: skyblue;
+        width: 200px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="one">I am number one</div>
+    <div id="two">
+            <div id="two1">
+                I am 2.1
+            </div>
+    </div>
+    <div id="three">
+        I am number three
+    </div>
+
+</div>
+
+</body>
+</html>
