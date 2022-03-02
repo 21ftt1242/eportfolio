@@ -13,22 +13,22 @@
 
 		<!-- enctype multipart form-data is used when a form requires binary data, like the contents of a file, to be uploaded -->
 
-<form action="https://lms.pb.edu.bn/qwerty/displaypost.php" method="post" enctype= "multipart form-data">
-<h3 for="village-choice">Select the village</h3>
+<form action="https://lms.pb.edu.bn/qwerty/displaypost.php" method="post" enctype= "multipart/form-data">
 
-<input list="village" id="village-choice" name="village-choice" />
+<h3>Select the village</h3>
+<input list="villages" name="village">
 
-<datalist id="village">
-    <option value="Berakas A">
-    <option value="Lambak">
-    <option value="Labu Estate">
-    <option value="Birau">
-    <option value="Luagan Duduk">
-    <option value="Kuala Belait">
-    <option value="Lamunin">
-    <option value="Subok">
-    <option value="Pengakalan Batu">
-    <option value="Selangan">
+<datalist id="villages">
+    <option value="Berakas A">Berakas A</option>
+    <option value="Lambak">Lambak</option>
+    <option value="Labu Estate">Labu Estate</option>
+    <option value="Birau">Birau</option>
+    <option value="Luagan Duduk">Luagan Duduk</option>
+    <option value="Kuala Belait">Kuala Belait</option>
+    <option value="Lamunin">Lamunin</option>
+    <option value="Subok">Subok</option>
+    <option value="Pengakalan Batu">Pengakalan Batu</option>
+    <option value="Selangan">Selangan</option>
 </datalist>
 
 <!-- use datalist element for the list of villages 
@@ -43,14 +43,13 @@
 	Pengkalan Batu
 	Selangan		
 -->
-
 <!-- 
 write correct patterns to achieve the requirement as stated in the <h3> elements
 DO NOT CHANGE THE values of the NAME attributes in each element!!!
 -->
 
 <h3>Enter A WORD at least 6 characters. The word must not contain lowercase or uppercase  t, h, s </h3>
-<input type="text" pattern="[A-za-z^TtHhSs]{6}" name="word"><br>
+<input type="text" pattern="[^TtHhSs]{6,}" name="word"><br>
 
 <h3>Replace the min, max and step attributes to equivalent pattern. change type to text</h3>
 <input type="text" pattern="(3|6|9|12)" name="numbers"><br> 
@@ -66,7 +65,7 @@ DO NOT CHANGE THE values of the NAME attributes in each element!!!
 
 <!-- WRITE THE REQUIRED PATTERN -->
 <h3>Last but not least.. Enter a sentence, mininum 10 characters and maximum 30 characters. Allow: numbers, alphabet lowercase & uppercase, spaces and question mark</h3>
-<input type="text" pattern="[A-Za-z\d\s?]{10,30}" name="wsdot-sample" size="30"><br>
+<input type="text" pattern="[A-z\d\s?]{10,30}" name="wsdot-sample" size="30"><br>
 
 <!-- so what's hidden? write your finding in reflection -->
 <input type="hidden" value="bwep2022">
