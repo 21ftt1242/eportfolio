@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 7-1-2</title>
+<!-- week 6-3  -->
+<!-- flex-direction: column; row row-reverse
+flex-direction: row-reverse;
+flex-wrap: nowrap;
+justify-content: space-between;
+align-items: center;  -->
+
+<!-- 
+
+align-content
+
+
+align-self
+used to align individual items -->
+
+	<style type="text/css">
+		
+		div{display: flex; border: 1px solid; 
+			width: 500px;height:400px;
+		}
+
+		p{width:200px;height: 100px; 
+			background-color: cyan;
+			border: 1px solid;
+			box-sizing: border-box;}
+
+			p:nth-child(odd){align-self:  flex-end;}
+			p:nth-child(even){align-self:  center;}
+	</style>
+
+</head>
+<body>
+<div>
+	<p>1</p><p>2</p><p>3</p><p>4</p>
+</div>
+</body>
+</html>
