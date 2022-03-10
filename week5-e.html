@@ -25,14 +25,11 @@
 		FAILURE TO COMPLY WILL RESULTS IN MARK DEDUCTION*/
 
 		/*Element Selector*/ 
-		b{
-			color: blue;
-		}
 
 		body{
 			background-image:  url(assets/images/id/i-1.jpg);
 			background-repeat: no-repeat;
-			background-position: center;
+			background-position: top center;
 			background-attachment: fixed;
 		}
 
@@ -41,39 +38,13 @@
 			height: 150px;
 		}
 
-
+		b{
+			color: blue !important; /*overrides id selector*/
+		}
 
 		/*ID Selector*/
 
 		#thebold{color: red;font-size: 1.75em} /*purposely included*/
-
-		/*Class Selector*/
-
-		.rounded{
-			display: inline-block; /*displays in inline block*/
-			vertical-align: bottom; /*aligns div to bottom*/
-			width: 400px; 
-			border: solid 1px; 
-			border-radius: 50px;
-			font-size: 1em;
-			text-align:  center;
-		}
-
-		.rounded.cn{
-			padding:  80px 30px 0px;
-			background-image: url(assets/images/id/dancing.gif);
-			background-size: 100px 80px;
-			background-repeat: repeat-x; /*BG img is repeated on x-axis*/
-			font-family: Courier New, serif;
-		}
-
-		.rounded > p { /*searches for a rounded class with descendant <p>*/
-			color: skyblue;
-			font-weight: bold;
-		}
-		[class="rounded"] { /*searches for class with name rounded only!*/
-			padding: 20px 30px;
-		}
 
 		div#lorem {
 			height: 500px;
@@ -103,6 +74,33 @@
 			margin-top: 1.2em;
 		}
 
+		/*Class Selector*/
+
+		.rounded{
+			display: inline-block; /*displays in inline block*/
+			vertical-align: bottom; /*aligns div to bottom*/
+			width: 400px; 
+			border: solid 1px; 
+			border-radius: 50px;
+			font-size: 1em;
+			text-align:  center;
+		}
+
+		.rounded.cn{
+			padding:  80px 30px 0px;
+			background-image: url(assets/images/id/dancing.gif);
+			background-size: 100px 80px;
+			background-repeat: repeat-x; /*BG img is repeated on x-axis*/
+			font-family: Courier New, serif;
+		}
+
+		/*Descendant Selector*/
+
+		.rounded > p { /*searches for a rounded class with descendant <p>*/
+			color: skyblue;
+			font-weight: bold;
+		}
+
 		div#anotherlorem > p > span { /*div with id that has span inside p*/
 			font-weight: bolder;
 			color: magenta;
@@ -112,11 +110,17 @@
 			font-family: Courier New, serif;
 		}
 
-		img[src*="gif"]{ /*selects img with file type "gif"*/
+		/*Attribute Selector*/
+
+		[class="rounded"] { /*searches for class with name rounded only!*/
+			padding: 20px 30px;
+		}
+
+		img[src*="gif"]{ /*selects img src that has a "gif" name*/
 			opacity: 30%;
 		}
 
-		img[alt="The best place"]:hover { /*selects img with alt text*/
+		img[alt="The best place"]:hover { /*selects img with alt text:on hover*/
 			border-radius: 50%;
 		}
 
