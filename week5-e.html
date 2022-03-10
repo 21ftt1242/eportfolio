@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Muhd Ghazali | Week 5-e</title>
+	<style>
+/*		THIS TASK IS A COMBINATION OF WEEK 5 AND PART OF WEEK 6 (PADDING & MARGIN)
+		WHEN SUBMITTING THIS TASK, CHOOSE WEEK 5
+
+		TO MOVE ELEMENTS OR ACHIEVE SPACING SURROUNDING THE TEXT, YOU CAN ONLY USE MARGIN OR PADDING
+		THE USE OF POSITION PROPERTY AND FLEXBOX WILL NOT BE MARKED*/
+
+		/*ORGANIZE YOUR CSS IN THE FOLLOWING ORDER
+
+		1. ELEMENT SELECTOR
+		2. ID SELECTOR
+		3. CLASS SELECTOR
+		4. DESCENDENT SELECTOR
+		5. CHILD SELECTOR
+		6. SIBLING SELECTOR
+		7. ATTRIBUTE SELECTOR
+		8. PSEUDO CLASS SELECTOR
+
+		FAILURE TO COMPLY WILL RESULTS IN MARK DEDUCTION*/
+
+		/*Element Selector*/ 
+		b{
+			color: blue;
+		}
+
+		body{
+			background-image:  url(assets/images/id/i-1.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+		}
+
+		img{
+			width: 200px;
+			height: 150px;
+		}
+
+
+
+		/*ID Selector*/
+
+		#thebold{color: red;font-size: 1.75em} /*purposely included*/
+
+		/*Class Selector*/
+
+		.rounded{
+			display: inline-block; /*displays in inline block*/
+			vertical-align: bottom; /*aligns div to bottom*/
+			width: 400px; 
+			border: solid 1px; 
+			border-radius: 50px;
+			font-size: 1em;
+			text-align:  center;
+		}
+
+		.rounded.cn{
+			padding:  80px 30px 0px;
+			background-image: url(assets/images/id/dancing.gif);
+			background-size: 100px 80px;
+			background-repeat: repeat-x; /*BG img is repeated on x-axis*/
+			font-family: Courier New, serif;
+		}
+
+		.rounded > p { /*searches for a rounded class with descendant <p>*/
+			color: skyblue;
+			font-weight: bold;
+		}
+		[class="rounded"] { /*searches for class with name rounded only!*/
+			padding: 20px 30px;
+		}
+
+		div#lorem {
+			height: 500px;
+			width: 75%;
+			border: solid;
+			border-width: 5px 10px;
+			border-color: deepskyblue navy;
+			font-size: 2em;
+			overflow: scroll;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		div#anotherlorem {
+			height: 200px;
+			width: 50%;
+			overflow: hidden; /*content is still seen but cuts off*/
+			line-height: 1.1em;
+			border: solid 1px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#lorem, #anotherlorem {
+			text-transform: uppercase; /*sets all text to uppercase*/
+			text-align: justify;
+			margin-top: 1.2em;
+		}
+
+		div#anotherlorem > p > span { /*div with id that has span inside p*/
+			font-weight: bolder;
+			color: magenta;
+			font-size: 1.35em;
+			text-shadow: orange 10px 5px 5px; 
+			/*color, horizontal distance, vertical distance, blur radius*/
+			font-family: Courier New, serif;
+		}
+
+		img[src*="gif"]{ /*selects img with file type "gif"*/
+			opacity: 30%;
+		}
+
+		img[alt="The best place"]:hover { /*selects img with alt text*/
+			border-radius: 50%;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<!-- INSTRUCTIONS
+		YOU ARE NOT ALLOWED TO CHANGE ANY PART OF THE HTLM CODES (SUCH AS ADDING ID attributes or additional values to classes atributes.) 
+		YOU CAN CHANGE IMAGE SRC VALUES HOWEVER FOR IMAGES AT THE BOTTOM-->
+
+<div class="rounded">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos quidem, sit saepe consectetur nemo ullam nihil voluptates nostrum facere totam excepturi alias similique sint qui ad accusamus culpa quae suscipit.	Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Nobis ullam doloribus, minus nisi inventore, aliquid nesciunt temporibus libero id, dignissimos magni. Repellendus, beatae porro, eius dolorum explicabo possimus perferendis doloremque.	Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis distinctio voluptate, minus, placeat dolor quia nemo obcaecati aliquid maiores. Id, eum, in! Fugiat atque iusto quasi corrupti nulla, unde inventore.</div>
+<div class="rounded cn">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos quidem, sit saepe consectetur nemo ullam nihil voluptates nostrum facere totam excepturi alias similique sint qui ad accusamus culpa quae suscipit.	Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Nobis ullam doloribus, minus nisi inventore, aliquid nesciunt temporibus libero id, dignissimos magni. Repellendus, beatae porro, eius dolorum explicabo possimus perferendis doloremque.	Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis distinctio voluptate, minus, placeat dolor quia nemo obcaecati aliquid maiores. Id, eum, in! Fugiat atque iusto quasi corrupti nulla, unde inventore.</div>
+<div class="rounded"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos quidem, sit saepe consectetur nemo ullam nihil voluptates nostrum facere totam excepturi alias similique sint qui ad accusamus culpa quae suscipit.	Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Nobis ullam doloribus, minus nisi inventore, aliquid nesciunt temporibus libero id, dignissimos magni. Repellendus, beatae porro, eius dolorum explicabo possimus perferendis doloremque.	Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis distinctio voluptate, minus, placeat dolor quia nemo obcaecati aliquid maiores. Id, eum, in! Fugiat atque iusto quasi corrupti nulla, unde inventore.</p></div>
+<div id="lorem"><p>	Here is another lorem for you! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam temporibus illum ad dolorum enim, voluptatem distinctio officia maiores necessitatibus sit est autem exercitationem ratione, tenetur. Quam natus necessitatibus placeat culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio impedit, repudiandae architecto suscipit repellat officiis pariatur quo, eveniet placeat amet optio? Officia neque eum quam labore explicabo impedit beatae dolore!Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Cupiditate reiciendis, delectus! Nihil est, vel ea nisi animi placeat accusantium sapiente, impedit atque eveniet, rerum nemo, perspiciatis aliquid! Nulla, voluptatibus, hic.</p></div>
+<div id="anotherlorem"><p><span>I am a span with text shadow! how cools</span></p>Here is another lorem for you! Lorem, ipsum dolor sit amet consectetur adipisicing elit. <span>[Im a span. sadly I dont have shadow]</span> Quibusdam temporibus illum ad dolorum enim, voluptatem distinctio officia maiores necessitatibus sit est autem exercitationem ratione, tenetur. Quam natus necessitatibus  placeat culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio impedit, repudiandae architecto suscipit repellat officiis pariatur quo, eveniet placeat amet optio? Officia neque eum quam labore explicabo impedit beatae dolore!Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </div>
+<b id="thebold">Im just a bold. using element selector, make me blue without changing the color in the #thebold{color: red;font-size: 1.75em} to blue</b>
+
+<h4>I am H4!</h4>
+<img src="assets/images/id/dancing.gif" alt="">
+<img src="assets/images/id/i-1.jpg" alt="">
+<img src="assets/images/my/pigeon.gif" alt="">
+<img src="assets/images/id/i-2.jpg" alt="The best place">
+<img src="assets/images/th/flying.gif" alt="">
+<img src="assets/images/id/i-3.jpg" alt="">
+
+
+
+</html>
