@@ -22,6 +22,8 @@
 
 		FAILURE TO COMPLY WILL RESULTS IN MARK DEDUCTION*/
 
+		/* ELEMENT SELECTOR */
+
 		img{ 
 			width: 120px;
 			height: 100px;
@@ -37,6 +39,8 @@
 			position: absolute;
 			z-index: 4; /*z-index specifies the z-order of only a positioned element. Elements that overlap each other. Elements that has a higher z-index will be prioritised*/
 		}
+
+		/* ID SELECTOR */
 		#two {
 			margin-left: 50px;
 			position: absolute;
@@ -52,6 +56,8 @@
 			position: absolute;
 			z-index: 1;
 		}
+
+		/* CLASS SELECTOR */
 		.z {
 			position: relative;
 		}
@@ -71,6 +77,9 @@
 			position: sticky;
 			top: 0px
 		}
+
+		/* CHILD SELECTOR */
+
 		/*.psuedo>article:nth-of-type(odd){ only affects the element type "article" inside the pseudo class, and only affects the odd orders (since there are 3 article elements, 1 and 3 are affected)
 			color: lightcoral;
 		}*/
@@ -79,7 +88,8 @@
 			color: lightcoral;
 		} /**/
 
-
+		/* ATTRIBUTE SELECTOR */
+		
 		img[alt="righty"]{
 			float: right;
 		}
