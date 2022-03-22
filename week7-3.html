@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 7-3</title>
+	<style type="text/css">
+		
+		#container{
+			display: grid;
+			background-color: skyblue;
+			padding: 10px;
+			/*grid-template-columns: 100px 100px 100px;*/
+			/*grid-template-columns: repeat(3, 100px);
+			grid-template-rows: 150px 150px 150px;*/
+			/*grid-template-rows: repeat(3,150px);*/
+			grid-template-columns: 1fr 2fr 1fr;
+			grid-template-rows: 1fr 2fr 1fr; /*fr stands for fraction*/
+			height: 90vh; /*vh stands for viewport height*/
+			/*grid-row-gap: 5px;
+			grid-column-gap: 5px;*/
+			/*grid-gap: 5px 10px; accepts (x y) value, x is row, y is column*/
+			grid-auto-rows: 1fr; /*fixes implicit row*/
+			grid-auto-columns: 1fr; /*fixes implicit columns*/
+		}
+
+		#container>div{
+			border: 1px solid;
+			background-color: turquoise;
+		}
+		/*implicit row = additional row*/
+		div:nth-child(1){
+			/*grid-column-start: 1;
+			grid-column-end: 4;*/
+			/*grid-column: 1/4; (start/end) */
+			grid-column: 1 / span 3; 
+		}
+
+		div:nth-child(2){
+			grid-row: 2 / 4; /*merges row 2 to 4, spanning to two rows*/
+		}
+
+		div:nth-child(3){
+			/*grid-column: 2 / 4;
+			grid-row: 2 / 4;*/
+
+			grid-area: 2 / 2 / 4 / 4; /*in order: (row start, column start, row end, column end)*/
+		}
+
+		div:nth-child(7){
+			grid-column: 1 / 5;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+	</div>
+</body>
+</html>
