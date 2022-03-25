@@ -9,22 +9,20 @@
 		h3{
 			text-align: center;
 		}
-		table{
-			border-collapse: collapse;
-			border: solid 1px;
+
+		#table{
 			margin: auto;
+			width: 50%;
+		}
 
-		}
-		td {
-			padding: 10px;
-		}
-		tr {
+		form>div {
 			border: solid 1px;
+			padding: 10px 10px;
+			border-collapse: collapse;
 		}
 
-		tr:nth-child(9) {
-			background-color: skyblue;
-			width: 100;
+		form>div:nth-child(n+9) {
+			text-align: center;
 		}
 
 
@@ -32,85 +30,66 @@
 </head>
 <body>
 
+<div id="table">
 <h3>Registration for Covid-19 Volunteer - &#174; C19-Team</h3>
 <form method="" action="">
-<table>
-<tr>
-	<td>Fullname</td>
-	<td><input type="text" name="Name" id="name" maxlength="30"> </td>
-</tr>
-<tr>
-	<td>Email</td>
-	<td><input type="email" name="Email" id="email"> </td>
-</tr>
-<tr>
-	<td>Date you can start</td>
-	<td><input type="date" name="month" id="month"> </td>
-</tr>
-<tr>
-	<td>Morning shift preference</td>
-	<td><input type="time" name="morningtime" id="time1"> </td>
-</tr>
-<tr>
-	<td>Evening shift perference</td>
-	<td><input type="time" name="eveningtime" id="time2"> </td>
-</tr>
-<tr>
-	<td>How many hours you can work? In multiple of 3</td>
-	<td><input type="number" name="number" id="number" step="3" min="3" max="9"> </td>
-</tr>
-<tr>
-	<td>Distance you willing to commute to volunteer center?</td>
-	<td>
+<div>
+	<label>Fullname</label>
+	<input type="text" name="Name" id="name" maxlength="30">
+</div>
+<div>
+	<label>Email</label><input type="email" name="Email" id="email">
+</div>
+<div>
+	<label>Date you can start</label><input type="date" name="month" id="month">
+</div>
+<div>
+	<label>Morning shift preference</label><input type="time" name="morningtime" id="time1">
+</div>
+<div>
+	<label>Evening shift perference</label><input type="time" name="eveningtime" id="time2">
+</div>
+<div>
+	<label>How many hours you can work? In multiple of 3</label><input type="number" name="number" id="number" step="3" min="3" max="9">
+</div>
+<div>
+	<label>Distance you willing to commute to volunteer center?</label>
+	<label>
 		<label>1<input type="range" name="range" value="3" id="range" min="1" max="15">15</label>
-	</td>
-</tr>
-<tr>
-	<td>You currency perference for payment?</td>
-	<td>
+	</label>
+</div>
+<div>
+	<label>You currency perference for payment?</label>
+	<label>
 	<input type="radio" name="currency" id="pound"><label for="pounds">&pound;</label>
 	<input type="radio" name="currency" id="yen"><label for="yen">&yen;</label>
 	<input type="radio" name="currency" id="euro"><label for="euro">&euro;</label>
-	</td>
-</tr>
-<tr>
-	<td>
-		<textarea cols="40" rows="6" placeholder="Type your home address"></textarea>
-	</td>
-</tr>
-<tr>
-	<td colspan="2" align="center">
+	</label>
+</div>
+<div>
+	<textarea cols="40" rows="6" placeholder="Type your home address"></textarea>
+</div>
+<div>
 		<s>You will be given daily meals</s>
-	</td>
-</tr>
-<tr>
-	<td colspan="2" align="center">
+</div>
+<div>
 		<input type="checkbox" name="checkbox1" checked disabled><label>I agree to all terms and conditions
 </label>
-	</td>
-</tr>
-<tr>
-	<td colspan="2" align="center">
+</div>
+<div>
 		<label>Prove you are not robot: 10 < 20?</label><input type="checkbox" name="checkbox2">
-	</td>
-</tr>
-<tr>
-	<td colspan="2" align="center">
+</div>
+<div>
 		<input type="submit" name="submit" value="Volunteer now!">
-	</td>
-</tr>
-<tr>
-	<td colspan="2" align="center">
+</div>
+<div>
 		<input type="reset" name="reset" value="Start over">
-	</td>
-</tr>
-<tr>
-	<td colspan="2" align="center">
+</div>
+<div>
 		For more informaton, visit MOH <a href="https://www.moh.gov.bn/" target="_blank">website</a>
-	</td>
-</tr>
-</table>
+</div>
 </form>
+</div>
 
 <hr>
 
