@@ -10,65 +10,102 @@
 			text-align: center;
 		}
 
-		#table{
-			margin: auto;
-			width: 50%;
+		.row {
+			width:  600px;
+			border: 1px solid;
+			padding: 10px;
 		}
 
-		form>div {
-			border: solid 1px;
-			padding: 10px 10px;
-			border-collapse: collapse;
+		.label {
+			width: 400px;
+			display: inline-block;
+		}
+
+		div {
+			margin: auto;
 		}
 
 		form>div:nth-child(n+9) {
+			width:  600px;
 			text-align: center;
+			border: 1px solid;
+			padding: 10px;
 		}
 
 
 	</style>
 </head>
 <body>
+	<div>
+		<h3>Registration for Covid-19 Volunteer - &#174; C19-Team</h3>
 
-<div id="table">
-<h3>Registration for Covid-19 Volunteer - &#174; C19-Team</h3>
-<form method="" action="">
-<div>
-	<label>Fullname</label>
-	<input type="text" name="Name" id="name" maxlength="30">
-</div>
-<div>
-	<label>Email</label><input type="email" name="Email" id="email">
-</div>
-<div>
-	<label>Date you can start</label><input type="date" name="month" id="month">
-</div>
-<div>
-	<label>Morning shift preference</label><input type="time" name="morningtime" id="time1">
-</div>
-<div>
-	<label>Evening shift perference</label><input type="time" name="eveningtime" id="time2">
-</div>
-<div>
-	<label>How many hours you can work? In multiple of 3</label><input type="number" name="number" id="number" step="3" min="3" max="9">
-</div>
-<div>
-	<label>Distance you willing to commute to volunteer center?</label>
+	<form method="" action="">
+
+	<div class="row">
+		<div class="label">
+		<label>Fullname</label>
+	</div>
+		<input type="text" name="Name" id="name" maxlength="30">
+	</div>
+
+	<div class="row">
+		<div class="label">
+			<label>Email</label>
+		</div>
+		<input type="email" name="Email" id="email">
+	</div>
+
+	<div class="row">
+		<div class="label">
+			<label>Date you can start</label>
+		</div>
+		<input type="date" name="month" id="month">
+	</div>
+
+	<div class="row">
+		<div class="label">
+			<label>Morning shift preference</label>
+		</div>
+		<input type="time" name="morningtime" id="time1">
+	</div>
+
+	<div class="row">
+		<div class="label">
+			<label>Evening shift perference</label>
+		</div>
+		<input type="time" name="eveningtime" id="time2">
+	</div>
+
+	<div class="row">
+		<div class="label">
+	<label>How many hours you can work? In multiple of 3</label>
+		</div>
+		<input type="number" name="number" id="number" step="3" min="3" max="9">
+	</div>
+
+	<div class="row">
+		<div class="label">
+			<label>Distance you willing to commute to volunteer center?</label>
+		</div>
 	<label>
 		<label>1<input type="range" name="range" value="3" id="range" min="1" max="15">15</label>
 	</label>
-</div>
-<div>
-	<label>You currency perference for payment?</label>
-	<label>
-	<input type="radio" name="currency" id="pound"><label for="pounds">&pound;</label>
-	<input type="radio" name="currency" id="yen"><label for="yen">&yen;</label>
-	<input type="radio" name="currency" id="euro"><label for="euro">&euro;</label>
-	</label>
-</div>
-<div>
+	</div>
+
+	<div class="row">
+		<div class="label">
+			<label>You currency perference for payment?</label>
+		</div>
+		<label>
+			<input type="radio" name="currency" id="pound"><label for="pounds">&pound;</label>
+			<input type="radio" name="currency" id="yen"><label for="yen">&yen;</label>
+			<input type="radio" name="currency" id="euro"><label for="euro">&euro;</label>
+		</label>
+	</div>
+
+	<div>
 	<textarea cols="40" rows="6" placeholder="Type your home address"></textarea>
-</div>
+	</div>
 <div>
 		<s>You will be given daily meals</s>
 </div>
@@ -90,21 +127,5 @@
 </div>
 </form>
 </div>
-
-<hr>
-
-<p>Denzel Washington once said...</p>
-
-<blockquote><b>&ldquo;At the end of the day it’s not about what you have or even what you’ve accomplished… it’s about who you’ve lifted up, who you’ve made better. It’s about what you’ve given back.&rdquo;</b>
-</blockquote>
-
-<pre>
-So roses are red, violets are blue
-It's all in my head, no matter what I do
-So roses are red, violets are blue
-It's all in my head, no matter what I do
-</pre>
-
-<!-- <pre> means preformatted text, where what you type in the HTML is what you get -->
 </body>
 </html>
