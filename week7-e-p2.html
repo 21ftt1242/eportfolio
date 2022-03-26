@@ -3,51 +3,45 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Muhd Ghazali | Week 7-e Part 1</title>
+	<title>Muhd Ghazali | Week 7-e Part 2</title>
 	<style type="text/css">
 		
 		/* ELEMENT SELECTOR */
-		h3{
-			text-align: center;
+		form{
+			display: flex;
+			justify-content: center;
 		}
-		div {
-			margin: auto;
-		}
-
-		/* ID SELECTOR */
-		#table {
-			border: solid 1px;
-			width: 600px;
-		}
-
 		/* CLASS SELECTOR */
-		.row {
-			width:  600px;
-			border: 1px solid;
+		#container {
+			width: 620px;
+			flex-direction: column;
+		}
+		div.row {
+			display: flex;
+			flex-direction: row;
+			padding: 10px;
 		}
 		.label {
-			width: 350px;
-			display: inline-block; /*important! makes the label side by side with the input fields*/
+			width: 400px;
+		}
+
+		.row>input{
+			flex-grow: 1;
+		}
+
+		.center {
+			text-align: center;
 			padding: 10px;
 		}
 
-		/* CHILD SELECTOR */
-		form>div:nth-child(n+9) { 
-			width:  600px;
-			text-align: center;
-			border: 1px solid;
-			padding: 10px 0px;
-		}
 
 /*inside the form element, it searches for the 9th div and selects the 9th div until the end div*/
 
 	</style>
 </head>
 <body>
-
-	<h3>Registration for Covid-19 Volunteer - &#174; C19-Team</h3>
-	<div id="table">
 	<form method="" action="">
+		<div id="container">
 
 		<!-- Row 1 -->
 
@@ -129,48 +123,47 @@
 
 		<!-- Row 9 -->
 
-	<div>
+	<div class="center">
 		<textarea cols="40" rows="6" placeholder="Type your home address"></textarea>
 	</div>
 
 		<!-- Row 10 -->
 
-	<div>
+	<div class="center">
 		<s>You will be given daily meals</s>
 	</div>
 
 		<!-- Row 11 -->
 
-	<div>
+	<div class="center">
 		<input type="checkbox" name="checkbox1" checked disabled><label>I agree to all terms and conditions
 		</label>
 	</div>
 
 		<!-- Row 12 -->
 
-	<div>
+	<div class="center">
 		<label>Prove you are not robot: 10 < 20?</label><input type="checkbox" name="checkbox2">
 	</div>
 
 		<!-- Row 13 -->
 
-	<div>
+	<div class="center">
 		<input type="submit" name="submit" value="Volunteer now!">
 	</div>
 
 		<!-- Row 14 -->
 
-	<div>
+	<div class="center">
 		<input type="reset" name="reset" value="Start over">
 	</div>
 
 		<!-- Row 15 -->
 
-	<div>
+	<div class="center">
 		For more informaton, visit MOH <a href="https://www.moh.gov.bn/" target="_blank">website</a>
 	</div>
-
+	</div>
 </form>
-</div>
 </body>
 </html>
