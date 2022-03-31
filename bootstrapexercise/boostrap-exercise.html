@@ -7,9 +7,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<style type="text/css">
-		body {
-			margin: 0px;
-		}
+		
+    /*NAVBAR AND CAROUSEL STYLING*/
 
 		.carousel.slide{
 			width: 50%;
@@ -52,20 +51,104 @@
    			padding: 5vw;
    			display: flex;
    			margin:  auto;
-   			background-color: #FECE0B;
 		}
 
 		#demo1, #demo2 {
 			flex: 1;
 		}
 
-		.navbar {
-			background-color: skyblue;
-		}
+    /*COLLAPSE AND OFFCANVAS STYLING*/
 
+
+    /*EVENTS PIC SIZE*/
+    .eventPic {
+      width: 80%;
+      height: 20%;
+    }
+
+
+    .offCanvasPic {
+      width: 80%;
+      height: 80%;
+    }
+
+    .PTGHead {
+      width: 100%;
+      padding: 10px 10px;
+      background-color: yellow;
+      text-align: center;
+    }
+
+    .eventsHead {
+      width: 100%;
+      padding: 10px 10px;
+      margin-top: 20px;
+      background-color: yellow;
+      text-align: center;
+    }
+
+    .displayVertical {
+      display: block;
+      margin: 0px auto;
+      padding: 20px 0px;
+    }
+
+
+    /*PLACES TO GO GRID*/
+    .PTGGrid {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto auto auto auto;
+      align-items: center;
+      text-align: center;
+    }
+
+    .spanMid {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .accordionImgSize {
+      width:  90%;
+      height: 80%;
+    }
+
+    .accordionImgSizeMid {
+      width:  45%;
+      height: 40%;
+    }
+
+    /*OFF-CANVAS GRID*/
+    .offCanvasGrid {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      grid-template-rows: auto auto auto auto auto;
+    }
+
+    .imgGrid {
+      grid-column: 1 / 2;
+      grid-row: 2 / 6;
+    }
+
+    .btnGrid {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+
+    #footer-center{
+      text-align: center;
+    }
 	</style>
 </head>
 <body>
+
+<!-- GHAZALI's PART -->
+
+<div class="PTGHead">
+    <h2>Main Navbar</h2>
+    <h4>Desktop & Mobile view (try reducing screen size) Navbar Bootstrap</h4>
+  </div>
+
 <nav style="background-color: #231F20;" class="navbar navbar-expand-sm navbar-dark sticky-top ">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">Logo</a>
@@ -95,6 +178,10 @@
 </div>
 
 
+<div class="PTGHead">
+    <h2>Upcoming and Previous events</h2>
+    <h4>Desktop view - Image Carousel Bootstrap</h4>
+  </div>
 
 <div class="carousel-section">
 
@@ -207,6 +294,231 @@
 
 </div>
 
+<!-- AFIF's PART -->
 
+
+
+<!-- Collapse -->
+
+  <div class="PTGHead">
+    <h2>PLACES TO GO</h2>
+    <h4>Desktop view - Collapse (Accordion)</h4>
+  </div>
+
+  <div class="container mt-3">
+
+    <h2>Brunei-Muara</h2>
+    <!-- <p><strong>Note:</strong> The <strong>data-bs-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p> -->
+
+  <div id="accordion" class="PTGGrid">
+
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+            <img class="accordionImgSize" src="jerudongpark.jpg">
+          </a>
+        </div>
+        <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h4>NAME OF PLACE</h4><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+          <img class="accordionImgSize" src="jalanroberts.jpg">
+        </a>
+        </div>
+        <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h4>NAME OF PLACE</h4><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+
+      <div class="card spanMid">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+            <img class="accordionImgSizeMid" src="joyfulgarden.jpg">
+          </a>
+        </div>
+
+        <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h4>NAME OF PLACE</h4><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
+          <img class="accordionImgSize" src="kampongayer.jpg">
+        </a>
+        </div>
+        <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h4>NAME OF PLACE</h4><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFive">
+          <img class="accordionImgSize" src="lugulake.jpg">
+        </a>
+        </div>
+        <div id="collapseFive" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            <h4>NAME OF PLACE</h4><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+
+      </div>
+  </div>
+
+
+
+
+  <!-- Off Canvas -->
+  <div class="eventsHead">
+    <h2>EVENTS - BRUNEI MUARA</h2>
+    <h4>Mobile view - Off Canvas Bootstrap</h4>
+    <p>(Reduce screen size)</p>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" id="loe1">
+    <div class="offcanvas-body offCanvasGrid">
+      <button type="button" class="btn-close btnGrid" data-bs-dismiss="offcanvas"></button>
+      <img class="offCanvasPic imgGrid" src="kampongayer.jpg" data-bs-dismiss="offcanvas">
+      <h4>Name of Event</h4>
+      <h5>Company in charge</h5>
+      <p>Date</p>
+      <p>Description, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" id="loe2">
+    <div class="offcanvas-body offCanvasGrid">
+      <button type="button" class="btn-close btnGrid" data-bs-dismiss="offcanvas"></button>
+      <img class="offCanvasPic imgGrid" src="jerudongpark.jpg" data-bs-dismiss="offcanvas">
+      <h4>Name of Event</h4>
+      <h5>Company in charge</h5>
+      <p>Date</p>
+      <p>Description, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom" id="loe3">
+    <div class="offcanvas-body offCanvasGrid">
+      <button type="button" class="btn-close btnGrid" data-bs-dismiss="offcanvas"></button>
+      <img class="offCanvasPic imgGrid" src="joyfulgarden.jpg" data-bs-dismiss="offcanvas">
+      <h4>Name of Event</h4>
+      <h5>Company in charge</h5>
+      <p>Date</p>
+      <p>Description, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-3">
+    <img class="eventPic displayVertical" src="kampongayer.jpg" data-bs-toggle="offcanvas" data-bs-target="#loe1">
+    <img class="eventPic displayVertical" src="jerudongpark.jpg" data-bs-toggle="offcanvas" data-bs-target="#loe2">
+    <img class="eventPic displayVertical" src="joyfulgarden.jpg" data-bs-toggle="offcanvas" data-bs-target="#loe3">
+    
+  </div>
+
+
+<!-- WAFI's PART -->
+
+
+
+<div class="PTGHead">
+    <h2>Feedback form</h2>
+    <h4>Modal and Forms Bootstrap</h4>
+    <p>This hyperlink will be shown on the page footer</p>
+  </div>
+<!-- BS Modal url: https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_modal_scroll2&stacked=h -->
+  <div class="container mt-3" id="footer-center">
+  
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Leave us a feedback!
+  </button>  -->
+  <a href="" data-bs-toggle="modal" data-bs-target="#myModal">Leave us a feedback</a>
+  <p>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Feedback Form</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <!-- BS Form url: https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_form&stacked=h -->
+        <div class="container mt-3">
+  <h3>Share your experience!</h3>
+  <p>Please fill in the feedback form accordingly.</p>
+    
+  <form action="/action_page.php">
+    <div class="mb-3 mt-3">
+      <label for="uname" class="form-label">Fullname:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="mb-3">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="comment">Feedback:</label>
+      <textarea class="form-control" rows="5" id="comment" name="text" required></textarea>
+    </div>
+    <div class="mb-3">
+    <label for="formFile" class="form-label">Attachment: (OPTIONAL)</label>
+    <input class="form-control" type="file" id="formFile" accept=".png, .jpg">
+    </div>
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
+      <label class="form-check-label" for="myCheck">I give my consent for my feedback to be showcased</label>
+      <div class="valid-feedback">Proceed.</div>
+      <div class="invalid-feedback">Check this checkbox to continue.</div>
+    </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="reset" class="btn btn-primary">Clear Form</button>
+  </form>
+</div>
+
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
