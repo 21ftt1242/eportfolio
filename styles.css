@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.bottomtext {
+#bottomtext {
   margin-right: auto;
   margin-left: auto;
   position: fixed;
@@ -28,6 +28,10 @@
   bottom:  0px;
   width:  100%;
 }
+
+body {
+      background-color: #328CC1;
+    }
 
 p.intro {
   text-align: center;
