@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript Exercise - Ghazali</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var name = prompt("Enter name:");
+		var time = prompt("Enter time in 24hr (whole number only:");
+		var firstNo = Number(prompt("Enter first number:"));
+		var secondNo = Number(prompt("Enter second number:"));
+		var choice = Number(prompt("Enter choice. 1 add, 2 multiply: 2"));
+		var choiceText = "";
+		var result;
+		var day = ""
+		var greet = "";
+
+
+		if (choice == 1) {
+			choiceText = "add";
+			result = firstNo + secondNo;
+		} else if (choice == 2) {
+			choiceText = "multiply";
+			result = firstNo * secondNo;
+		} else {
+			choiceText = "invalid";
+		}
+
+		if (time <= 24) {
+			if (time < 12) {
+				day = "Morning";
+				greet = "Enjoy your morning!";
+			} else if (time > 12 && time <= 24) {
+				day = "day"
+				greet = "Enjoy the rest of your days!";
+			} 
+		document.write("<h1>" + "Good " + day + " "  + name + " <br> You entered " + firstNo + " & " + secondNo + " <br> You decided to " + choiceText + " them " + "<br> The answer is " +  result + "<br>" + greet);
+		} else {
+			document.write("<h1>" + "Sorry " + name + ". I need a valid time.");
+		}
+	
+
+	</script>
+</body>
+</html>
