@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript Exercise AND Operator - Ghazali</title>
+	<!-- 6th April 2022 Class -->
+</head>
+<body>
+	<script type="text/javascript">
+
+		var time = prompt("Enter time in 24hr: ");
+		var wx = prompt("Enter weather (sunny/raining): ");
+
+	if (time >=0 && time <=6) { 
+		document.write("<h1>" + "Too early!"); 
+	}
+		else if (time >= 7 && time <= 16) {
+			if (wx == "sunny") {
+			document.write("<h1>" + "Let's play outside!");
+			} else if (wx == "raining") {
+			document.write("<h1>" + "Let's play indoors!");
+			}
+		}
+		else if (time >= 17 && time <= 21) {
+			if (wx == "sunny") {
+			document.write("<h1>" + "Let's go to the cinemas!");
+			} else if (wx == "raining") {
+			document.write("<h1>" + "Watch movie at home!");
+			}
+		}
+		else if (time >= 22 && time <= 24) {
+			document.write("<h1>" + "It is bed time!");
+		}
+	else {
+		document.write("<h1>" + "Invalid time!! Goodbye!!");
+	}
+
+	</script>
+</body>
+</html>

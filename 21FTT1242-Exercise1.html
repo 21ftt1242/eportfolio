@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Javascript Exercise AND Operator - Ghazali</title>
+	<!-- 6th April 2022 Class -->
+</head>
+<body>
+	<script type="text/javascript">
+
+		var maths = prompt("Do you have credits in Mathematics? ");
+		var eng = prompt("Do you have credits in English?");
+		var malay = prompt("Do you have credits in Malay?");
+		var ic = prompt("Are you a yellow IC holder?");
+		var credit = prompt("Do you have credits in 3 English medium subjects?");
+
+	if (credit == "y") { 
+		if (maths == "y" && eng == "y" && malay == "y" && ic == "y") {
+			document.write("<h1>" + "Congratulations! You are eligible to apply and receive full scholarship");
+		} 
+
+		else if ((maths == "y" && eng == "y" && malay == "n" && ic == "n") || (maths == "y" && eng == "y" && malay == "n" && ic == "y")) {
+			document.write("<h1>" + "You are eligible to apply as fee paying students");
+		}
+	} else {
+		document.write("<h1>" + "Sorry, you are not eligible to apply");
+	}
+
+	</script>
+</body>
+</html>
