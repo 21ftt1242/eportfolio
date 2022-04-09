@@ -47,21 +47,22 @@
       display: grid;
     }
 
-    .submain>div:nth-child(1) {
+    .submain>div:nth-child(1) { /*author*/
       display: grid;
       background-color: lightseagreen;
       justify-content: center;
       align-items: center;
       grid-row: 2 / 2; /*author to bottom*/
+      grid-template-rows: 40px;
     }
 
-    .submain>div:nth-child(2) {
+    .submain>div:nth-child(2) { /*quote*/
       display: grid;
       background-color: skyblue;
       text-align: center;
       align-items: center;
       justify-content: center;
-
+      grid-template-rows: 110px;
     }
 
     /*.col {
@@ -100,7 +101,6 @@
       display: grid;
       grid-gap: 2em;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(6, 150px);
       width: 90%;
       margin: 0 auto;
       font-size: 1.25em;
@@ -115,6 +115,7 @@
       background-color: lightseagreen;
       justify-content: center;
       align-items: center;
+      grid-template-rows: 40px;
        /*author to bottom*/
     }
 
@@ -124,6 +125,7 @@
       text-align: center;
       align-items: center;
       justify-content: center;
+      grid-template-rows: 110px;
     }
 
     .main>div:nth-child(1) {
