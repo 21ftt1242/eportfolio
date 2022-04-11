@@ -6,7 +6,10 @@
   <title></title>
 
   <style type="text/css">
-
+  body{
+      display: block;
+      margin: 8px;
+    }
 /*
     THIS TASK REQUIRE YOU TO USE CSS GRID AND THEIR RELATED PROPERTIES
   */
@@ -26,9 +29,11 @@
 
 
     
-    /*DESKTOP VIEW*/
+      /*--------DESKTOP VIEW--------*/
 
     @media screen and (min-width: 800px){ /*800px and beyond*/
+
+      /*CLASS SELECTOR*/
 
     .main{
       display: grid;
@@ -44,28 +49,25 @@
       display: grid;
     }
 
-    .submain>div:nth-child(1) {
+    /*CHILD SELECTOR*/
+
+    .submain>div:nth-child(1) { /*author*/
       display: grid;
       background-color: lightseagreen;
       justify-content: center;
       align-items: center;
       grid-row: 2 / 2; /*author to bottom*/
+      grid-template-rows: 40px;
     }
 
-    .submain>div:nth-child(2) {
+    .submain>div:nth-child(2) { /*quote*/
       display: grid;
       background-color: skyblue;
       text-align: center;
       align-items: center;
       justify-content: center;
+      grid-template-rows: 110px;
     }
-
-    /*.col {
-      grid-column: 1 / 1; 
-    }
-    .spotlight {
-      grid-column: 2 / 5; 
-    }*/
 
     .main>div:nth-child(1) {
       grid-row: 1 / 2;
@@ -88,15 +90,16 @@
     }
 }
 
- /*TABLET VIEW*/
+      /*--------TABLET VIEW--------*/
 
     @media screen and (min-width: 481px) and (max-width: 799px) { /*800px and beyond*/
+
+      /*CLASS SELECTOR */
 
     .main{
       display: grid;
       grid-gap: 2em;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(6, 150px);
       width: 90%;
       margin: 0 auto;
       font-size: 1.25em;
@@ -106,11 +109,14 @@
       display: grid;
     }
 
+    /*CHILD SELECTOR*/
+
     .submain>div:nth-child(1) {
       display: grid;
       background-color: lightseagreen;
       justify-content: center;
       align-items: center;
+      grid-template-rows: 40px;
        /*author to bottom*/
     }
 
@@ -120,6 +126,7 @@
       text-align: center;
       align-items: center;
       justify-content: center;
+      grid-template-rows: 110px;
     }
 
     .main>div:nth-child(1) {
@@ -140,10 +147,13 @@
 }
 
 
-    /*MOBILE VIEW*/
+    /*--------MOBILE VIEW--------*/
 
 
-    @media screen and (max-width: 480px){ /*0px to 400px*/
+    @media screen and (max-width: 480px){ /*0px to 480px*/
+
+      /*CLASS SELECTOR */
+      
       .main{
       display: grid;
       margin: 0 auto;
@@ -151,6 +161,9 @@
       grid-template-columns: 100%;
       grid-gap: 0;
     }
+
+    /*CHILD SELECTOR*/
+
     .submain>div:nth-child(1) {
       display: grid;
       background-color: lightseagreen;
