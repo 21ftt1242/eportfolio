@@ -7,48 +7,86 @@
 </head>
 <body>
 	<script type="text/javascript">
-		var x=16;
-		var y=15;
-		var z="10";
 
-		if (x > y){
-		console.log("x is bigger than y");
-		} else {
-		console.log("x is smaller than y")
-		}
+		/*DEMO 1*/
 
-		var name = prompt("Enter name:");
-		var gender = prompt("Enter gender (F or M):");
-		var dob = Number(prompt("Enter year of birth:"));
 
-		var currentDate = new Date(); //import current system date
+		/*var number = Number(prompt("Enter a number between 1 - 5 and I will spell them in words: "));
+		var result = "";
+
+		switch(number) {
+
+		case 1: result = document.write("<h1>" + "You have entered ONE " + "</h1>"); break;
+		case 2: result = document.write("<h1>" + "You have entered TWO " + "</h1>"); break;
+		case 3: result = document.write("<h1>" + "You have entered THREE " + "</h1>"); break;
+		case 4: result = document.write("<h1>" + "You have entered FOUR " + "</h1>"); break;
+		case 5: result = document.write("<h1>" + "You have entered FIVE " + "</h1>"); break;
+		default: result = document.write("<h1>" + "I am yet to learn that!" + "</h1>");
+	}*/
+
+		/*DEMO 2*/
+
+	/*var character = prompt("Enter a character. I will tell you whether it is a vowel or a consonant: ")
+	var result = "";
+
+	switch (character) {
+		case "a":case "e":case "i":case "o":case "u": result = document.write("<h1>" + character + " is a vowel" + "</h1>"); break;
+		default: result = document.write("<h1>" + character + " is a consonant" + "</h1>");
+	}*/
+
+		/*DEMO 3*/
+
+		/*var dob = Number(prompt("Enter year of birth:"));*/
+
+		/*var currentDate = new Date(); //import current system date
 		var year = currentDate.getFullYear(); //2022
-		var age = year - dob; //2022 - inputted year
-		var genderText;
-		//use Date() - retrieve year portion
 
-		if (gender=="F" || gender=="f"){
-			genderText = "Dayang";
-		} else if (gender=="M" || gender=="m"){
-			genderText = "Awang";
-		} else {
-			document.write("<h1>" + "Invalid gender!!!" + "</h1>");
+		var result = year - dob;*/
+
+		/*if (result > 18) {
+			document.write("<h1>" + "adult" + "</h1>");
+		}*/
+
+		/*result >= 18? document.write("<h1>" + "You are most definitely an adult." + "</h1>") : document.write("<h1>" + "You're still a kid!!!!!!" + "</h1>");*/
+
+
+		/*DEMO 4*/
+
+		var options = Number(prompt("Enter 1 for Number Spell, Enter 2 for Vowel Finder"));
+
+		function NumSpell() {
+
+			var number = Number(prompt("Enter a number between 1 - 5 and I will spell them in words: "));
+		var result = "";
+
+		switch(number) {
+
+		case 1: result = document.write("<h1>" + "You have entered ONE " + "</h1>"); break;
+		case 2: result = document.write("<h1>" + "You have entered TWO " + "</h1>"); break;
+		case 3: result = document.write("<h1>" + "You have entered THREE " + "</h1>"); break;
+		case 4: result = document.write("<h1>" + "You have entered FOUR " + "</h1>"); break;
+		case 5: result = document.write("<h1>" + "You have entered FIVE " + "</h1>"); break;
+		default: result = document.write("<h1>" + "I am yet to learn that!" + "</h1>");
+	}
 		}
-		document.write("<h1>" + "Hi " + genderText + " " + name + ". " + "This year you will be " + age + "." + "</h1>")
 
-		//const discount=0.1;
-		//console.log("X is "+x);
-		//console.log("x-y is" + (x-y));
-		//console.log("y+z is "+(y+z));
-		//y=y-z; 
-		//console.log("y is "+y);
-		//console.log("discount is " +discount);
+		function VowFinder() {
 
-		//var num = (x>y);
-		//var k = 15;
+			var character = prompt("Enter a character. I will tell you whether it is a vowel or a consonant: ")
+			var result = "";
 
-		//num = (x===z); //triple equal is "a very strict comparison", it compares the value and the data type
-		//console.log(num);
+			switch (character) {
+				case "a":case "e":case "i":case "o":case "u": result = document.write("<h1>" + character + " is a vowel" + "</h1>"); break;
+			default: result = document.write("<h1>" + character + " is a consonant" + "</h1>");
+	}
+		}
+
+		if (options == 1) {
+			NumSpell();
+		}
+		if (options == 2) {
+			VowFinder();
+		}
 	</script>
 </body>
 </html>
