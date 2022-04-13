@@ -36,23 +36,32 @@
 
 		/*DEMO 3*/
 
-		/*var dob = Number(prompt("Enter year of birth:"));*/
+		/*var dob = Number(prompt("Enter year of birth:"));
 
-		/*var currentDate = new Date(); //import current system date
+		var currentDate = new Date(); //import current system date
 		var year = currentDate.getFullYear(); //2022
 
 		var result = year - dob;*/
 
-		/*if (result > 18) {
-			document.write("<h1>" + "adult" + "</h1>");
+		/*using if statements*/
+
+		/*if (result < 18) {
+			document.write("<h1>" + "underage" + "</h1>");
+		} else if (result >= 60) {
+			document.write("<h1>" + "Warga emas" + "</h1>");
+		} else {
+			document.write("<h1>" + "Enjoy life!" + "</h1>");
 		}*/
 
-		/*result >= 18? document.write("<h1>" + "You are most definitely an adult." + "</h1>") : document.write("<h1>" + "You're still a kid!!!!!!" + "</h1>");*/
+		/*using ternary operator*/
 
+		/*result < 18 ? 	document.write("<h1>" + "You are still underage." + "</h1>") : 
+		result  >= 60 ? document.write("<h1>" + "You are warga emas!!" + "</h1>") : 
+						document.write("<h1>" + "Enjoy life!!!" + "</h1>");*/
 
 		/*DEMO 4*/
 
-		var options = Number(prompt("Enter 1 for Number Spell, Enter 2 for Vowel Finder"));
+		/*var options = Number(prompt("Enter 1 for Number Spell, Enter 2 for Vowel Finder"));
 
 		function NumSpell() {
 
@@ -86,7 +95,7 @@
 		}
 		if (options == 2) {
 			VowFinder();
-		}
+		}*/
 	</script>
 </body>
 </html>

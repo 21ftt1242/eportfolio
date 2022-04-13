@@ -1,0 +1,90 @@
+<html !DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 12-1</title>
+
+
+  <style type="text/css">
+    #table {
+      margin: auto;
+      width: 20%;s
+    }
+    #table>input {
+      float: right;
+    }
+
+    #selection {
+      float: right;
+    }
+
+    #selection>option{
+      text-align: center;
+    }
+    #msg {
+      width: 20%;
+      margin: auto;
+    }
+  </style>
+
+</head>
+<body>
+
+<div id ="table">
+Name
+<input type="text" id="name"  onkeyup="upperCase()" onfocus="bigText()" onblur="normalText()"> <br> <br>
+Age
+<input type="text" id="age" > <br> <br>
+Education
+<select id = "selection">
+
+
+<option value="O level">O level</option>
+<option value="A level">A level</option>
+<option value="Diploma">Diploma</option>
+</select> <br> <br>
+
+<textarea placeholder ="address" id="place" rows="3" cols="45"></textarea> <br>  <br>
+
+<button onclick="studentInfo()">Output result</button> <br> <br>
+</div>
+<div id="msg"></div>
+
+
+<script type="text/javascript">
+  function copyToDiv() {
+
+    var name = document.getElementById("name");
+    var msg = document.getElementById("msg");
+    msg.innerHTML += name.value;
+    msg.style.border = "5px solid black";
+    msg.style.fontSize = "2em";
+  }
+
+  function studentInfo() {
+
+    var name = document.getElementById("name");
+    var age = document.getElementById("age");
+    msg.innerHTML = "Hi " + name.value + "<br>" + "This year you will be " + age.value + " years old." + "<br>" + "Your education background is " + selection.value + "<br>" + "Your address is at " + place.value;
+  }
+
+  function upperCase() {
+    var name = document.getElementById("name");
+    name.value = name.value.toUpperCase();
+  }
+
+  function bigText() {
+    var name = document.getElementById("name");
+    name.style.fontSize = "2em";
+  }
+
+   function normalText() {
+    var name = document.getElementById("name");
+    name.style.fontSize = "1em";
+  }
+
+
+</script>
+</body>
+</html>
