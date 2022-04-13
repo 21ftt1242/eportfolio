@@ -35,9 +35,13 @@
 		.banner {
 			margin: 0px;
 			width: 100%;
-   			height: 100%;
-			background-color: #302162;
+   		height: 100%;
+			background-color: #3E92CC;
+      background-image: url("images/bgimage.png");
 			position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
 		}
 
 		.banner img{
@@ -73,88 +77,45 @@
 			flex: 1;
 		}
 
-    /*COLLAPSE AND OFFCANVAS STYLING*/
 
+    .parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
 
-    /*EVENTS PIC SIZE*/
-    .eventPic {
-      width: 80%;
-      height: 20%;
-    }
+.circle{
+  border-radius: 50%;
+  width: 30%;
+  margin: auto;
+  display: block;
+}
 
+.div1 { grid-area: 1 / 3 / 2 / 4; margin: auto;}
+.div2 { grid-area: 2 / 2 / 3 / 3; }
+.div3 { grid-area: 2 / 3 / 3 / 4; }
+.div4 { grid-area: 2 / 4 / 3 / 5; }
+.div5 { grid-area: 3 / 3 / 4 / 4; }
+.div6 { grid-area: 3 / 4 / 4 / 5; }
+.div7 { grid-area: 3 / 2 / 4 / 3; }
+.div8 { grid-area: 4 / 1 / 5 / 2; }
+.div9 { grid-area: 4 / 2 / 5 / 3; }
+.div10 { grid-area: 4 / 3 / 5 / 4; }
+.div11 { grid-area: 4 / 4 / 5 / 5; }
+.div12 { grid-area: 4 / 5 / 5 / 6; }
+.div13 { grid-area: 5 / 5 / 6 / 6; }
+.div14 { grid-area: 5 / 4 / 6 / 5; }
+.div15 { grid-area: 5 / 3 / 6 / 4; }
+.div16 { grid-area: 5 / 2 / 6 / 3; }
+.div17 { grid-area: 5 / 1 / 6 / 2; } 
 
-    .offCanvasPic {
-      width: 80%;
-      height: 80%;
-    }
-
-    .PTGHead {
-      width: 100%;
-      padding: 10px 10px;
-      background-color: yellow;
-      text-align: center;
-    }
-
-    .eventsHead {
-      width: 100%;
-      padding: 10px 10px;
-      margin-top: 20px;
-      background-color: yellow;
-      text-align: center;
-    }
-
-    .displayVertical {
-      display: block;
-      margin: 0px auto;
-      padding: 20px 0px;
-    }
-
-
-    /*PLACES TO GO GRID*/
-    .PTGGrid {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: auto auto auto auto auto;
-      align-items: center;
-      text-align: center;
-    }
-
-    .spanMid {
-      grid-column: 1 / 3;
-      grid-row: 2 / 3;
-    }
-
-    .accordionImgSize {
-      width:  90%;
-      height: 80%;
-    }
-
-    .accordionImgSizeMid {
-      width:  45%;
-      height: 40%;
-    }
-
-    /*OFF-CANVAS GRID*/
-    .offCanvasGrid {
-      display: grid;
-      grid-template-columns: 40% 60%;
-      grid-template-rows: auto auto auto auto auto;
-    }
-
-    .imgGrid {
-      grid-column: 1 / 2;
-      grid-row: 2 / 6;
-    }
-
-    .btnGrid {
-      grid-column: 1 / 3;
-      grid-row: 1 / 2;
-    }
-
-    #footer-center{
-      text-align: center;
-    }
 	</style>
+
 </head>
 <body>
 
@@ -162,9 +123,9 @@
 
 <!-- Navbar -->
 <!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_navbar.php -->
-<nav style="background-color: #231F20;" class="navbar navbar-expand-sm navbar-dark sticky-top ">
+<nav style="background-color: #FECE0B;" class="navbar navbar-expand-sm navbar-light sticky-top ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+    <a class="navbar-brand" href="javascript:void(0)"><img src="images/bdflogonav.png" width="50" height="50" ></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -190,16 +151,25 @@
 <img src="images/bdflogo.png">
 </div>
 
-<div class="organisation">
-<div><img src="images/organisation-temp.jpg"></div>
-<div><img src="images/organisation-temp.jpg"></div>
-<div><img src="images/organisation-temp.jpg"></div>
-<div><img src="images/organisation-temp.jpg"></div>
-<div><img src="images/organisation-temp.jpg"></div>
-<div><img src="images/organisation-temp.jpg"></div>
-<div><img src="images/organisation-temp.jpg"></div>
-<div><img src="images/organisation-temp.jpg"></div>
-</div>
+<div class="parent">
+<div class="div1"><img src="images/guy.jpg" class="circle"></div>
+<div class="div2"><img src="images/guy.jpg" class="circle"></div>
+<div class="div3"><img src="images/guy.jpg" class="circle"></div>
+<div class="div4"><img src="images/guy.jpg" class="circle"></div>
+<div class="div5"><img src="images/guy.jpg" class="circle"></div>
+<div class="div6"><img src="images/guy.jpg" class="circle"></div>
+<div class="div7"><img src="images/guy.jpg" class="circle"></div>
+<div class="div8"><img src="images/guy.jpg" class="circle"></div>
+<div class="div9"><img src="images/guy.jpg" class="circle"></div>
+<div class="div10"><img src="images/guy.jpg" class="circle"></div>
+<div class="div11"><img src="images/guy.jpg" class="circle"></div>
+<div class="div12"><img src="images/guy.jpg" class="circle"></div>
+<div class="div13"><img src="images/guy.jpg" class="circle"></div>
+<div class="div14"><img src="images/guy.jpg" class="circle"></div>
+<div class="div15"><img src="images/guy.jpg" class="circle"></div>
+<div class="div16"><img src="images/guy.jpg" class="circle"></div>
+<div class="div17"><img src="images/guy.jpg" class="circle"></div>
+</div> 
 
 <div class="carousel-section">
 
@@ -315,6 +285,5 @@
 </div>
 
 
-</div>
 </body>
 </html>
