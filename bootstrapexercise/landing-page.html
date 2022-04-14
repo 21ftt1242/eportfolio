@@ -12,6 +12,11 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
 
+<!-- Popover #2 -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -193,7 +198,7 @@ position: relative;
 height: 140px;
 display: block;
 float: left;
-margin-right: 1em
+margin-right: 1em;
 }
 .mytooltip .tooltip-item::after {
 content: '';
@@ -227,7 +232,17 @@ padding: 1.31em 1.21em 1.21em 0;
 color: #ffffff;
 }
 
-/*footer*/
+.media {
+  text-align: center;
+}
+
+.popImage {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+/*---------FOOTER---------*/
 .modal-title{
         color: #000000;
       }
@@ -295,7 +310,7 @@ function scrollFunction() {
 <span class="tooltip-content clearfix">
 <img src="images/guy.jpg">
 <span class="tooltip-text">Mama mu hijau</span></span></div>
-<div class="div2"><img src="images/guy.jpg" class="circle" data-toggle="popover" title="test" data-img="images/guy.jpg" ></div>
+<div class="div2"><img src="images/guy.jpg" class="circle" data-toggle="popover" data-img="images/guy.jpg" ></div>
 <div class="div3"><img src="images/guy.jpg" class="circle"></div>
 <div class="div4"><img src="images/guy.jpg" class="circle"></div>
 <div class="div5"><img src="images/guy.jpg" class="circle"></div>
@@ -637,7 +652,7 @@ function scrollFunction() {
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function(){
    $('[data-toggle="popover"]').popover({
           //trigger: 'focus',
@@ -648,6 +663,17 @@ $(document).ready(function(){
           },
           title: 'Toolbox'
     }) 
+});
+</script> -->
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top',
+    trigger : 'hover',
+        html : true,
+        content : '<div class="media"><img src="images/guy.jpg" class="popImage" alt="Sample Image"><div class="media-body"><h5 class="media-heading">CEO</h5><p>John Smith</p></div></div>'
+    });
 });
 </script>
 
