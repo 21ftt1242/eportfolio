@@ -44,7 +44,7 @@
     }
 
     .nav-link {
-      color: #FFFFFF;
+      color: #000000;
       font-weight: bolder;
     }
 
@@ -250,13 +250,15 @@ justify-content: center;
   </div>
 </nav>
 
+
+<!-- NAVBAR FUNCTION -->
 <script type="text/javascript">
     window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     
     document.getElementById("navscroll").style.background = "#FECE0B";
-    document.getElementsByClassName("nav-link").style.color = "#000000";//doesnt work 
+    document.getElementsByClassName("nav-item").style.color = "#000000";//doesnt work 
   } else {
    
     document.getElementById("navscroll").style.background = "none";
@@ -637,7 +639,7 @@ function scrollFunction() {
 })();
 </script>
 
-
+<!-- POPOVER FUNCTION -->
 
 <script type="text/javascript">
 $(document).ready(function(){
