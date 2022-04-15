@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PLACES TO GO</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/minty/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="filterbucks.js"></script>
+
+  <style type="text/css">
+
+		
+    /*COLLAPSE AND OFFCANVAS STYLING*/
+
+    /*EVENTS PIC SIZE*/
+    .eventPic {
+      width: 80%;
+      height: 20%;
+    }
+
+    .offCanvasPic {
+      width: 80%;
+      height: 80%;
+    }
+
+    .PTGHead {
+      width: 100%;
+      height: 50vh;
+      padding: 10px 10px;
+      background-color: yellow;
+      text-align: center;
+    }
+
+    .eventsHead {
+      width: 100%;
+      padding: 10px 10px;
+      margin-top: 20px;
+      background-color: yellow;
+      text-align: center;
+    }
+
+    .displayVertical {
+      display: block;
+      margin: 0px auto;
+      padding: 20px 0px;
+    }
+
+
+    /*PLACES TO GO GRID*/
+    .PTGGrid {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto auto;
+      align-items: center;
+      text-align: center;
+      margin-top: 0px;
+    }
+
+    .spanMid {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .card:nth-child(3) {
+      width: 50%;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+
+
+    /*INTERACTIVE MAP*/
+    .infopic {
+      width: 90%;
+      border: solid 1px;
+      position: relative;
+      margin: 0 auto 5% auto;
+    }
+
+    /*BELAIT*/
+    .infopic>button:nth-child(2) { 
+      position: absolute;
+      height: 5%;
+      width: 4%;
+
+      top: 60%;
+      left: 36%;
+
+      background-color: white;
+
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+
+      border-radius: 100%;
+      cursor: pointer;
+
+      border: solid 2px;
+    }
+
+    /*TUTONG*/
+    .infopic>button:nth-child(3) {
+      position: absolute;
+      height: 5%;
+      width: 4%;
+
+      top: 40%;
+      left: 49%;
+
+      background-color: white;
+
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+
+      border-radius: 100%;
+      cursor: pointer;
+
+      border: solid 2px;
+    }
+
+    /*BRUNEI MUARA*/
+    .infopic>button:nth-child(4) {
+      position: absolute;
+      height: 5%;
+      width: 4%;
+
+      top: 14%;
+      right: 30%;
+
+      background-color: white;
+
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+
+      border-radius: 100%;
+      cursor: pointer;
+
+      border: solid 2px;
+    }
+
+    /*TEMBURONG*/
+    .infopic>button:nth-child(5) {
+      position: absolute;
+      height: 5%;
+      width: 4%;
+
+      top: 38%;
+      right: 14%;
+
+      background-color: white;
+
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+
+      border-radius: 100%;
+      cursor: pointer;
+
+      border: solid 2px;
+    }
+
+
+    h1 {
+      font-weight: bold;
+    }
+
+    .line {
+      width: 100%;
+      border-bottom: 5px solid;
+      margin-bottom: 3%;
+    }
+
+    #bm {
+      display: none;
+    }
+
+    #tut {
+      display: none;
+    }
+
+    #tem {
+      display: none;
+    }
+
+    #bel {
+      display: none;
+    }
+
+  
+
+
+
+
+    /*MOBILE VIEW*/
+
+    @media only screen and (max-width: 479px) {
+      .PTGGrid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto;
+        align-items: center;
+        text-align: center;
+        margin-top: 0px;
+      }
+
+      .card:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      .card:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      .card:nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+
+        width: 100%;
+      }
+
+      .card:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+      }
+
+      .card:nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+      }
+    }
+    /*NAVBAR*/
+    .navbar {
+      transition: background 0.6s;
+    }
+
+    .navbar-toggler-icon {
+      color: #ffffff !important;
+    }
+
+    .nav-link {
+      color: #FFFFFF;
+      font-weight: bolder;
+    }
+	</style>
+</head>
+<body>
+<!-- Navbar -->
+<!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_navbar.php -->
+<nav id="navscroll" class="navbar fixed-top navbar-expand-md navbar-default">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="landing-page.html"><img src="images/bdflogonav.png" width="50" height="50" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="Events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Places to Go</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- NAVBAR FUNCTION -->
+<script type="text/javascript">
+    window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    
+    document.getElementById("navscroll").style.background = "#FECE0B";
+    document.getElementsByClassName("nav-link")[0].style.color = "#3B3B3B";
+    document.getElementsByClassName("nav-link")[1].style.color = "#3B3B3B";
+    document.getElementsByClassName("nav-link")[2].style.color = "#3B3B3B";//doesnt work 
+  } else {
+    document.getElementsByClassName("nav-link")[0].style.color = "#FFFFFF";
+    document.getElementsByClassName("nav-link")[1].style.color = "#FFFFFF";
+    document.getElementsByClassName("nav-link")[2].style.color = "#FFFFFF";
+    document.getElementById("navscroll").style.background = "none";
+  }
+}
+</script>
+<!-- AFIF's PART -->
+
+<!-- Collapse -->
+<!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_collapse.php -->
+
+  <div class="PTGHead">
+    <h2>PLACES TO GO</h2>
+  </div>
+
+  <div class="container mt-3 infopic">
+    <div><img src="Images/PTG/MAP/bn-map.JPG" style="width: 100%"></div>
+    <button onclick="myFunction1()" class="filter2" data-fbdeep="1" value="BEL"></button>
+    <button onclick="myFunction2()" class="filter2" data-fbdeep="1" value="TUT"></button>
+    <button onclick="myFunction3()" class="filter2" data-fbdeep="1" value="BM"></button>
+    <button onclick="myFunction4()" class="filter2" data-fbdeep="1" value="TEM"></button>
+  </div>
+
+  <script>
+
+    jQuery(document).ready(function(){
+      $(".filter2").filterbucks({
+        HideUnrelateds:true,
+        BtnSingleChoise:true,
+        ButtonCssOpacity:true
+      });
+      $(".filter2").on("filterbucks-start",function(){
+        console.log("Start!");
+      });
+      $(".filter2").on("filterbucks-end",function(){
+        console.log("End!");
+      });
+    });
+
+    </script>
+
+    <script type="text/javascript">
+      function myFunction3() {
+        var bm = document.getElementById("bm");
+        if (bm.style.display == "grid") {
+        bm.style.display = "none";
+      } 
+      else {
+        bm.style.display = "grid";
+      }
+    }
+
+    function myFunction4() {
+        var tem = document.getElementById("tem");
+        if (tem.style.display == "grid") {
+        tem.style.display = "none";
+      } 
+      else {
+        tem.style.display = "grid";
+      }
+    }
+
+    function myFunction1() {
+        var bel = document.getElementById("bel");
+        if (bel.style.display == "grid") {
+        bel.style.display = "none";
+      } 
+      else {
+        bel.style.display = "grid";
+      }
+    }
+
+    function myFunction2() {
+        var tut = document.getElementById("tut");
+        if (tut.style.display == "grid") {
+        tut.style.display = "none";
+      } 
+      else {
+        tut.style.display = "grid";
+      }
+    }
+    </script>
+
+
+
+  <div id="bm" class="container mt-3 filterbucks BM">
+   
+    <div class="line"><h1>BRUNEI MUARA</h1></div>
+
+  <div id="accordion1" class="PTGGrid">
+
+      <!-- ITEM #1 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#c1_bm">
+
+          <!-- Carousel -->
+          <div id="demo1_ptg_bm" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo1_ptg_bm" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo1_ptg_bm" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo1_ptg_bm" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P1/jerudongpark_1.jpg" alt="jerudongpark_1.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P1/jerudongpark_2.jpg" alt="jerudongpark_2.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P1/jerudongpark_3.jpg" alt="jerudongpark_3.jpg" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+
+          </a>
+        </div>
+
+        <div id="c1_bm" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>JERUDONG PARK</h4><br>Go on a rollercoaster ride with friends and enjoy a picnic at the garden, or get on a magical boat ride and spend some time with a special someone. Wet your feet and refresh yourself at the water park, or take a whimsical stroll along the park's magnificent landscapes. And make sure to take a picture at the Diamond Monument before you leave!
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #2 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c2_bm">
+
+          <!-- Carousel -->
+          <div id="demo2_ptg_bm" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo2_ptg_bm" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo2_ptg_bm" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo2_ptg_bm" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P2/jalanroberts_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P2/jalanroberts_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P2/jalanroberts_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c2_bm" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>JALAN ROBERTS</h4><br>The most photogenic street in downtown Bandar Seri Begawan is Jalan Roberts, next to Jalan Pretty and Jalan McArthur. This street is named after E. Roberts, the first Head of Public Works Department in 1906. A walk through this technicolour lane comprising vintage shophouses with classic louvered wooden shutters will reward you with a pop of colour for your Instagram feed. Car-free Sunday is the perfect time to stroll around here when pedestrians are kings of the street for the day.
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #3 -->
+
+      <div class="card spanMid">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c3_bm">
+
+          <!-- Carousel -->
+          <div id="demo3_ptg_bm" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo3_ptg_bm" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo3_ptg_bm" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo3_ptg_bm" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P3/joyfulgarden_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P3/joyfulgarden_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P3/joyfulgarden_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </button>
+        </div>
+          </a>
+        </div>
+
+        <div id="c3_bm" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>JOYFUL GARDEN</h4><br>Built with love to cultivate joy, Joyful Garden is a tranquil escape that is much needed. The lush garden is home to a plethora of plants and decorated with wooden swings, delightful gazebos and furniture pieces inspired by the Chinese culture. Walk across small bridges and unwind as you listen to the calming sounds of water streaming down from the hill into the ponds. This spot is perfect for visitors who want to slow down and take some time to unwind. And if you come at the right time, you might be able to join in on a Qi Gong session.<br><br>The Joyful Garden is free of charge to enter. It is located at No. 40, Simpang 214, Kampung Subok Open daily from 7am – 6pm on Monday to Thursday and Saturday, 7am – 6:30pm on Friday and Sunday.
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ITEM #4 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c4_bm">
+
+          <!-- Carousel -->
+          <div id="demo4_ptg_bm" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo4_ptg_bm" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo4_ptg_bm" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo4_ptg_bm" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P4/kampongayer_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P4/kampongayer_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P4/kampongayer_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c4_bm" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>KAMPONG AYER</h4><br>Kampong Ayer is one of the largest water settlements in Southeast Asia, this expanse of settlements on stilts is a must-visit for any traveler wishing to complete their tour of Brunei. The Brunei River is home to a lively community. Start off with a scenic boat ride of the Brunei River before taking a walk along wooden paths and bridges rich with culture and history. Complete your experience by paying a visit to the Cultural and Tourism Gallery and learn why Kampong Ayer is known as the "Venice of The East".
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ITEM #5 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c5_bm">
+
+          <!-- Carousel -->
+          <div id="demo5_ptg_bm" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo5_ptg_bm" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo5_ptg_bm" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo5_ptg_bm" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P5/lugulake_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BM/P5/lugulake_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BM/P5/lugulake_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c5_bm" class="collapse" data-bs-parent="#accordion1">
+          <div class="card-body">
+            <h4>LUGU LAKE</h4><br>A former man-made pit turned freshwater lagoon, Lugu Lake will definitely dazzle the eyes with its uniquely turquoise lustre. On any given weekend, you can find local resident kids waddling and splashing around in the blue lake. For those who are more experienced on the water, you can try your hand at paddleboarding! Soak in the warm rays as you float atop the dreamy blue lagoon.
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+<div id="tut" class="container mt-3 filterbucks TUT">
+
+    <div class="line"><h1>TUTONG</h1></div>
+
+  <div id="accordion2" class="PTGGrid">
+
+      <!-- ITEM #1 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#c1_tut">
+
+          <!-- Carousel -->
+          <div id="demo1_ptg_tut" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo1_ptg_tut" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo1_ptg_tut" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo1_ptg_tut" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P1/deerfarm_1.jpg" alt="jerudongpark_1.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TUT/P1/deerfarm_2.jpg" alt="jerudongpark_2.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P1/deerfarm_3.jpg" alt="jerudongpark_3.jpg" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+
+          </a>
+        </div>
+
+        <div id="c1_tut" class="collapse" data-bs-parent="#accordion2">
+          <div class="card-body">
+            <h4>DEER FARM</h4><br>Get up close and personal with herds of friendly deers at L&S Deer Farm in Lamunin. A day spent with these gentle creatures will be fun and educational for both adults and children.
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #2 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c2_tut">
+
+          <!-- Carousel -->
+          <div id="demo2_ptg_tut" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo2_ptg_tut" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo2_ptg_tut" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo2_ptg_tut" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P2/tasekmerimbun_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TUT/P2/tasekmerimbun_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P2/tasekmerimbun_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c2_tut" class="collapse" data-bs-parent="#accordion2">
+          <div class="card-body">
+            <h4>TASEK MERIMBUN</h4><br>Tasek Merimbun is the largest natural lake all of Brunei Darussalam, and is designated as one of ASEAN's Heritage Parks. Due to the release of tannin from falling leaves, it's waters glisten with a dark sheen. This, alongside its diverse range of flora and fauna, make for an exciting trip for adventurous wildlife enthusiasts. Many birdwatchers come here to catch sightings of various exotic birds. Its perfect for those who wish to make their next Tutong trip a memorable one.
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #3 -->
+
+      <div class="card spanMid">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c3_tut">
+
+          <!-- Carousel -->
+          <div id="demo3_ptg_tut" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo3_ptg_tut" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo3_ptg_tut" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo3_ptg_tut" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P3/tutongtown_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TUT/P3/tutongtown_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P3/tutongtown_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </button>
+        </div>
+          </a>
+        </div>
+
+        <div id="c3_tut" class="collapse" data-bs-parent="#accordion2">
+          <div class="card-body">
+            <h4>TUTONG TOWN</h4><br>Settled between the two busiest districts, Tutong Town is the perfect pitstop for travellers looking for a refreshing change of pace. Stop by to take in the view of the Tutong River and enjoy some 'kopi' time at a kopitiam. Try the Rojak and Pulut Panggang which are some of the more popular dishes you can find here. The locals are friendly, and may have as many stories as the buildings around this dainty time-worn town. Just don’t forget to plan where to go next!
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ITEM #4 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c4_tut">
+
+          <!-- Carousel -->
+          <div id="demo4_ptg_tut" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo4_ptg_tut" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo4_ptg_tut" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo4_ptg_tut" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P4/serikenanganbeach_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TUT/P4/serikenanganbeach_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P4/serikenanganbeach_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c4_tut" class="collapse" data-bs-parent="#accordion2">
+          <div class="card-body">
+            <h4>SERI KENANGAN BEACH</h4><br>If you like long walks on the beach, there is no place better than Pantai Seri Kenangan. It sits beside a long spit of land just 5 minutes away from Tutong Town, with the Tutong River on one side, and the South China Sea on the other. It is here where you can feel the sea breeze on your skin, and the warmth of white pristine sands on your feet. Where the gentle tides roll and crash as the flaring hues of the setting sun roll past the horizon. Make some memories here that you won't forget, as Pantai Seri Kenangan's name translates to "Unforgettable Beach".
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ITEM #5 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c5_tut">
+
+          <!-- Carousel -->
+          <div id="demo5_ptg_tut" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo5_ptg_tut" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo5_ptg_tut" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo5_ptg_tut" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P5/wasaiberdanu_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TUT/P5/wasaiberdanu_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TUT/P5/wasaiberdanu_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c5_tut" class="collapse" data-bs-parent="#accordion2">
+          <div class="card-body">
+            <h4>WASAI BEDANU</h4><br>Go for a morning swim and soak in the cool water as you take in this stunning waterfall! Hidden in the midst of the dense rainforest in Tutong, Wasai Bedanu (which means Bedanu Waterfall), is located about an hour away from the capital, and stands testament as one of the Sultanate’s natural gems. Wasai Bedanu is found in the Bedanu Recreational Park, near Kampong Mungkom and it’s recommended to use a four-wheel drive vehicle due to the road’s rough terrain.
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+<div id="tem" class="container mt-3 filterbucks TEM">
+
+    <div class="line"><h1>TEMBURONG</h1></div>
+
+  <div id="accordion3" class="PTGGrid">
+
+      <!-- ITEM #1 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#c1_tem">
+
+          <!-- Carousel -->
+          <div id="demo1_ptg_tem" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo1_ptg_tem" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo1_ptg_tem" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo1_ptg_tem" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P1/bangartown_1.jpg" alt="jerudongpark_1.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TEM/P1/bangartown_2.jpg" alt="jerudongpark_2.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P1/bangartown_3.jpg" alt="jerudongpark_3.jpg" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+
+          </a>
+        </div>
+
+        <div id="c1_tem" class="collapse" data-bs-parent="#accordion3">
+          <div class="card-body">
+            <h4>BANGAR TOWN</h4><br>Unaffected by the fast-paced routine of city life, Bangar Town is a pleasant pause on the ever-moving tale of our life. A thrilling 45-minute speedboat journey away, Bangar is hidden between thick mangrove forest and its lush greenery of nipa palms. The main draw of this serene town is the Ulu Temburong National Park, where you can explore some of the world’s old skyscrapers in the form of centuries-old botanical towers.
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #2 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c2_tem">
+
+          <!-- Carousel -->
+          <div id="demo2_ptg_tem" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo2_ptg_tem" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo2_ptg_tem" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo2_ptg_tem" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P2/belalong_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TEM/P2/belalong_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P2/belalong_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c2_tem" class="collapse" data-bs-parent="#accordion3">
+          <div class="card-body">
+            <h4>BELALONG CANOPY WALKWAY</h4><br>The Belalong Canopy Walkway is considered to by many to be one of Brunei's most majestic locations. Walk across five connected towers with a canopy height of over 43 meters. From up here you can experience a birds eye view of the pristine beauty of Brunei's rainforests, one of the most diverse ecosystems in the world.<br><br>Its recommended you begin your hike at dawn or dusk, so you can watch the brilliant sun rise or set past the jungle horizon.the day.
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #3 -->
+
+      <div class="card spanMid">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c3_tem">
+
+          <!-- Carousel -->
+          <div id="demo3_ptg_tem" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo3_ptg_tem" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo3_ptg_tem" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo3_ptg_tem" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P3/soasbridge_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TEM/P3/soasbridge_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P3/soasbridge_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </button>
+        </div>
+          </a>
+        </div>
+
+        <div id="c3_tem" class="collapse" data-bs-parent="#accordion3">
+          <div class="card-body">
+            <h4>SULTAN HAJI OMAR 'ALI SAIFUDDIEN BRIDGE</h4><br>Stretching at a remarkable 30km long, Sultan Haji Omar 'Ali Saifuddien Bridge becoming one of the longest bridges in Southeast Asia. The dual-carriageway bridge was opened in March 2020, with the purpose of connecting the Temburong district to the mainland. The cross-district trip brings travellers on a picturesque ride so if you're in the mood to catch sunsets, take a drive on this new bridge.
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ITEM #4 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c4_tem">
+
+          <!-- Carousel -->
+          <div id="demo4_ptg_tem" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo4_ptg_tem" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo4_ptg_tem" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo4_ptg_tem" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P4/ulu_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TEM/P4/ulu_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P4/ulu_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c4_tem" class="collapse" data-bs-parent="#accordion3">
+          <div class="card-body">
+            <h4>ULU TEMBURONG NATIONAL PARK</h4><br>Ulu Temburong National Park is home to centuries-old evergreen that has seen the passing of time through the ages. In fact, 80% of Brunei is pure rainforest and home to numerous kinds of wildlife such as the elusive hornbill and over 400 kinds of butterflies. If you’re looking for views for days, the 60m high canopy walk is right up your alley.
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ITEM #5 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c5_tem">
+
+          <!-- Carousel -->
+          <div id="demo5_ptg_tem" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo5_ptg_tem" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo5_ptg_tem" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo5_ptg_tem" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P5/apan_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/TEM/P5/apan_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/TEM/P5/apan_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c5_tem" class="collapse" data-bs-parent="#accordion3">
+          <div class="card-body">
+            <h4>SUNGAI APAN WATERFALL</h4><br>This dreamy waterscape is nestled amongst the verdant Batang Duri rainforest. The Sg Apan Waterfall has four tiers and the first tier is accessible through a 40-minute longboat ride followed by a 20-minute hike - so make sure you're wearing your best pair of hiking boots! The journey is long and tiring but the sight of the waterfall will be a welcomed refuge.
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+<div id="bel" class="container mt-3 filterbucks BEL">
+
+    <div class="line"><h1>BELAIT</h1></div>
+
+  <div id="accordian4" class="PTGGrid">
+
+      <!-- ITEM #1 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#c1_bel">
+
+          <!-- Carousel -->
+          <div id="demo1_ptg_bel" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo1_ptg_bel" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo1_ptg_bel" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo1_ptg_bel" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P1/bbm_1.jpg" alt="jerudongpark_1.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BEL/P1/bbm_2.jpg" alt="jerudongpark_2.jpg" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P1/bbm_3.jpg" alt="jerudongpark_3.jpg" class="d-block" style="width:100%">
+            </div>
+          </div>
+        </div>
+
+          </a>
+        </div>
+
+        <div id="c1_bel" class="collapse" data-bs-parent="#accordian4">
+          <div class="card-body">
+            <h4>BILLIONTH BARREL MONUMENT</h4><br>Built in 1991, the Billionth Barrel Monument resides along the beach in Seria and is a symbol of achievement in Brunei’s oil production. Commemorating the accomplishment in its name, the iconic structure stands tall and proud for all to see. This landmark is situated on the beach in Seria that boasts of beautiful sunsets and glimpses of oil rigs in the distant horizon.
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #2 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c2_bel">
+
+          <!-- Carousel -->
+          <div id="demo2_ptg_bel" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo2_ptg_bel" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo2_ptg_bel" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo2_ptg_bel" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P2/luagan_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BEL/P2/luagan_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P2/luagan_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c2_bel" class="collapse" data-bs-parent="#accordian4">
+          <div class="card-body">
+            <h4>LUAGAN LALAK RECREATION PARK</h4><br>Find tranquility in The Luagan Lalak Recreation Park. The park is home to an alluvial freshwater swamp known for its mesmerising beauty. The walkways extend out into the center of the swamp, as the mirror-like surface of the water reflects the open sky with all of its majesty. Each visit may be different too, as the water rises and falls with the seasons. In the dryer months, the water gives way to beautiful patches of sedges. It's a great place for dreamy walks and beautiful photos.
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM #3 -->
+
+      <div class="card spanMid">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c3_bel">
+
+          <!-- Carousel -->
+          <div id="demo3_ptg_bel" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo3_ptg_bel" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo3_ptg_bel" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo3_ptg_bel" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P3/senergylab_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BEL/P3/senergylab_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P3/senergylab_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </button>
+        </div>
+          </a>
+        </div>
+
+        <div id="c3_bel" class="collapse" data-bs-parent="#accordian4">
+          <div class="card-body">
+            <h4>SERIA ENERGY LAB</h4><br>Check out the Seria Energy Lab, a centre where kids can play and learn! The lab was established to feed the curious young minds and it features multiple exhibitions that’s all about energy. Be sure to see their centrepiece -  the AquaLab, a 70,000 litre cylindrical aquarium tank that holds within a jacket leg with various fish and marine animals.
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ITEM #4 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c4_bel">
+
+          <!-- Carousel -->
+          <div id="demo4_ptg_bel" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo4_ptg_bel" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo4_ptg_bel" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo4_ptg_bel" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P4/teraja_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BEL/P4/teraja_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P4/teraja_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c4_bel" class="collapse" data-bs-parent="#accordian4">
+          <div class="card-body">
+            <h4>TERAJA WATERFALLS</h4><br>All in its natural glory, the Teraja Waterfalls invite visitors to its pristine pools and wander through its home teeming with unique flora and wildlife. With more than 40 waterfalls the naturescape of Labi, you'll want to grab a tour to get the complete experience!<br><br>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ITEM #5 -->
+
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#c5_bel">
+
+          <!-- Carousel -->
+          <div id="demo5_ptg_bel" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo5_ptg_bel" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo5_ptg_bel" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo5_ptg_bel" data-bs-slide-to="2"></button>
+          </div>
+          
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P5/coffeefarm_1.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item active">
+              <img src="Images/PTG/BEL/P5/coffeefarm_2.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+              <img src="Images/PTG/BEL/P5/coffeefarm_3.jpg" alt="" class="d-block" style="width:100%">
+            </div>
+          </div>
+          </div>
+          </a>
+        </div>
+        <div id="c5_bel" class="collapse" data-bs-parent="#accordian4">
+          <div class="card-body">
+            <h4>LABI COFFEE FARM</h4><br>The Labi Coffee Farm is home to more than 9 hectares worth of coffee, and it is open to visitors! With 18,000 homegrown coffee trees in the expanse of its orchard, it's a grand sight to see. Give your next cup of coffee a Bruneian kick by bringing back some locally grown Arabica and Robusta beans!
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+
+</body>
+</html>
