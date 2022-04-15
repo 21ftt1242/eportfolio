@@ -48,6 +48,12 @@
       font-weight: bolder;
     }
 
+    button.navbar-toggler {
+      background-image: url("images/burger-menu.png");
+      background-size: 100% 100%;
+      border: solid 1px;
+    }
+    
     /*CAROUSEL STYLING*/
 		.carousel.slide{
 			width: 50%;
@@ -220,8 +226,12 @@ justify-content: center;
         margin: auto;
       }
 
-      #navtext {
+      #demo1 {
+        padding-right: 10px;
+      }
 
+      #prevEvents {
+        float: right;
       }
 	</style>
 
@@ -317,7 +327,7 @@ $(document).ready(function(){
 
 
 <div id="demo1" class="carousel slide" data-bs-ride="carousel">
-
+<h2>Upcoming events</h2>
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
@@ -372,7 +382,7 @@ $(document).ready(function(){
 
 <!-- Carousel #2 -->
 <div id="demo2" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
+<h2 id="prevEvents">Previous Events</h2>
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
