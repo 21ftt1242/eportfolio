@@ -36,8 +36,11 @@
 		
     /*NAVBAR*/
     .navbar {
-      background: transparent;
       transition: background 0.6s;
+    }
+
+    .navbar-toggler-icon {
+      color: #ffffff;
     }
 
     .nav-link {
@@ -145,92 +148,8 @@
 .div10 { grid-area: 4 / 3 / 5 / 4; }
 .div11 { grid-area: 4 / 4 / 5 / 5; }
 .div12 { grid-area: 4 / 5 / 5 / 6; }
-.div13 { grid-area: 5 / 5 / 6 / 6; }
-.div14 { grid-area: 5 / 4 / 6 / 5; }
-.div15 { grid-area: 5 / 3 / 6 / 4; }
-.div16 { grid-area: 5 / 2 / 6 / 3; }
-.div17 { grid-area: 5 / 1 / 6 / 2; } 
+.div13 { grid-area: 5 / 3 / 6 / 4; }
 
-
-.mytooltip {
-display: inline;
-position: relative;
-z-index: 999
-}
-.mytooltip .tooltip-item .circle {
-cursor: pointer;
-display: inline-block;
-font-weight: 500;
-}
-.mytooltip .tooltip-content {
-position: absolute;
-z-index: 9999;
-width: 360px;
-left: 50%;
-margin: 0 0 20px -180px;
-bottom: 100%;
-text-align: left;
-font-size: 14px;
-line-height: 30px;
--webkit-box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.2);
-box-shadow: -5px -5px 15px rgba(48, 54, 61, 0.2);
-background: #2b2b2b;
-opacity: 0;
-cursor: default;
-pointer-events: none
-}
-
-.mytooltip .tooltip-content::after {
-content: '';
-top: 100%;
-left: 50%;
-border: solid transparent;
-height: 0;
-width: 0;
-position: absolute;
-pointer-events: none;
-border-color: #2a3035 transparent transparent;
-border-width: 10px;
-margin-left: -10px
-}
-.mytooltip .tooltip-content img {
-position: relative;
-height: 140px;
-display: block;
-float: left;
-margin-right: 1em;
-}
-.mytooltip .tooltip-item::after {
-content: '';
-position: absolute;
-width: 360px;
-height: 20px;
-bottom: 100%;
-left: 50%;
-pointer-events: none;
--webkit-transform: translateX(-50%);
-transform: translateX(-50%)
-}
-.mytooltip:hover .tooltip-item::after {
-pointer-events: auto
-}
-.mytooltip:hover .tooltip-content {
-pointer-events: auto;
-opacity: 1;
--webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg)
-}
-.mytooltip:hover .tooltip-content2 {
-opacity: 1;
-font-size: 18px
-}
-.mytooltip .tooltip-text {
-font-size: 14px;
-line-height: 24px;
-display: block;
-padding: 1.31em 1.21em 1.21em 0;
-color: #ffffff;
-}
 
 .media {
   text-align: center;
@@ -240,6 +159,10 @@ color: #ffffff;
     width: 80%;
     margin: auto;
     display: block;
+}
+
+.popover {
+  text-align: center;
 }
 
 /*---------FOOTER---------*/
@@ -304,28 +227,21 @@ function scrollFunction() {
 <img src="images/bdflogo.png">
 </div>
 
+<!-- Popover organisation taken from https://codepen.io/lowpez/pen/pKJaKp -->
 <div class="parent">
-<div class="div1"><span class="mytooltip tooltip-effect-1">
-<span class="tooltip-item"><img src="images/guy.jpg" class="circle"></span>
-<span class="tooltip-content clearfix">
-<img src="images/guy.jpg">
-<span class="tooltip-text">Mama mu hijau</span></span></div>
-<div class="div2"><img src="images/guy.jpg" class="circle" data-toggle="popover" data-img="images/guy.jpg" ></div>
-<div class="div3"><img src="images/guy.jpg" class="circle"></div>
-<div class="div4"><img src="images/guy.jpg" class="circle"></div>
-<div class="div5"><img src="images/guy.jpg" class="circle"></div>
-<div class="div6"><img src="images/guy.jpg" class="circle"></div>
-<div class="div7"><img src="images/guy.jpg" class="circle"></div>
-<div class="div8"><img src="images/guy.jpg" class="circle"></div>
-<div class="div9"><img src="images/guy.jpg" class="circle"></div>
-<div class="div10"><img src="images/guy.jpg" class="circle"></div>
-<div class="div11"><img src="images/guy.jpg" class="circle"></div>
-<div class="div12"><img src="images/guy.jpg" class="circle"></div>
-<div class="div13"><img src="images/guy.jpg" class="circle"></div>
-<div class="div14"><img src="images/guy.jpg" class="circle"></div>
-<div class="div15"><img src="images/guy.jpg" class="circle"></div>
-<div class="div16"><img src="images/guy.jpg" class="circle"></div>
-<div class="div17"><img src="images/guy.jpg" class="circle"></div>
+<div class="div1"><img src="images/ceo.jpg" class="circle" data-toggle="popover" data-img="images/ceo.jpg" title="<b>CEO</b> <br> Wafi Hakim"></div>
+<div class="div2"><img src="images/guy2.jpg" class="circle" data-toggle="popover" data-img="images/guy2.jpg" title="<b>Head of Events</b> <br> Fakhrul Razi"></div>
+<div class="div3"><img src="images/guy3.jpg" class="circle" data-toggle="popover" data-img="images/guy3.jpg" title="<b>Vice President</b> <br> Aziz Harun"></div>
+<div class="div4"><img src="images/guy4.jpg" class="circle" data-toggle="popover" data-img="images/guy4.jpg" title="<b>Head chef</b> <br> Khairul Aming"></div>
+<div class="div5"><img src="images/guy5.jpg" class="circle" data-toggle="popover" data-img="images/guy5.jpg" title="<b>Chef Assistant</b> <br> Haji Brad Pitt"></div>
+<div class="div6"><img src="images/girl1.jpg" class="circle" data-toggle="popover" data-img="images/girl1.jpg" title="<b>Multimedia Manager</b> <br> Siti Taylor Swift"></div>
+<div class="div7"><img src="images/girl2.jpg" class="circle" data-toggle="popover" data-img="images/girl2.jpg" title="<b>Head of Islamic events</b> <br> Dayangku Marina"></div>
+<div class="div8"><img src="images/girl3.jpg" class="circle" data-toggle="popover" data-img="images/girl3.jpg" title="<b>Events Coordinator</b> <br> Lailatul Zubaidah"></div>
+<div class="div9"><img src="images/girl4.jpg" class="circle" data-toggle="popover" data-img="images/girl4.jpg" title="<b>Creative Director</b> <br> Khairunnisa Ash'ari"></div>
+<div class="div10"><img src="images/girl5.jpg" class="circle" data-toggle="popover" data-img="images/girl5.jpg" title="<b>Graphic Designer</b> <br> Dina Alias"></div>
+<div class="div11"><img src="images/girl7.jpg" class="circle" data-toggle="popover" data-img="images/girl7.jpg" title="<b>Web Developer</b> <br> Shinny Chia"></div>
+<div class="div12"><img src="images/girl6.jpg" class="circle" data-toggle="popover" data-img="images/girl6.jpg" title="<b>Social Media Marketer</b> <br> Afiqah Zailani"></div>
+<div class="div13"><img src="images/girl8.jpg" class="circle" data-toggle="popover" data-img="images/girl8.jpg" title="<b>Project Planner</b> <br> Rumaitha Al Busaidi"></div>
 </div> 
 
 <div class="carousel-section">
@@ -652,7 +568,7 @@ function scrollFunction() {
 
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 $(document).ready(function(){
    $('[data-toggle="popover"]').popover({
           //trigger: 'focus',
@@ -664,18 +580,25 @@ $(document).ready(function(){
           title: 'Toolbox'
     }) 
 });
-</script> -->
+</script> 
 
-<script>
+<!-- <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({
         placement : 'top',
     trigger : 'hover',
         html : true,
-        content : '<div class="media"><img src="images/guy.jpg" class="popImage" alt="Sample Image"><div class="media-body"><h5 class="media-heading">CEO</h5><p>John Smith</p></div></div>'
+        content : '<div class="media"><img class="img-fluid" src="'+$(this).data('img') + '"/><h5 class="media-heading">CEO</h5><p>Wafi Hakim</p></div></div>'
+    });
+
+    $('[data-toggle="popover2"]').popover({
+        placement : 'top',
+    trigger : 'hover',
+        html : true,
+        content : '<div class="media"><img src="images/guy2.jpg" class="popImage" alt="Sample Image"><div class="media-body"><h5 class="media-heading">CEO</h5><p>Wafi Hakim</p></div></div>'
     });
 });
-</script>
+</script> -->
 
 </body>
 </html>
