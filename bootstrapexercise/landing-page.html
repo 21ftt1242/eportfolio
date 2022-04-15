@@ -40,11 +40,11 @@
     }
 
     .navbar-toggler-icon {
-      color: #ffffff;
+      color: #ffffff !important;
     }
 
     .nav-link {
-      color: #000000;
+      color: #FFFFFF;
       font-weight: bolder;
     }
 
@@ -219,6 +219,10 @@ justify-content: center;
       .col-md-2{
         margin: auto;
       }
+
+      #navtext {
+
+      }
 	</style>
 
 </head>
@@ -228,7 +232,7 @@ justify-content: center;
 
 <!-- Navbar -->
 <!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_navbar.php -->
-<nav id="navscroll" class="navbar fixed-top navbar-expand-md">
+<nav id="navscroll" class="navbar fixed-top navbar-expand-md ">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)"><img src="images/bdflogonav.png" width="50" height="50" ></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -237,7 +241,7 @@ justify-content: center;
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Events</a>
+          <a class="nav-link navtext" href="javascript:void(0)">Events</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">Gallery</a>
@@ -258,9 +262,13 @@ function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     
     document.getElementById("navscroll").style.background = "#FECE0B";
-    document.getElementsByClassName("nav-item").style.color = "#000000";//doesnt work 
+    document.getElementsByClassName("nav-link")[0].style.color = "black";
+    document.getElementsByClassName("nav-link")[1].style.color = "black";
+    document.getElementsByClassName("nav-link")[2].style.color = "black";//doesnt work 
   } else {
-   
+    document.getElementsByClassName("nav-link")[0].style.color = "#FFFFFF";
+    document.getElementsByClassName("nav-link")[1].style.color = "#FFFFFF";
+    document.getElementsByClassName("nav-link")[2].style.color = "#FFFFFF";
     document.getElementById("navscroll").style.background = "none";
   }
 }
