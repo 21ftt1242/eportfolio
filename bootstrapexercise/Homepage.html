@@ -17,8 +17,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -32,7 +30,11 @@
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
 
-	<style type="text/css">
+    <!-- Testimonial -->
+<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+  <script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<style type="text/css"> 
 		
     /*NAVBAR*/
     .navbar {
@@ -118,10 +120,24 @@
 
   .circle{
     border-radius: 50%;
-    width: 30%;
+    width: 50%;
     margin: auto;
     display: block;
   }
+
+  #prevEvents {
+        float: right;
+      }
+
+      .large{
+        font-weight: bolder;
+        font-size: 2em;
+        padding-bottom: 20px;
+      }
+
+      
+
+      
 
   /*ORGANISATION COMMITTEE*/
 .parent {
@@ -150,57 +166,25 @@
 .parent>.div12 { grid-area: 4 / 5 / 5 / 6; }
 .parent>.div13 { grid-area: 5 / 3 / 6 / 4; }
 
-@media only screen and (max-width: 479px) {
-      .parent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-auto-rows: auto;
-    grid-column-gap: 10px;
-    grid-row-gap: 50px;
-    margin: 0px;
-    width: 100%;
-  }
+b {
+        font-weight: bolder;
+      }
 
-.parent>.div1 { grid-area: 1 / 1 / 2 / 3; height: auto;}
-.parent>.div2 { grid-area: 2 / 1 / 3 / 2; height: auto;}
-.parent>.div3 { grid-area: 2 / 2 / 3 / 3; height: auto;}
-.parent>.div4 { grid-area: 3 / 1 / 4 / 2; height: auto;}
-.parent>.div5 { grid-area: 3 / 2 / 4 / 3; }
-.parent>.div6 { grid-area: 4 / 1 / 5 / 2; }
-.parent>.div7 { grid-area: 4 / 2 / 5 / 3; }
-.parent>.div8 { grid-area: 5 / 1 / 6 / 2; }
-.parent>.div9 { grid-area: 5 / 2 / 6 / 3; }
-.parent>.div10 { grid-area: 6 / 1 / 7 / 2; }
-.parent>.div11 { grid-area: 6 / 2 / 7 / 3; }
-.parent>.div12 { grid-area: 7 / 1 / 8 / 2; }
-.parent>.div13 { grid-area: 7 / 2 / 8 / 3; }
-
-.circle{
-    border-radius: 50%;
-    width: 100%;
-    margin: auto;
-    display: block;
-  }
-
-  
-  }
-
-
-.media {
-  text-align: center;
-}
-
-.popImage {
-    width: 80%;
-    margin: auto;
-    display: block;
-}
-
-.popover {
-  text-align: center;
-}
-
+/* ----------TESTIMONIAL---------- */
+    .cd-container{
+      background-color: skyblue;
+    }
+    .cd-see-all{
+      background-color: lightgrey;
+    }
+    div[class*="cd-testimonials-all"] {
+      /*position: relative;*/
+    }
+    a[class*="close-btn"] {
+      position: relative;
+      left: 90%;
+      top: 95%;
+    }
 /*---------SPONSORS--------*/
 
 .parent2 {
@@ -241,6 +225,94 @@ justify-content: center;
 .sponsors {
   width: 100%;
 }
+@media only screen and (max-width: 479px) {
+      .parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+    margin: 0px;
+    width: 100%;
+  }
+
+.parent>.div1 { grid-area: 1 / 1 / 2 / 3; }
+.parent>.div2 { grid-area: 2 / 1 / 3 / 2; }
+.parent>.div3 { grid-area: 2 / 2 / 3 / 3; }
+.parent>.div4 { grid-area: 3 / 1 / 4 / 2; }
+.parent>.div5 { grid-area: 3 / 2 / 4 / 3; }
+.parent>.div6 { grid-area: 4 / 1 / 5 / 2; }
+.parent>.div7 { grid-area: 4 / 2 / 5 / 3; }
+.parent>.div8 { grid-area: 5 / 1 / 6 / 2; }
+.parent>.div9 { grid-area: 5 / 2 / 6 / 3; }
+.parent>.div10 { grid-area: 6 / 1 / 7 / 2; }
+.parent>.div11 { grid-area: 6 / 2 / 7 / 3; }
+.parent>.div12 { grid-area: 7 / 1 / 8 / 2; }
+.parent>.div13 { grid-area: 7 / 2 / 8 / 3; }
+
+.circle{
+    border-radius: 50%;
+    width: 100%;
+    margin: auto;
+    display: block;
+  }
+/*---------SPONSORS--------*/
+
+.parent2 {
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-template-rows: auto;
+grid-auto-rows: auto;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+margin: auto;
+width: 100%;
+height: 100%;
+text-align: center;
+align-items: center;
+justify-content: center;
+}
+
+.parent2>.div1 { grid-area: 1 / 1 / 2 / 3; }
+.parent2>.div2 { grid-area: 2 / 1 / 3 / 2; }
+.parent2>.div3 { grid-area: 2 / 2 / 3 / 3; }
+.parent2>.div4 { grid-area: 3 / 1 / 4 / 3; }
+.parent2>.div5 { grid-area: 5 / 1 / 6 / 2; }
+.parent2>.div6 { grid-area: 5 / 2 / 6 / 3; }
+.parent2>.div7 { grid-area: 6 / 1 / 7 / 2; }
+.parent2>.div8 { grid-area: 6 / 2 / 7 / 3; }
+.parent2>.div9 { grid-area: 7 / 1 / 8 / 3; }
+.parent2>.div10 { grid-area: 8 / 1 / 9 / 2; }
+.parent2>.div11 { grid-area: 8 / 2 / 9 / 3; }
+.parent2>.div12 { grid-area: 9 / 1 / 10 / 3; }
+.parent2>.div13 { grid-area: 10 / 1 / 11 / 2; }
+.parent2>.div14 { grid-area: 10 / 2 / 11 / 3; }
+.parent2>.div15 { grid-area: 11/ 1 / 12 / 2; }
+.parent2>.div16 { grid-area: 11/ 2 / 12 / 3; }
+.parent2>.div17 { grid-area: 12 / 1 / 13 / 2; }
+.parent2>.div18 { grid-area: 12 / 2 / 13 / 3; }
+.parent2>.div19 { grid-area: 13 / 1 / 14 / 2; }
+.parent2>.div20 { grid-area: 13 / 2 / 14 / 3; }  
+  
+  }
+
+
+.media {
+  text-align: center;
+}
+
+.popImage {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+
+.popover {
+  text-align: center;
+}
+
+
 
 
 /*---------FOOTER---------*/
@@ -260,9 +332,11 @@ justify-content: center;
         padding-right: 10px;
       }
 
-      #prevEvents {
-        float: right;
+      #bold{
+        font-weight: bold;
       }
+
+
 	</style>
 
 </head>
@@ -274,7 +348,7 @@ justify-content: center;
 <!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_navbar.php -->
 <nav id="navscroll" class="navbar fixed-top navbar-expand-md navbar-default">
   <div class="container-fluid">
-    <a class="navbar-brand" href="landing-page.html"><img src="images/bdflogonav.png" width="50" height="50" ></a>
+    <a class="navbar-brand" href="Homepage.html"><img src="images/bdflogonav.png" width="50" height="50" ></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -284,7 +358,7 @@ justify-content: center;
           <a class="nav-link navtext" href="Events.html">Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Gallery</a>
+          <a class="nav-link" href="Gallery.html">Gallery</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="PlacesToGo.html">Places to Go</a>
@@ -357,7 +431,7 @@ $(document).ready(function(){
 
 
 <div id="demo1" class="carousel slide" data-bs-ride="carousel">
-<h2>Upcoming events</h2>
+<h2 class="large">Upcoming events</h2>
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
@@ -412,7 +486,7 @@ $(document).ready(function(){
 
 <!-- Carousel #2 -->
 <div id="demo2" class="carousel slide carousel-fade" data-bs-ride="carousel">
-<h2 id="prevEvents">Previous Events</h2>
+<h2 class="large" id="prevEvents">Previous Events</h2>
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
@@ -464,6 +538,205 @@ $(document).ready(function(){
 </div>
 </div>
 
+<!-- ----------------TESTIMONIAL --------------- -->
+
+<!-- Testimonials -->
+  <!-- https://codyhouse.co/demo/client-testimonials-carousel/index.html -->
+<div class="cd-testimonials-wrapper cd-container">
+  <ul class="cd-testimonials">
+    <li>
+      <p>I was really impressed by the kind and accepting culture in Brunei that have given me so much warmth during my visit to Brunei. The festival was also very fun to enjoy alongside my partner through multiple activities that was present throughout the festival.</p>
+      <div class="cd-author">
+        <img src="images/Lee Min-Ho.jpg" alt="Author image">
+        <ul class="cd-author-info">
+          <li>Lee Min-Ho</li>
+          <li>Korean Actor, Tourist</li>
+        </ul>
+      </div>
+    </li>
+
+    <li>
+      <p>Aminggunawan Approved.</p>
+      <div class="cd-author">
+        <img src="images/Aminggunawan.jpg" alt="Author image">
+        <ul class="cd-author-info">
+          <li>Aming Gunawan</li>
+          <li>Local Influencer</li>
+        </ul>
+      </div>
+    </li>
+
+    <li>
+      <p>Enjoyed a lot of activities during the events while searching for the best nasi katok in Brunei.</p>
+      <div class="cd-author">
+        <img src="images/Atib Roslan.jpeg" alt="Author image">
+        <ul class="cd-author-info">
+          <li>Atib Roslan</li>
+          <li>Local tiktoker</li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul> <!-- cd-testimonials -->
+
+  <a href="#0" class="cd-see-all">See all</a>
+</div> <!-- cd-testimonials-wrapper -->
+
+<div class="cd-testimonials-all">
+  <div class="cd-testimonials-all-wrapper">
+    <ul>
+      <li class="cd-testimonials-item">
+        <p>I was really impressed by the kind and accepting culture in Brunei that have given me so much warmth during my visit to Brunei. The festival was also very fun to enjoy alongside my partner through multiple activities that was present throughout the festival.</p>
+      <div class="cd-author">
+        <img src="images/Lee Min-Ho.jpg" alt="Author image">
+        <ul class="cd-author-info">
+          <li>Lee Min-Ho</li>
+          <li>Korean Actor, Tourist</li>
+        </ul>
+      </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Aminggunawan Approved.</p>
+      <div class="cd-author">
+        <img src="images/Aminggunawan.jpg" alt="Author image">
+        <ul class="cd-author-info">
+          <li>Aming Gunawan</li>
+          <li>Local Influencer</li>
+        </ul>
+      </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Enjoyed a lot of activities during the events while searching for the best nasi katok in Brunei.</p>
+      <div class="cd-author">
+        <img src="images/Atib Roslan.jpeg" alt="Author image">
+        <ul class="cd-author-info">
+          <li>Atib Roslan</li>
+          <li>Local tiktoker</li>
+        </ul>
+      </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>The atmosphere was really amazing and packed with a lot of enjoyable activities. We would like to visit Brunei again in the near future.</p>
+        
+        <div class="cd-author">
+          <img src="images/bp.jpeg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Blackpink</li>
+            <li>Kpop Artist, Tourist</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Saya berasa gembira dapat melawat Brunei Darussalam pada hujung tahun ini. Aktiviti-aktiviti yang diadakan juga amat menyenangkan dan membawa kegembiraan kepada keluarga saya. Lawatan ini juga dapat menginspirasikan saya untuk menulis lagu bagi tahun depan.</p>
+        
+        <div class="cd-author">
+          <img src="images/jamal.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Jamal Abdillah</li>
+            <li>Malaysian Singer, Artist, Tourist</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>I was really shocked on how well planned this event was and at the same time was also dissappointed as I didn't get the chance to perform during the festival. In Shaa Allah Syafiq akan tunaikan janji Syafiq untuk perform dekat Brunei December Festival pada tahun depan.</p>
+        
+        <div class="cd-author">
+          <img src="images/syafiq.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Syafiq Abdillah</li>
+            <li>Local Singer, Songwriter</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Like my song 'senyum', this festival had successfully made me 'senyum' from the start till the end of the festival.</p>
+        
+        <div class="cd-author">
+          <img src="images/aziz.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Aziz Harun</li>
+            <li>Local Singer, Songwriter</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Ngalih ku belusir-lusir mencari si Marwan ahh. Luan iski kan ikut aktivit-aktiviti yang diadakan. But most importantly, kami enjoy the festivals sambil meliat pemandangan di Brunei ani.</p>
+        
+        <div class="cd-author">
+          <img src="images/babu.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Babusinur</li>
+            <li>Local Influencer</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Absolutely a joy. Variety of foods, activities and places to go, what more could I ask for?</p>
+        
+        <div class="cd-author">
+          <img src="images/Rizal.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Rizal Rasid</li>
+            <li>Local Influencer, Singer</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>This festival was an opportunity for me to try out new hobbies and activities as I have been stuck at home for weeks because of covid.</p>
+        
+        <div class="cd-author">
+          <img src="images/mat.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Mat Fadhil</li>
+            <li>Local Singer</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Saya terpesona dengan pelbagai aktiviti yang dianjurkan oleh pihak yang berkenaan. Kalau berkesempatan, saya ingin mengikuti festival ini lagi pada tahun hadapan.</p>
+        
+        <div class="cd-author">
+          <img src="images/adie.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>AdieRockerz</li>
+            <li>Local tiktoker</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+
+      <li class="cd-testimonials-item">
+        <p>Asmara amat gembira kerana dapat mengikuti festival yang bermakna ini dan juga berkesempatan untuk berinteraksi dengan fans-fans Asmara yang selalu menyokong Asmara. Terima kasih sekali lagi kepada penganjur dan pihak-pihak yang terlibat.</p>
+        
+        <div class="cd-author">
+          <img src="images/asmara.jpg" alt="Author image">
+          <ul class="cd-author-info">
+            <li>Asmara Mewangi</li>
+            <li>Local tiktoker</li>
+          </ul>
+        </div> <!-- cd-author -->
+      </li>
+    </ul>
+  </div>  <!-- cd-testimonials-all-wrapper -->
+
+  <a href="#0" class="close-btn">Close</a>
+</div> <!-- cd-testimonials-all -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+<!-- -----------------SPONSORS-------------- -->
+
 <div class="parent2">
 <div class="div1"> Supporting Government Organisations</div>
 <div class="div2"><a href="https://www.kkbs.gov.bn/Theme/Home.aspx"><img src="images/logo1.png" class="sponsors"></a></div>
@@ -504,7 +777,7 @@ $(document).ready(function(){
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Home</a>
+              <a href="Homepage.html" class="text-white">Home</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -512,7 +785,7 @@ $(document).ready(function(){
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Events</a>
+              <a href="Events.html" class="text-white">Events</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -520,7 +793,7 @@ $(document).ready(function(){
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Gallery</a>
+              <a href="Gallery.html" class="text-white">Gallery</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -528,7 +801,7 @@ $(document).ready(function(){
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Places to Go</a>
+              <a href="PlacesToGo.html" class="text-white">Places to Go</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -543,17 +816,15 @@ $(document).ready(function(){
       <section class="mb-5">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              distinctio earum repellat quaerat voluptatibus placeat nam,
-              commodi optio pariatur est quia magnam eum harum corrupti
-              dicta, aliquam sequi voluptate quas.
-            </p>
+            <p id="bold">(+673)876 9923</p>
+            <br>
 
-            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-  Leave us a feedback!
-</button>
+            <p>
+               Block 2E Ong Sum Ping Condominium, Jalan Ong Sum Ping, Bandar Seri Begawan BA1311
+            </p> <br>
+
+            <!-- Feedback Form -->
+<a href="" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Leave us a feedback</a>
 
 <!-- Modal -->
 <!-- https://mdbootstrap.com/docs/standard/components/modal/ -->
@@ -634,23 +905,14 @@ $(document).ready(function(){
 
       <!-- Section: Social -->
       <section class="text-center mb-5">
-        <a href="" class="text-white me-4">
+        <a href="https://www.facebook.com/RickAstley" class="text-white me-4">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://twitter.com/rickastley?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="text-white me-4">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
+        <a href="https://instagram.com/officialrickastley?igshid=YmMyMTA2M2Y=" class="text-white me-4">
           <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
         </a>
       </section>
       <!-- Section: Social -->
@@ -662,9 +924,9 @@ $(document).ready(function(){
          class="text-center p-3"
          style="background-color: rgba(0, 0, 0, 0.2)"
          >
-      © 2020 Copyright:
+      © 2022 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
+         >BDF2022</a
         >
     </div>
     <!-- Copyright -->
