@@ -3,46 +3,50 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bootstrap exercise</title>
+	<title>Homepage</title>
+
+  <!-- IMPORT BOOTSTRAP 5 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Popover -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+  <!-- Popover -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
 
-<!-- Popover #2 -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- Popover #2 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
-    <!-- Testimonial -->
-<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+  <!-- MDB Footer -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+
+  <!-- Testimonial -->
+  <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
   <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
   <script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<style type="text/css"> 
-		
-    /*NAVBAR*/
-    .navbar {
-      transition: background 0.6s;
+	
+  <style type="text/css"> 
+
+    html {
+      height: 100%;
     }
 
-    .navbar-toggler-icon {
-      color: #ffffff !important;
+/* --------------NAVBAR--------------*/
+
+    .navbar {
+      transition: background 0.6s;
     }
 
     .nav-link {
@@ -56,27 +60,15 @@
       border: solid 1px;
     }
 
-    /*CAROUSEL STYLING*/
-		.carousel.slide{
-			width: 50%;
-			margin: auto;
-			display: inline-block;
-		}
 
-		/*button becomes circle*/
-		 .carousel-indicators button{
-		 	 width: 10px!important;
-  			height: 10px!important;
-   			border-radius: 50%;
-   		}
+/* --------------BANNER--------------*/
 
-   
 		.banner {
 			margin: 0px;
 			width: 100%;
    		height: 100%;
 			background-color: #3E92CC;
-      background-image: url("images/bgimage.png");
+      background-image: url("images/Homepage/bgimage.png");
 			position: relative;
       background-position: center;
       background-repeat: no-repeat;
@@ -88,59 +80,23 @@
  			 display: block;
        width: 50%;
        vertical-align: middle;
-
 		}
 
-    .organisation {
-      width: 100%;
-      height: 100%;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+    .titleText{
+      font-size: 2em;
+      padding-top: 50px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
     }
 
-    .organisation img{
-      width: 10%;
-      height: 60%;
-      border-radius: 50%;
-      margin: auto;
-      display: grid;
-    }
-		.carousel-section{
-			width: 100%;
-   			height: 100%;
-   			padding: 5vw;
-   			display: flex;
-   			margin:  auto;
-		}
+/* --------------ORGANISATION COMMITTEE--------------*/
 
-		#demo1, #demo2 {
-			flex: 1;
-		}
-
-  .circle{
-    border-radius: 50%;
-    width: 50%;
-    margin: auto;
-    display: block;
+    b {
+        font-weight: bolder;
   }
 
-  #prevEvents {
-        float: right;
-      }
-
-      .large{
-        font-weight: bolder;
-        font-size: 2em;
-        padding-bottom: 20px;
-      }
-
-      
-
-      
-
-  /*ORGANISATION COMMITTEE*/
-.parent {
+    .parent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -152,31 +108,78 @@
     padding: 50px;
   }
 
-.parent>.div1 { grid-area: 1 / 3 / 2 / 4; margin: 0 auto; text-align: center}
-.parent>.div2 { grid-area: 2 / 2 / 3 / 3; }
-.parent>.div3 { grid-area: 2 / 3 / 3 / 4; }
-.parent>.div4 { grid-area: 2 / 4 / 3 / 5; }
-.parent>.div5 { grid-area: 3 / 3 / 4 / 4; }
-.parent>.div6 { grid-area: 3 / 4 / 4 / 5; }
-.parent>.div7 { grid-area: 3 / 2 / 4 / 3; }
-.parent>.div8 { grid-area: 4 / 1 / 5 / 2; }
-.parent>.div9 { grid-area: 4 / 2 / 5 / 3; }
-.parent>.div10 { grid-area: 4 / 3 / 5 / 4; }
-.parent>.div11 { grid-area: 4 / 4 / 5 / 5; }
-.parent>.div12 { grid-area: 4 / 5 / 5 / 6; }
-.parent>.div13 { grid-area: 5 / 3 / 6 / 4; }
+    .parent>.div1 { grid-area: 1 / 3 / 2 / 4; margin: 0 auto; text-align: center; }
+    .parent>.div2 { grid-area: 2 / 2 / 3 / 3; }
+    .parent>.div3 { grid-area: 2 / 3 / 3 / 4; }
+    .parent>.div4 { grid-area: 2 / 4 / 3 / 5; }
+    .parent>.div5 { grid-area: 3 / 3 / 4 / 4; }
+    .parent>.div6 { grid-area: 3 / 4 / 4 / 5; }
+    .parent>.div7 { grid-area: 3 / 2 / 4 / 3; }
+    .parent>.div8 { grid-area: 4 / 1 / 5 / 2; }
+    .parent>.div9 { grid-area: 4 / 2 / 5 / 3; }
+    .parent>.div10 { grid-area: 4 / 3 / 5 / 4; }
+    .parent>.div11 { grid-area: 4 / 4 / 5 / 5; }
+    .parent>.div12 { grid-area: 4 / 5 / 5 / 6; }
+    .parent>.div13 { grid-area: 5 / 3 / 6 / 4; }
 
-b {
-        font-weight: bolder;
-      }
+    .circle{
+    border-radius: 50%;
+    width: 50%;
+    margin: auto;
+    display: block;
+  }
+
+/* --------------UPCOMING AND PREVIOUS EVENTS--------------*/
+    .carousel.slide{
+      width: 50%;
+      margin: auto;
+      display: inline-block;
+    }
+    
+    .carousel-indicators button{
+      width: 10px!important;
+      height: 10px!important;
+      border-radius: 50%;
+    }
+
+		.carousel-section{
+			width: 80%;
+   		height: 100%;
+   		padding: 5vw;
+   		display: flex;
+   		margin:  auto;
+		}
+
+    .large{
+      font-weight: bolder;
+      font-size: 2em;
+      padding-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+		#demo1, #demo2 {
+			flex: 1;
+		}
+
+    #prevEvents {
+      float: right;
+    }
 
 /* ----------TESTIMONIAL---------- */
     .cd-container{
-      background-color: skyblue;
+      background-color: #3F51B5;
     }
     .cd-see-all{
       background-color: lightgrey;
     }
+    .cd-author .cd-author-info li:first-child {
+      font-weight: bolder;
+    }
+
+   .cd-author .cd-author-info li:last-child {
+      color: #7EAEFC !important;
+    }
+
     div[class*="cd-testimonials-all"] {
       /*position: relative;*/
     }
@@ -185,46 +188,49 @@ b {
       left: 90%;
       top: 95%;
     }
-/*---------SPONSORS--------*/
 
-.parent2 {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-grid-template-rows: repeat(9, 0.5fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-margin: auto;
-width: 100%;
-height: 100%;
-text-align: center;
-align-items: center;
-justify-content: center;
+    
+/* ----------SPONSORS---------- */
+
+    .parent2 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(9, 0.5fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
 }
 
-.parent2>.div1 { grid-area: 1 / 3 / 2 / 5; margin: 0 auto; text-align: center}
-.parent2>.div2 { grid-area: 2 / 3 / 3 / 4; }
-.parent2>.div3 { grid-area: 2 / 4 / 3 / 5; }
-.parent2>.div4 { grid-area: 3 / 3 / 4 / 5; }
-.parent2>.div5 { grid-area: 4 / 2 / 5 / 3; }
-.parent2>.div6 { grid-area: 4 / 3 / 5 / 4; }
-.parent2>.div7 { grid-area: 4 / 4 / 5 / 5; }
-.parent2>.div8 { grid-area: 4 / 5 / 5 / 6; }
-.parent2>.div9 { grid-area: 5 / 3 / 6 / 5; }
-.parent2>.div10 { grid-area: 6 / 3 / 7 / 4; }
-.parent2>.div11 { grid-area: 6 / 4 / 7 / 5; }
-.parent2>.div12 { grid-area: 7 / 3 / 8 / 5; }
-.parent2>.div13 { grid-area: 8 / 2 / 9 / 3; }
-.parent2>.div14 { grid-area: 8 / 3 / 9 / 4; }
-.parent2>.div15 { grid-area: 8 / 4 / 9 / 5; }
-.parent2>.div16 { grid-area: 8 / 5 / 9 / 6; }
-.parent2>.div17 { grid-area: 9 / 2 / 9 / 3; }
-.parent2>.div18 { grid-area: 9 / 3 / 9 / 4; }
-.parent2>.div19 { grid-area: 9 / 4 / 9 / 5; }
-.parent2>.div20 { grid-area: 9 / 5 / 9 / 6; }  
+    .parent2>.div1 { grid-area: 1 / 3 / 2 / 5; margin: 0 auto; text-align: center; font-family: 'Poppins', sans-serif; font-weight: 600;}
+    .parent2>.div2 { grid-area: 2 / 3 / 3 / 4; }
+    .parent2>.div3 { grid-area: 2 / 4 / 3 / 5; }
+    .parent2>.div4 { grid-area: 3 / 3 / 4 / 5; font-family: 'Poppins', sans-serif; font-weight: 600;}
+    .parent2>.div5 { grid-area: 4 / 2 / 5 / 3; }
+    .parent2>.div6 { grid-area: 4 / 3 / 5 / 4; }
+    .parent2>.div7 { grid-area: 4 / 4 / 5 / 5; }
+    .parent2>.div8 { grid-area: 4 / 5 / 5 / 6; }
+    .parent2>.div9 { grid-area: 5 / 3 / 6 / 5; font-family: 'Poppins', sans-serif; font-weight: 600;}
+    .parent2>.div10 { grid-area: 6 / 3 / 7 / 4; }
+    .parent2>.div11 { grid-area: 6 / 4 / 7 / 5; }
+    .parent2>.div12 { grid-area: 7 / 3 / 8 / 5; font-family: 'Poppins', sans-serif; font-weight: 600;}
+    .parent2>.div13 { grid-area: 8 / 2 / 9 / 3; }
+    .parent2>.div14 { grid-area: 8 / 3 / 9 / 4; }
+    .parent2>.div15 { grid-area: 8 / 4 / 9 / 5; }
+    .parent2>.div16 { grid-area: 8 / 5 / 9 / 6; }
+    .parent2>.div17 { grid-area: 9 / 2 / 9 / 3; }
+    .parent2>.div18 { grid-area: 9 / 3 / 9 / 4; }
+    .parent2>.div19 { grid-area: 9 / 4 / 9 / 5; }
+    .parent2>.div20 { grid-area: 9 / 5 / 9 / 6; }  
 
-.sponsors {
-  width: 100%;
-}
+    .sponsors {
+      width: 100%;
+    }
+
 @media only screen and (max-width: 479px) {
       .parent {
     display: grid;
@@ -237,19 +243,19 @@ justify-content: center;
     width: 100%;
   }
 
-.parent>.div1 { grid-area: 1 / 1 / 2 / 3; }
-.parent>.div2 { grid-area: 2 / 1 / 3 / 2; }
-.parent>.div3 { grid-area: 2 / 2 / 3 / 3; }
-.parent>.div4 { grid-area: 3 / 1 / 4 / 2; }
-.parent>.div5 { grid-area: 3 / 2 / 4 / 3; }
-.parent>.div6 { grid-area: 4 / 1 / 5 / 2; }
-.parent>.div7 { grid-area: 4 / 2 / 5 / 3; }
-.parent>.div8 { grid-area: 5 / 1 / 6 / 2; }
-.parent>.div9 { grid-area: 5 / 2 / 6 / 3; }
-.parent>.div10 { grid-area: 6 / 1 / 7 / 2; }
-.parent>.div11 { grid-area: 6 / 2 / 7 / 3; }
-.parent>.div12 { grid-area: 7 / 1 / 8 / 2; }
-.parent>.div13 { grid-area: 7 / 2 / 8 / 3; }
+  .parent>.div1 { grid-area: 1 / 1 / 2 / 3; }
+  .parent>.div2 { grid-area: 2 / 1 / 3 / 2; }
+  .parent>.div3 { grid-area: 2 / 2 / 3 / 3; }
+  .parent>.div4 { grid-area: 3 / 1 / 4 / 2; }
+  .parent>.div5 { grid-area: 3 / 2 / 4 / 3; }
+  .parent>.div6 { grid-area: 4 / 1 / 5 / 2; }
+  .parent>.div7 { grid-area: 4 / 2 / 5 / 3; }
+  .parent>.div8 { grid-area: 5 / 1 / 6 / 2; }
+  .parent>.div9 { grid-area: 5 / 2 / 6 / 3; }
+  .parent>.div10 { grid-area: 6 / 1 / 7 / 2; }
+  .parent>.div11 { grid-area: 6 / 2 / 7 / 3; }
+  .parent>.div12 { grid-area: 7 / 1 / 8 / 2; }
+  .parent>.div13 { grid-area: 7 / 2 / 8 / 3; }
 
 .circle{
     border-radius: 50%;
@@ -257,7 +263,8 @@ justify-content: center;
     margin: auto;
     display: block;
   }
-/*---------SPONSORS--------*/
+
+/* ----------SPONSORS---------- */
 
 .parent2 {
 display: grid;
@@ -316,6 +323,7 @@ justify-content: center;
 
 
 /*---------FOOTER---------*/
+
 .modal-title{
         color: #000000;
       }
@@ -342,10 +350,11 @@ justify-content: center;
 </head>
 <body>
 
-<!-- GHAZALI's PART -->
 
-<!-- Navbar -->
+<!-----------NAVIGATION BAR----------->
+
 <!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_navbar.php -->
+
 <nav id="navscroll" class="navbar fixed-top navbar-expand-md navbar-default">
   <div class="container-fluid">
     <a class="navbar-brand" href="Homepage.html"><img src="images/bdflogonav.png" width="50" height="50" ></a>
@@ -369,7 +378,9 @@ justify-content: center;
 </nav>
 
 
-<!-- NAVBAR FUNCTION -->
+<!-----------NAVIGATION BAR FUNCTION -- JQUERY FEATURE #1 -- ----------->
+<!-- Taken from https://codeconvey.com/navbar-transparent-to-solid-on-scroll/ -->
+
 <script type="text/javascript">
     window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
@@ -388,28 +399,36 @@ function scrollFunction() {
 }
 </script>
 
-<!-- Banner placeholder -->
+<!-----------BANNER----------->
+
 <div class="banner">
 <img src="images/bdflogo.png">
 </div>
 
-<!-- Popover organisation taken from https://codepen.io/lowpez/pen/pKJaKp -->
+
+<!-----------ORGANISATION COMMITTEE POPOVER----------->
+<h1 class="titleText">Organisation Committee</h1>
+
+
 <div class="parent">
-<div class="div1"><img src="images/ceo.jpg" class="circle" data-toggle="popover" data-img="images/ceo.jpg" title="<b>CEO</b> <br> Wafi Hakim"></div>
-<div class="div2"><img src="images/guy2.jpg" class="circle" data-toggle="popover" data-img="images/guy2.jpg" title="<b>Head of Events</b> <br> Fakhrul Razi"></div>
-<div class="div3"><img src="images/guy3.jpg" class="circle" data-toggle="popover" data-img="images/guy3.jpg" title="<b>Vice President</b> <br> Aziz Harun"></div>
-<div class="div4"><img src="images/guy4.jpg" class="circle" data-toggle="popover" data-img="images/guy4.jpg" title="<b>Head chef</b> <br> Khairul Aming"></div>
-<div class="div5"><img src="images/guy5.jpg" class="circle" data-toggle="popover" data-img="images/guy5.jpg" title="<b>Chef Assistant</b> <br> Haji Brad Pitt"></div>
-<div class="div6"><img src="images/girl1.jpg" class="circle" data-toggle="popover" data-img="images/girl1.jpg" title="<b>Multimedia Manager</b> <br> Siti Taylor Swift"></div>
-<div class="div7"><img src="images/girl2.jpg" class="circle" data-toggle="popover" data-img="images/girl2.jpg" title="<b>Head of Islamic events</b> <br> Dayangku Marina"></div>
-<div class="div8"><img src="images/girl3.jpg" class="circle" data-toggle="popover" data-img="images/girl3.jpg" title="<b>Events Coordinator</b> <br> Lailatul Zubaidah"></div>
-<div class="div9"><img src="images/girl4.jpg" class="circle" data-toggle="popover" data-img="images/girl4.jpg" title="<b>Creative Director</b> <br> Khairunnisa Ash'ari"></div>
-<div class="div10"><img src="images/girl5.jpg" class="circle" data-toggle="popover" data-img="images/girl5.jpg" title="<b>Graphic Designer</b> <br> Dina Alias"></div>
-<div class="div11"><img src="images/girl7.jpg" class="circle" data-toggle="popover" data-img="images/girl7.jpg" title="<b>Web Developer</b> <br> Shinny Chia"></div>
-<div class="div12"><img src="images/girl6.jpg" class="circle" data-toggle="popover" data-img="images/girl6.jpg" title="<b>Social Media Marketer</b> <br> Afiqah Zailani"></div>
-<div class="div13"><img src="images/girl8.jpg" class="circle" data-toggle="popover" data-img="images/girl8.jpg" title="<b>Project Planner</b> <br> Rumaitha Al Busaidi"></div>
+<div class="div1"><img src="images/Homepage/ceo.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/ceo.jpg" title="<b>CEO</b> <br> Wafi Hakim"></div>
+<div class="div2"><img src="images/Homepage/guy2.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/guy2.jpg" title="<b>Head of Events</b> <br> Fakhrul Razi"></div>
+<div class="div3"><img src="images/Homepage/guy3.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/guy3.jpg" title="<b>Vice President</b> <br> Aziz Harun"></div>
+<div class="div4"><img src="images/Homepage/guy4.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/guy4.jpg" title="<b>Head chef</b> <br> Khairul Aming"></div>
+<div class="div5"><img src="images/Homepage/guy5.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/guy5.jpg" title="<b>Chef Assistant</b> <br> Haji Brad Pitt"></div>
+<div class="div6"><img src="images/Homepage/girl1.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl1.jpg" title="<b>Multimedia Manager</b> <br> Siti Taylor Swift"></div>
+<div class="div7"><img src="images/Homepage/girl2.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl2.jpg" title="<b>Head of Islamic events</b> <br> Dayangku Marina"></div>
+<div class="div8"><img src="images/Homepage/girl3.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl3.jpg" title="<b>Events Coordinator</b> <br> Lailatul Zubaidah"></div>
+<div class="div9"><img src="images/Homepage/girl4.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl4.jpg" title="<b>Creative Director</b> <br> Khairunnisa Ash'ari"></div>
+<div class="div10"><img src="images/Homepage/girl5.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl5.jpg" title="<b>Graphic Designer</b> <br> Dina Alias"></div>
+<div class="div11"><img src="images/Homepage/girl7.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl7.jpg" title="<b>Web Developer</b> <br> Shinny Chia"></div>
+<div class="div12"><img src="images/Homepage/girl6.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl6.jpg" title="<b>Social Media Marketer</b> <br> Afiqah Zailani"></div>
+<div class="div13"><img src="images/Homepage/girl8.jpg" class="circle" data-toggle="popover" data-img="images/Homepage/girl8.jpg" title="<b>Project Planner</b> <br> Rumaitha Al Busaidi"></div>
 </div> 
-<!-- POPOVER FUNCTION -->
+
+
+<!-----------POPOVER FUNCTION -- JQUERY FEATURE #2 ---->
+<!-- Taken from https://codepen.io/lowpez/pen/pKJaKp -->
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -426,7 +445,7 @@ $(document).ready(function(){
 </script> 
 <div class="carousel-section">
 
-<!-- Carousel -->
+<!-----------CAROUSEL----------->
 <!-- Taken from https://www.w3schools.com/bootstrap5/bootstrap_carousel.php -->
 
 
@@ -443,31 +462,31 @@ $(document).ready(function(){
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active " data-bs-interval="2000">
-      <img src="images/jerudongpark.jpg" alt="Jerudong Park" class="d-block w-100">
+      <img src="images/Events/event1.jpg" class="d-block w-100">
        <div class="carousel-caption d-none d-md-block">
-    	<p>Jerudong Park</p>
+    	<p>Run Happy at Home</p>
        </div>
   	</div>
   
 
   	<div class="carousel-item" data-bs-interval="1500">
-      <img src="images/jalanroberts.jpg" alt="Jalan Roberts" class="d-block w-100">
+      <img src="images/Events/event5.jpg" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
-    	<p>Jalan Roberts</p>
+    	<p>Muziumku</p>
       </div>
   	</div>
 
   	<div class="carousel-item" data-bs-interval="1500">
-      <img src="images/joyfulgarden.jpg" alt="Joyful Garden" class="d-block w-100">
+      <img src="images/Events/event3.jpg" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
-    	<p>Joyful Garden</p>
+    	<p>Mindquest online</p>
       </div>
   	</div>
 
   	<div class="carousel-item" data-bs-interval="1500">
-      <img src="images/kampongayer.jpg" alt="Kampong Ayer" class="d-block w-100">
+      <img src="images/Events/event9.jpg" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
-    	<p>Kampong Ayer</p>
+    	<p>PUBG Championship</p>
       </div>
   	</div>
 
@@ -498,31 +517,31 @@ $(document).ready(function(){
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="images/jerudongpark.jpg" alt="Jerudong Park" class="d-block w-100">
+      <img src="images/Events/event4.jpg" class="d-block w-100">
        <div class="carousel-caption d-none d-md-block">
-    	<p>Jerudong Park</p>
+    	<p>Virtual Running Event</p>
        </div>
   	</div>
   
 
   	<div class="carousel-item">
-      <img src="images/jalanroberts.jpg" alt="Jalan Roberts" class="d-block w-100">
+      <img src="images/Events/event2.jpg" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
-    	<p>Jalan Roberts</p>
+    	<p>Karnival Bahasa Arab</p>
       </div>
   	</div>
 
   	<div class="carousel-item">
-      <img src="images/joyfulgarden.jpg" alt="Joyful Garden" class="d-block w-100">
+      <img src="images/Events/event8.jpg" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
-    	<p>Joyful Garden</p>
+    	<p>Jerudong Park e-Sports/p>
       </div>
   	</div>
 
   	<div class="carousel-item">
-      <img src="images/kampongayer.jpg" alt="Kampong Ayer" class="d-block w-100">
+      <img src="images/Events/event11.jpg" class="d-block w-100">
       <div class="carousel-caption d-none d-md-block">
-    	<p>Kampong Ayer</p>
+    	<p>Mega Garden Sales</p>
       </div>
   	</div>
 
@@ -538,16 +557,15 @@ $(document).ready(function(){
 </div>
 </div>
 
-<!-- ----------------TESTIMONIAL --------------- -->
+<!-- ----------------TESTIMONIAL -- JQUERY FEATURE #3 -->
+<!-- Taken from https://codyhouse.co/demo/client-testimonials-carousel/index.html -->
 
-<!-- Testimonials -->
-  <!-- https://codyhouse.co/demo/client-testimonials-carousel/index.html -->
 <div class="cd-testimonials-wrapper cd-container">
   <ul class="cd-testimonials">
     <li>
       <p>I was really impressed by the kind and accepting culture in Brunei that have given me so much warmth during my visit to Brunei. The festival was also very fun to enjoy alongside my partner through multiple activities that was present throughout the festival.</p>
       <div class="cd-author">
-        <img src="images/Lee Min-Ho.jpg" alt="Author image">
+        <img src="images/Homepage/Lee Min-Ho.jpg" alt="Author image">
         <ul class="cd-author-info">
           <li>Lee Min-Ho</li>
           <li>Korean Actor, Tourist</li>
@@ -558,7 +576,7 @@ $(document).ready(function(){
     <li>
       <p>Aminggunawan Approved.</p>
       <div class="cd-author">
-        <img src="images/Aminggunawan.jpg" alt="Author image">
+        <img src="images/Homepage/Aminggunawan.jpg" alt="Author image">
         <ul class="cd-author-info">
           <li>Aming Gunawan</li>
           <li>Local Influencer</li>
@@ -569,7 +587,7 @@ $(document).ready(function(){
     <li>
       <p>Enjoyed a lot of activities during the events while searching for the best nasi katok in Brunei.</p>
       <div class="cd-author">
-        <img src="images/Atib Roslan.jpeg" alt="Author image">
+        <img src="images/Homepage/Atib Roslan.jpeg" alt="Author image">
         <ul class="cd-author-info">
           <li>Atib Roslan</li>
           <li>Local tiktoker</li>
@@ -588,7 +606,7 @@ $(document).ready(function(){
       <li class="cd-testimonials-item">
         <p>I was really impressed by the kind and accepting culture in Brunei that have given me so much warmth during my visit to Brunei. The festival was also very fun to enjoy alongside my partner through multiple activities that was present throughout the festival.</p>
       <div class="cd-author">
-        <img src="images/Lee Min-Ho.jpg" alt="Author image">
+        <img src="images/Homepage/Lee Min-Ho.jpg" alt="Author image">
         <ul class="cd-author-info">
           <li>Lee Min-Ho</li>
           <li>Korean Actor, Tourist</li>
@@ -599,7 +617,7 @@ $(document).ready(function(){
       <li class="cd-testimonials-item">
         <p>Aminggunawan Approved.</p>
       <div class="cd-author">
-        <img src="images/Aminggunawan.jpg" alt="Author image">
+        <img src="images/Homepage/Aminggunawan.jpg" alt="Author image">
         <ul class="cd-author-info">
           <li>Aming Gunawan</li>
           <li>Local Influencer</li>
@@ -610,7 +628,7 @@ $(document).ready(function(){
       <li class="cd-testimonials-item">
         <p>Enjoyed a lot of activities during the events while searching for the best nasi katok in Brunei.</p>
       <div class="cd-author">
-        <img src="images/Atib Roslan.jpeg" alt="Author image">
+        <img src="images/Homepage/Atib Roslan.jpeg" alt="Author image">
         <ul class="cd-author-info">
           <li>Atib Roslan</li>
           <li>Local tiktoker</li>
@@ -622,7 +640,7 @@ $(document).ready(function(){
         <p>The atmosphere was really amazing and packed with a lot of enjoyable activities. We would like to visit Brunei again in the near future.</p>
         
         <div class="cd-author">
-          <img src="images/bp.jpeg" alt="Author image">
+          <img src="images/Homepage/bp.jpeg" alt="Author image">
           <ul class="cd-author-info">
             <li>Blackpink</li>
             <li>Kpop Artist, Tourist</li>
@@ -634,7 +652,7 @@ $(document).ready(function(){
         <p>Saya berasa gembira dapat melawat Brunei Darussalam pada hujung tahun ini. Aktiviti-aktiviti yang diadakan juga amat menyenangkan dan membawa kegembiraan kepada keluarga saya. Lawatan ini juga dapat menginspirasikan saya untuk menulis lagu bagi tahun depan.</p>
         
         <div class="cd-author">
-          <img src="images/jamal.jpg" alt="Author image">
+          <img src="images/Homepage/jamal.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>Jamal Abdillah</li>
             <li>Malaysian Singer, Artist, Tourist</li>
@@ -646,7 +664,7 @@ $(document).ready(function(){
         <p>I was really shocked on how well planned this event was and at the same time was also dissappointed as I didn't get the chance to perform during the festival. In Shaa Allah Syafiq akan tunaikan janji Syafiq untuk perform dekat Brunei December Festival pada tahun depan.</p>
         
         <div class="cd-author">
-          <img src="images/syafiq.jpg" alt="Author image">
+          <img src="images/Homepage/syafiq.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>Syafiq Abdillah</li>
             <li>Local Singer, Songwriter</li>
@@ -658,7 +676,7 @@ $(document).ready(function(){
         <p>Like my song 'senyum', this festival had successfully made me 'senyum' from the start till the end of the festival.</p>
         
         <div class="cd-author">
-          <img src="images/aziz.jpg" alt="Author image">
+          <img src="images/Homepage/aziz.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>Aziz Harun</li>
             <li>Local Singer, Songwriter</li>
@@ -670,7 +688,7 @@ $(document).ready(function(){
         <p>Ngalih ku belusir-lusir mencari si Marwan ahh. Luan iski kan ikut aktivit-aktiviti yang diadakan. But most importantly, kami enjoy the festivals sambil meliat pemandangan di Brunei ani.</p>
         
         <div class="cd-author">
-          <img src="images/babu.jpg" alt="Author image">
+          <img src="images/Homepage/babu.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>Babusinur</li>
             <li>Local Influencer</li>
@@ -682,7 +700,7 @@ $(document).ready(function(){
         <p>Absolutely a joy. Variety of foods, activities and places to go, what more could I ask for?</p>
         
         <div class="cd-author">
-          <img src="images/Rizal.jpg" alt="Author image">
+          <img src="images/Homepage/Rizal.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>Rizal Rasid</li>
             <li>Local Influencer, Singer</li>
@@ -694,7 +712,7 @@ $(document).ready(function(){
         <p>This festival was an opportunity for me to try out new hobbies and activities as I have been stuck at home for weeks because of covid.</p>
         
         <div class="cd-author">
-          <img src="images/mat.jpg" alt="Author image">
+          <img src="images/Homepage/mat.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>Mat Fadhil</li>
             <li>Local Singer</li>
@@ -706,7 +724,7 @@ $(document).ready(function(){
         <p>Saya terpesona dengan pelbagai aktiviti yang dianjurkan oleh pihak yang berkenaan. Kalau berkesempatan, saya ingin mengikuti festival ini lagi pada tahun hadapan.</p>
         
         <div class="cd-author">
-          <img src="images/adie.jpg" alt="Author image">
+          <img src="images/Homepage/adie.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>AdieRockerz</li>
             <li>Local tiktoker</li>
@@ -718,7 +736,7 @@ $(document).ready(function(){
         <p>Asmara amat gembira kerana dapat mengikuti festival yang bermakna ini dan juga berkesempatan untuk berinteraksi dengan fans-fans Asmara yang selalu menyokong Asmara. Terima kasih sekali lagi kepada penganjur dan pihak-pihak yang terlibat.</p>
         
         <div class="cd-author">
-          <img src="images/asmara.jpg" alt="Author image">
+          <img src="images/Homepage/asmara.jpg" alt="Author image">
           <ul class="cd-author-info">
             <li>Asmara Mewangi</li>
             <li>Local tiktoker</li>
@@ -739,33 +757,28 @@ $(document).ready(function(){
 
 <div class="parent2">
 <div class="div1"> Supporting Government Organisations</div>
-<div class="div2"><a href="https://www.kkbs.gov.bn/Theme/Home.aspx"><img src="images/logo1.png" class="sponsors"></a></div>
-<div class="div3"><a href="https://www.gov.bn/directories/MOE.aspx"><img src="images/logo2.png" class="sponsors"></a></div>
+<div class="div2"><a href="https://www.kkbs.gov.bn/Theme/Home.aspx"><img src="images/Homepage/logo1.png" class="sponsors" title="Ministry of Culture, Youth and Sports"></a></div>
+<div class="div3"><a href="https://www.gov.bn/directories/MOE.aspx"><img src="images/Homepage/logo2.png" class="sponsors" title="Ministry of Education"></a></div>
 <div class="div4">Platinum Sponsor</div>
-<div class="div5"><a href="http://www.bibd.com.bn/personal/"><img src="images/logo3.png" class="sponsors"></a></div>
-<div class="div6"><a href="https://dst.com.bn/"><img src="images/logo4.png" class="sponsors"></a></div>
-<div class="div7"><a href="https://progresif.com/"><img src="images/logo5.png" class="sponsors"></a></div>
-<div class="div8"><a href="https://www.baiduri.com.bn/"><img src="images/logo8.png" class="sponsors"></a></div>
+<div class="div5"><a href="http://www.bibd.com.bn/personal/"><img src="images/Homepage/logo3.png" class="sponsors" title="BIBD Brunei"> </a></div>
+<div class="div6"><a href="https://dst.com.bn/"><img src="images/Homepage/logo4.png" class="sponsors" title="Datastream Digital"></a></div>
+<div class="div7"><a href="https://progresif.com/"><img src="images/Homepage/logo5.png" class="sponsors" title="Progresif"></a></div>
+<div class="div8"><a href="https://www.baiduri.com.bn/"><img src="images/Homepage/logo8.png" class="sponsors" title="Baiduri Bank"></a></div>
 <div class="div9">Gold Sponsor</div>
-<div class="div10"><a href="http://niat.com.bn/"><img src="images/logo7.png" class="sponsors"></a></div>
-<div class="div11"><a href="https://www.aia.com.bn/en/index.html"><img src="images/logo6.png" class="sponsors"></a></div>
+<div class="div10"><a href="http://niat.com.bn/"><img src="images/Homepage/logo7.png" class="sponsors" title="Network Integrity Assurance Technologies"></a></div>
+<div class="div11"><a href="https://www.aia.com.bn/en/index.html"><img src="images/Homepage/logo6.png" class="sponsors" title="AIA Brunei"></a></div>
 <div class="div12">Supporting Organisations</div>
-<div class="div13"><a href="http://www.pb.edu.bn/SitePages/home.aspx"><img src="images/logo9.png" class="sponsors"></a></div>
-<div class="div14"><a href="https://ibte.edu.bn/"><img src="images/logo10.png" class="sponsors"></a></div>
-<div class="div15"><a href="https://ubd.edu.bn/"><img src="images/logo11.png" class="sponsors"></a></div>
-<div class="div16"><a href="http://www.utb.edu.bn/"><img src="images/logo12.png" class="sponsors"></a></div>
-<div class="div17"><a href="https://www.instagram.com/mcdonaldsbrunei/"><img src="images/logo13.png" class="sponsors"></a></div>
-<div class="div18"><a href="https://www.idealcafeandgrill.com/"><img src="images/logo14.png" class="sponsors"></a></div>
-<div class="div19"><a href="https://www.instagram.com/coffeebean_brunei/"><img src="images/logo15.png" class="sponsors"></a></div>
-<div class="div20"><a href="https://www.facebook.com/ayamkugroup/"><img src="images/logo16.png" class="sponsors"></a></div>
+<div class="div13"><a href="http://www.pb.edu.bn/SitePages/home.aspx"><img src="images/Homepage/logo9.png" class="sponsors" title="Politeknik Brunei"></a></div>
+<div class="div14"><a href="https://ibte.edu.bn/"><img src="images/Homepage/logo10.png" class="sponsors" title="Institute of Brunei Technical Education"></a></div>
+<div class="div15"><a href="https://ubd.edu.bn/"><img src="images/Homepage/logo11.png" class="sponsors" title="Universiti Brunei Darussalam"></a></div>
+<div class="div16"><a href="http://www.utb.edu.bn/"><img src="images/Homepage/logo12.png" class="sponsors" title="University Technology Brunei"></a></div>
+<div class="div17"><a href="https://www.instagram.com/mcdonaldsbrunei/"><img src="images/Homepage/logo13.png" class="sponsors" title="McDonalds Brunei"></a></div>
+<div class="div18"><a href="https://www.idealcafeandgrill.com/"><img src="images/Homepage/logo14.png" class="sponsors" title="Ideal Cafe and Grill"></a></div>
+<div class="div19"><a href="https://www.instagram.com/coffeebean_brunei/"><img src="images/Homepage/logo15.png" class="sponsors" title="Coffee Bean & Tea Leaf"></a></div>
+<div class="div20"><a href="https://www.facebook.com/ayamkugroup/"><img src="images/Homepage/logo16.png" class="sponsors" title="Ayamku Restaurant"></a></div>
 </div> 
 
 
-
-
-<!-- -------- FOOTER --------- -->
-<!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="my-5">
   <!-- Footer -->
   <footer class="text-center text-white" style="background-color: #3f51b5">
     <!-- Grid container -->
@@ -823,19 +836,21 @@ $(document).ready(function(){
                Block 2E Ong Sum Ping Condominium, Jalan Ong Sum Ping, Bandar Seri Begawan BA1311
             </p> <br>
 
-            <!-- Feedback Form -->
+<!-- ----------------FOOTER (FEEDBACK FORM) -- BOOTSTRAP FEATURE #1 -->
+<!-- Modal -->
+<!-- Taken from https://mdbootstrap.com/docs/standard/components/modal/ -->
+
+<!-- Taken from https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_form&stacked=h --> 
+<!-- Taken from https://www.w3schools.com/bootstrap4/bootstrap_forms.asp -->
+
 <a href="" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Leave us a feedback</a>
 
-<!-- Modal -->
-<!-- https://mdbootstrap.com/docs/standard/components/modal/ -->
-<!-- Form -->
-<!-- https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_form&stacked=h --> 
-<!-- https://www.w3schools.com/bootstrap4/bootstrap_forms.asp -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">MODAL TITLE</h5>
+        <h5 class="modal-title" id="exampleModalLabel">FEEDBACK FORM</h5>
         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -850,7 +865,7 @@ $(document).ready(function(){
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
       <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field.</div>
+      <div class="invalid-feedback">Please enter a valid email.</div>
     </div>
     <div class="mb-3 mt-3">
       <label for="comment">Feedback:</label>
@@ -860,7 +875,7 @@ $(document).ready(function(){
     <label for="formFile" class="form-label">Attachment: (OPTIONAL)</label>
     <input class="form-control" type="file" id="formFile" accept=".png, .jpg">
     </div>
-    <p class="mb-3">On a scale of 1-5, How was your BDF 2022 Experience?</p>
+    <p class="mb-3">On a scale of 1-5, How was your BDF 2022 Experience?(OPTIONAL)</p>
     <div class="mb-3">
     <div class="form-check form-check-inline">
   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
@@ -932,7 +947,6 @@ $(document).ready(function(){
     <!-- Copyright -->
   </footer>
   <!-- Footer -->
-</div>
 <!-- End of .container -->
 
  
@@ -943,6 +957,7 @@ $(document).ready(function(){
     <script type="text/javascript"></script>
 
 <script>
+
 // Disable form submissions if there are invalid fields
 (function() {
   'use strict';
