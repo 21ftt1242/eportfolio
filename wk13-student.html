@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+</head>
+<body>
+<input type="text" id="name" placeholder="name"><br>
+<input type="radio" name="gender" value="male" id="male">Male
+<input type="radio" name="gender" value="female" id="female">Female<br>
+<input type="checkbox" name="wishlist" value="money">money
+<input type="checkbox" name="wishlist" value="travel">travel
+<input type="checkbox" name="wishlist" value="happiness">happines<br>
+<select name="choice" id="wish">
+	<option value="eternal">eternal life</option>
+	<option value="young">forever young</option>
+	<option value="beauty">eternal beauty</option>
+</select>
+<button onclick="retGender()">reveal gender</button>
+<button onclick="retWishlist()">reveal wishlist</button>
+<button onclick="retSelect()">reveal select</button>
+
+<script type="text/javascript">
+
+	function retGender() {
+		var male = document.getElementById("male");
+		var female = document.getElementById("female");
+
+		var selectedGender = "Gender: ";
+		var result = "";
+
+		// if (male.checked) {
+		// 	alert("male was selected");
+		// }
+		// if (female.checked) {
+		// 	alert("female was selected");
+		// }
+
+		if (male.checked) {
+			selectedGender += "Male";
+		}
+		else if (female.checked) {
+			selectedGender += "Female";
+		}
+		else {
+			selectedGender = "You have not selected any gender!";
+		}
+
+		alert(selectedGender);
+	}
+
+
+	function retWishlist() {
+		var wishlist = document.getElementsByName("wishlist");
+		var wishes=""
+
+		// manual
+		// if(wishlist[0].checked){
+		// 	wishes += wishlist[0].value + "\n";
+		// }
+
+		// if(wishlist[1].checked){
+		// 	wishes += wishlist[1].value + "\n";
+		// }
+
+		// if(wishlist[2].checked){
+		// 	wishes += wishlist[2].value + "\n";
+		// }
+
+
+		// loop
+		for (var i = 0 ; i < wishlist.length ; i++) {
+			if(wishlist[i].checked){
+				wishes += wishlist[i].value + "\n"
+			}
+		}
+
+		alert(wishes);
+	}
+
+	function retSelect() {
+		var wish = document.getELementById("wish");
+
+		alert(wish.options[wish.selectedIndex].text);
+	}
+	
+</script>
+</body>
+</html>
