@@ -1,0 +1,60 @@
+<html !DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 14</title>
+
+
+  <style type="text/css">
+ 
+  </style>
+
+</head>
+<body>
+
+<input placeholder="Method 1" type="text" id="textBox" onkeyup="colorChange()"> <br> <br>
+<input placeholder="Method 2" type="text" onkeyup="colorChange1(this.value)">
+
+<!-- this.value gets the input -->
+
+
+<script type="text/javascript">
+  function colorChange() {
+
+    var color = document.getElementById("textBox");
+
+    // PSA !!! .value is important!!!
+
+    //Method #1: Use ID
+    //page.style.backgroundColor = color.value;
+
+    //Method #2: Use tag
+    //document.body.style.backgroundColor = color.value;
+
+    document.bgColor = color.value; 
+    
+  }
+
+    //Method #3: Use this.value and function with parameters
+  function colorChange1(color) {
+    document.body.style.backgroundColor = color;
+  }
+  
+  // Key Takeaways
+
+
+  /*Global variable = public variable. It can be accessed by any functions.
+    Local variable only exists inside the curly bracket
+    
+    When assigning a variable inside a function, without using "var", it can be used
+    with other functions IF the function with the declared variable is run first.
+
+    If used "var" inside a function, it then becomes a local variable and cannot be used
+    outisde of the function itself.
+
+    "let" only lets the variable live inside a block.
+  */
+</script>
+</body>
+</html>
