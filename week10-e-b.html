@@ -98,12 +98,7 @@
 </form>
 
 <script>
-  var result;
-  var points;
-  var caPoints;
-  var lePoints;
-  showChoices();
- //write all the required functions here
+   //write all the required functions here
  //indentation is important
  //also neatness
 
@@ -116,19 +111,29 @@
 // additionally
 // getElementsByClassName
 
+
+
+//------------Resets Level-------------------
+  document.getElementById("level").selectedIndex = 0;
+
+//------------Hides all elements-------------
+var hide =  document.getElementsByClassName("hideall");
+
+  for(var i = 0; i < hide.length; i++) {
+    hide[i].style.visibility = "hidden";
+  }
+
 function showChoices() {
-
-
 var level = document.getElementById("level").value;
 var show = document.getElementsByClassName("hide1");
 var show2 = document.getElementsByClassName("hide2");
-var hide =  document.getElementsByClassName("hideall");
 
 //------------Hides all elements-------------
   for(var i = 0; i < hide.length; i++) {
     hide[i].style.visibility = "hidden";
   }
 
+//---------------INTERNATIONAL----------------------
 //------------Shows International's elements----------
   if (level == "international") {
     for(var i = 0; i < show.length; i++) {
@@ -148,6 +153,7 @@ var hide =  document.getElementsByClassName("hideall");
   hide[14].style.visibility = "visible"; //semester select
   }
 
+//---------------NATIONAL-------------------------
 //------------Shows National's elements---------- 
   else if (level == "national") {
    
@@ -230,13 +236,13 @@ var activity2 = document.getElementById("clubactivities").value;
 var activity3 = document.getElementById("localevents").value;
 var showResult = document.getElementById("epstatus");
 
+
 var result1;
 var result2;
-
-points = 0;
-caPoints = 0;
-lePoints = 0;
-result = 0;
+var points = 0;
+var caPoints = 0;
+var lePoints = 0;
+var result = 0;
 
 //-----------International activity-----------
   if (activity1 == "won trophy") {
@@ -279,7 +285,7 @@ result = 0;
 //----------Semester output----------------
   if (semester <= 3) {
 
-    if (result1, result2 <= 32) {
+    if (result1 <=32 || result2 <= 32) {
     showResult.innerHTML += "<br>" + "You need to participate more!";
     } else {
     showResult.innerHTML += "<br>" + "Good job!";
@@ -287,7 +293,7 @@ result = 0;
   }
 
   else if (semester <= 5 ) {
-    if (result1, result2 <= 32) {
+    if (result1 <=32 || result2 <= 32) {
     showResult.innerHTML += "<br>" + "You need to be more active than before!";
     } else {
     showResult.innerHTML += "<br>" + "Well done!";
@@ -296,7 +302,7 @@ result = 0;
 
 
   else if (semester == 6) {
-    if (result1, result2 <= 32) {
+    if (result1 <=32 || result2 <= 32) {
     showResult.innerHTML += "<br>" + "Please contact CSDI asap";
     } else {
       showResult.innerHTML += "<br>" + "Reminder: You need 64 points to graduate";
