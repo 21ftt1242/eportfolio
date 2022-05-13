@@ -30,7 +30,7 @@
   <option value="national">national</option>
 </select>
 </div>
-<span><button class="hideall" id="reload">Reset form</button></span>
+<span><button class="hideall" id="reload" onclick="showChoices()">Reset form</button></span>
 
 <span></span><span></span>
 <span class="hideall"># of participation</span>
@@ -38,7 +38,7 @@
 
 <span class="hide1 hideall">Achievement for International</span>
 <div class="hide1  hideall">
-<select name="international" id="international" onchange="reload1()">
+<select name="international" id="international">
   <option value="0">select</option>
   <option value="won trophy">won trophy</option>
     <option value="participation">participation</option>
@@ -98,6 +98,10 @@
 </form>
 
 <script>
+  var result;
+  var points;
+  var caPoints;
+  var lePoints;
   showChoices();
  //write all the required functions here
  //indentation is important
@@ -111,24 +115,14 @@
 
 // additionally
 // getElementsByClassName
-function reloadForm() {
-  document.getElementById("myform").reset();
-}
-
-function reload1() {
-  document.getElementById("internationalfrequency").value = 0;
-  document.getElementById("semester").selectedIndex = 0;
-  document.getElementById("epstatus").innerHTML = "";
-}
-
-
 
 function showChoices() {
+
+
 var level = document.getElementById("level").value;
 var show = document.getElementsByClassName("hide1");
 var show2 = document.getElementsByClassName("hide2");
 var hide =  document.getElementsByClassName("hideall");
-
 
 //------------Hides all elements-------------
   for(var i = 0; i < hide.length; i++) {
@@ -137,11 +131,18 @@ var hide =  document.getElementsByClassName("hideall");
 
 //------------Shows International's elements----------
   if (level == "international") {
-    
     for(var i = 0; i < show.length; i++) {
     show[i].style.visibility = "visible";
     }
+
+//--------Reset input forms, show reload button----------------
+  document.getElementById("international").selectedIndex = 0;
+  document.getElementById("internationalfrequency").value = 0;
   document.getElementById("reload").style.visibility = "visible";
+//--------Reset Semester and EP status---------------
+  document.getElementById("semester").selectedIndex = 0;
+  document.getElementById("epstatus").innerHTML = "";
+//--------Make Reload button & semester visible----------
   hide[1].style.visibility = "visible"; //reset form
   hide[13].style.visibility = "visible"; //You are in semester
   hide[14].style.visibility = "visible"; //semester select
@@ -153,7 +154,14 @@ var hide =  document.getElementsByClassName("hideall");
    for(var i = 0; i < show2.length; i++) {
     show2[i].style.visibility = "visible";
     }
+
+//--------Reset input forms, show reload button----------------
   document.getElementById("reload").style.visibility = "visible";
+  document.getElementById("types").selectedIndex = 0;
+//--------Reset Semester and EP status---------------
+  document.getElementById("semester").selectedIndex = 0;
+  document.getElementById("epstatus").innerHTML = "";
+//--------Make Reload button & semester visible----------
   hide[1].style.visibility = "visible"; //reset form
   hide[13].style.visibility = "visible"; //You are in semester
   hide[14].style.visibility = "visible"; //semester select
@@ -165,8 +173,13 @@ function showActivities() {
   var clubs = document.getElementsByClassName("hide21");
   var localEvent = document.getElementsByClassName("hide22");
 
+//--------Reset Activities Input forms----------------
   document.getElementById("cafrequency").value = 0;
   document.getElementById("lefrequency").value = 0;
+  document.getElementById("clubactivities").selectedIndex = 0;
+  document.getElementById("localevents").selectedIndex = 0;
+
+//--------Reset Semester and EP status---------------
   document.getElementById("semester").selectedIndex = 0;
   document.getElementById("epstatus").innerHTML = "";
    
@@ -202,23 +215,28 @@ function showActivities() {
     localEvent[i].style.visibility = "visible";
     }
   }
-
 }
 
 function calculatePoints() {
 
+//----------Declare Variables---------------
 var participation = parseInt(document.getElementById("internationalfrequency").value);
 var participation2 = parseInt(document.getElementById("cafrequency").value);
 var participation3 = parseInt(document.getElementById("lefrequency").value);
+var semester = parseInt(document.getElementById("semester").value);
+var chooseResults = document.getElementById("level").value;
 var activity1 = document.getElementById("international").value;
 var activity2 = document.getElementById("clubactivities").value;
 var activity3 = document.getElementById("localevents").value;
 var showResult = document.getElementById("epstatus");
-var semester = parseInt(document.getElementById("semester").value);
 
-var points = 0;
-var caPoints = 0;
-var lePoints = 0;
+var result1;
+var result2;
+
+points = 0;
+caPoints = 0;
+lePoints = 0;
+result = 0;
 
 //-----------International activity-----------
   if (activity1 == "won trophy") {
@@ -247,43 +265,45 @@ var lePoints = 0;
     lePoints = 3;
   }
 
-  var result = points * participation; //international
-  var result2 = caPoints * participation2; //national > club only
-  var result3 = lePoints * participation3; //national > local events only
-  var result4 = result2 + result3; //both
+//----------Show EP results based on level-----------
+  if (chooseResults == "international") {
+    result1 = points * participation;
+    showResult.innerHTML = "EP: " + result1;
+  }
+  
+  else if (chooseResults == "national") {
+    result2 =  (caPoints * participation2) + (lePoints * participation3);
+    showResult.innerHTML = "EP: " + result2;
+  }
 
-
-  showResult.innerHTML = "EP: " + result;
-  showResult.innerHTML = "EP: " + result2;
-  showResult.innerHTML = "EP: " + result3;
-  showResult.innerHTML = "EP: " + result4;
-
+//----------Semester output----------------
   if (semester <= 3) {
 
-    if (result, result2, result3, result4 <= 32) {
+    if (result1, result2 <= 32) {
     showResult.innerHTML += "<br>" + "You need to participate more!";
     } else {
-      showResult.innerHTML += "<br>" + "Good job!";
+    showResult.innerHTML += "<br>" + "Good job!";
     }
   }
 
   else if (semester <= 5 ) {
-    if (result, result2, result3, result4 <= 32) {
+    if (result1, result2 <= 32) {
     showResult.innerHTML += "<br>" + "You need to be more active than before!";
     } else {
-      showResult.innerHTML += "<br>" + "Well done!";
+    showResult.innerHTML += "<br>" + "Well done!";
     }
   }
 
 
   else if (semester == 6) {
-    if (result, result2, result3, result4 <= 32) {
+    if (result1, result2 <= 32) {
     showResult.innerHTML += "<br>" + "Please contact CSDI asap";
     } else {
       showResult.innerHTML += "<br>" + "Reminder: You need 64 points to graduate";
     }
   }
 }
+
 
 </script>
 </body>
