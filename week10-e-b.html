@@ -113,15 +113,17 @@
 
 
 
-//------------Resets Level-------------------
+//------------Resets Level selection-------------------
   document.getElementById("level").selectedIndex = 0;
 
 //------------Hides all elements-------------
 var hide =  document.getElementsByClassName("hideall");
 
   for(var i = 0; i < hide.length; i++) {
-    hide[i].style.visibility = "hidden";
+    hide[i].style.display = "none";
   }
+
+//-----------Main function starts--------------------
 
 function showChoices() {
 var level = document.getElementById("level").value;
@@ -130,27 +132,27 @@ var show2 = document.getElementsByClassName("hide2");
 
 //------------Hides all elements-------------
   for(var i = 0; i < hide.length; i++) {
-    hide[i].style.visibility = "hidden";
+    hide[i].style.display = "none";
   }
 
 //---------------INTERNATIONAL----------------------
 //------------Shows International's elements----------
   if (level == "international") {
     for(var i = 0; i < show.length; i++) {
-    show[i].style.visibility = "visible";
+    show[i].style.display = "block";
     }
 
 //--------Reset input forms, show reload button----------------
   document.getElementById("international").selectedIndex = 0;
   document.getElementById("internationalfrequency").value = 0;
-  document.getElementById("reload").style.visibility = "visible";
+  document.getElementById("reload").style.display = "block";
 //--------Reset Semester and EP status---------------
   document.getElementById("semester").selectedIndex = 0;
   document.getElementById("epstatus").innerHTML = "";
 //--------Make Reload button & semester visible----------
-  hide[1].style.visibility = "visible"; //reset form
-  hide[13].style.visibility = "visible"; //You are in semester
-  hide[14].style.visibility = "visible"; //semester select
+  hide[1].style.display = "block"; //#no of participation text
+  hide[13].style.display = "block"; //You are in semester text
+  hide[14].style.display = "block"; //semester select
   }
 
 //---------------NATIONAL-------------------------
@@ -158,19 +160,19 @@ var show2 = document.getElementsByClassName("hide2");
   else if (level == "national") {
    
    for(var i = 0; i < show2.length; i++) {
-    show2[i].style.visibility = "visible";
+    show2[i].style.display = "block";
     }
 
-//--------Reset input forms, show reload button----------------
-  document.getElementById("reload").style.visibility = "visible";
+//--------Reset input forms----------------
   document.getElementById("types").selectedIndex = 0;
+  document.getElementById("reload").style.display = "block";
 //--------Reset Semester and EP status---------------
   document.getElementById("semester").selectedIndex = 0;
   document.getElementById("epstatus").innerHTML = "";
 //--------Make Reload button & semester visible----------
-  hide[1].style.visibility = "visible"; //reset form
-  hide[13].style.visibility = "visible"; //You are in semester
-  hide[14].style.visibility = "visible"; //semester select
+  hide[1].style.display = "block"; //#no of participation text
+  hide[13].style.display = "block"; //You are in semester text
+  hide[14].style.display = "block"; //semester select
   }
 }  
 
@@ -192,33 +194,33 @@ function showActivities() {
 //-----------Show Club Activities-------------
   if (activity2 == "club activities") {
     for(var i = 0; i < clubs.length; i++) {
-    clubs[i].style.visibility = "visible";
+    clubs[i].style.display = "block";
     }
 
     for(var i = 0; i < clubs.length; i++) {
-    localEvent[i].style.visibility = "hidden";
+    localEvent[i].style.display = "none";
     }
   }
 
 //-----------Show Local Events-------------
   else if (activity2 == "local events") {
     for(var i = 0; i < localEvent.length; i++) {
-    localEvent[i].style.visibility = "visible";
+    localEvent[i].style.display = "block";
     }
 
     for(var i = 0; i < clubs.length; i++) {
-    clubs[i].style.visibility = "hidden";
+    clubs[i].style.display = "none";
     }
   }
 //-----------Show Both--------------------
   else if (activity2 == "both") {
 
     for(var i = 0; i < clubs.length; i++) {
-    clubs[i].style.visibility = "visible";
+    clubs[i].style.display = "block";
     }
 
     for(var i = 0; i < localEvent.length; i++) {
-    localEvent[i].style.visibility = "visible";
+    localEvent[i].style.display = "block";
     }
   }
 }
