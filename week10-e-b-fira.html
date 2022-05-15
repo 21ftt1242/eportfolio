@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>week10-e-b-s</title>
+    <style>
+    #myform{display: grid; width: 70%;margin: 0 auto;grid-template-columns:1fr 1fr 1fr;grid-auto-rows: 3em;}
+    input[type="number"]{height: 1.5em;width: 4em}
+
+
+        /*no additional css is required*/
+
+  </style>
+</head>
+<!-- do not insert additional id attributes to any element -->
+<!-- do not remove any inline styles -->
+<body>
+<body>
+<form action="">
+<div id="myform">
+<h3 style="grid-column: 1/span 3;">Enrichment Points Calculator</h3>
+
+
+<span>Level</span>
+<div>
+  <select name="level" id="level" onchange="Choices()">  <!-- all choices will appear when click, when click either national or inter ,show achievement-->
+  <option value="0">select</option>
+  <option value="international">international</option>
+  <option value="national">national</option>
+</select>
+</div>
+<span><button class="hideall" id="reload" onclick="Choices()">Reset form</button></span> <!-- reset back to show level only when click -->
+
+<span></span><span></span>
+<span class="hideall"># of participation</span>
+
+
+<span class="hide1 hideall">Achievement for International</span>
+<div class="hide1  hideall">
+<select name="international" id="international">
+  <option value="0">select</option>
+  <option value="won trophy">won trophy</option>
+    <option value="participation">participation</option>
+</select>
+</div>
+<input type="number" id="internationalfrequency" min="0" max="5" class="hide1  hideall" value="0">
+
+<span class="hide2  hideall">National Level - Choose type</span>
+<div style="grid-column: 2/4;" class="hide2  hideall">
+<select name="types" id="types" onchange="activities()">
+  <option value="0">select</option>
+  <option value="club activities">club activities</option> 
+    <option value="local events">local event</option>
+      <option value="both">both</option>
+
+</select>
+</div>
+
+<span class="hide21  hideall">club activities your role</span>
+<div class="hide21  hideall">
+<select name="clubactivities" id="clubactivities">
+  <option value="0">select</option>
+  <option value="president">president</option>
+    <option value="secretary">secretary</option>
+      <option value="member">member</option>
+</select>
+</div>
+<input type="number" id="cafrequency" min="0" max="10" value="0" class="hide21  hideall">
+
+
+<span class="hide22  hideall">Local event role</span>
+<div class="hide22  hideall">
+<select name="localevents" id="localevents">
+  <option value="0">select</option>
+  <option value="organizer">organizer</option>
+    <option value="participant">participant</option>
+</select>
+</div>
+<input type="number" id="lefrequency" min="0" max="10" value="0" class="hide22  hideall">
+
+<span class="hideall">You are in semester</span>
+<div style="grid-column:2/span 2" class="hideall">
+  <select name="semester" id="semester" onchange="calculate()">
+  <option value="0">select</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+</select>
+</div>
+<div id="epstatus" style="grid-column:1/span 3">
+
+</div>
+</form>
+<script>
+ //write all the required functions here
+ //indentation is important
+ //also neatness
+
+// repitition is not in the syllabus. but students may use loop since  they learnt this concept in ITP
+//  you are expected to use since covered in the classes:
+// function with parameters
+// getElementsByName
+// getElementsById
+
+// additionally
+// getElementsByClassName
+
+
+//hide 
+var hide=document.getElementsByClassName("hideall");
+ for(var i=0;i<hide.length;i++){
+  hide[i].style.display="none";
+}
+
+
+function Choices(){
+  var level = document.getElementById("level").value;
+  var inter = document.getElementsByClassName("hide21");
+  var nat = document.getElementsByClassName("hide22");
+
+
+for(var j=0;j<hide.length;j++){
+  hide[j].style.display="none";
+}
+
+//international
+if(level == "international"){
+  for(var j = 0;j<inter.length;j++){
+    inter[j].style.display="block";
+}
+
+document.getElementById("internationalfrequency").value=0;
+document.getElementById("reload").style.display="block";
+document.getElementById("semester");
+
+hide[1].style.display="block"; 
+hide[13].style.display="block";
+hide[14].style.display="block"; 
+}
+
+//national
+else if (level =="national"){
+  for(var k=0; k<nat.length;k++){
+    nat[k].style.display="block";
+  }
+
+document.getElementById("reload").style.display="block";
+document.getElementById("semester");
+
+hide[1].style.display="block"; 
+hide[13].style.display="block";
+hide[14].style.display="block"; 
+ }
+}
+
+function activities(){
+  var activity=document.getElementById("types").value;
+  var club=document.getElementsByClassName("hide21");
+  var event=getElementsByClassName("hide22");
+
+//reset activities
+document.getElementById("cafrequency").value=0;
+document.getElementById("clubactivities");
+document.getElementById("lefrequency").value=0;
+document.getElementById("localevents");
+document.getElementById("semester").value;
+document.getElementById("epstatus").value;
+
+//club activity
+if(activity=="club activities"){
+  for(var i=0;i<club.length;i++){
+    club[i].style.display="block";
+  }
+
+  for(var i=0;i<club.length;i++){
+    event[i].style.display="none";
+  }
+}
+//local event
+else if(activity=="local events"){
+  for(var i=0;i<event.length;i++){
+    event[i].style.display="block";
+  }
+
+  for(var i=0;i<club.length;i++){
+    club[i].style.display="none";
+  }
+}
+
+//both 
+else if(activity=="both"){
+  for(var i=0;l<club.length;i++){
+    club[i].style.display="block";
+  }
+
+  for(var i=0;i<event.length;i++){
+    event[i].style.display="block";
+  }
+ }
+}
+
+function calculate(){
+var part = parseInt(document.getElementById("internationalfrequency").value);
+var part2 = parseInt(document.getElementById("cafrequency").value);
+var part3 = parseInt(document.getElementById("lefrequency").value);
+var sems = parseInt(document.getElementById("semester").value);
+var choose = document.getElementById("level").value;
+var act1 = document.getElementById("international").value;
+var act2 = document.getElementById("clubactivities").value;
+var act3 = document.getElementById("localevents").value;
+var result = document.getElementById("epstatus");
+
+var point = 0;
+var clubP = 0;
+var eventP = 0;
+
+//international 
+
+if(act1 == "won trophy"){
+  point = 45;
+}
+
+else if(act1 =="participation"){
+  point = 25;
+}
+
+//national - club - role
+if(act2 == "president"){
+  clubP = 15;
+}
+
+else if (act2 == "secretary"){
+  clubP = 10;
+}
+else if(act2 == "member"){
+  clubP = 5;
+}
+
+//national - event - role
+if(act3 == "organizer"){
+  eventP = 8;
+}
+
+else if(act3 == "participant"){
+  eventP = 3;
+}
+
+// EP results
+var resultone;
+var resulttwo;
+
+if(choose == "international"){
+  resultone = point * part;
+  result.innerHTML = "EP: "+resultone;
+}
+
+if(choose == "national"){
+  resulttwo = (clubP * part2) + (eventP * part3);
+  result.innerHTML = "EP: "+resulttwo;
+}
+
+//semester
+ // semester 1-3 <=32 points, You need to participate more!
+ // semester 1-3 >=32 points, Good job!
+ // semester 4-5 <=32 points, You need to be more active than before!
+ // semester 4-5 >=32 points, Well done!
+ // semester 6 <=32 points, please contact CSDI asap
+ // semester 6 >=32 points, Reminder: You need 64 points to graduate
+
+if (sems <= 3){
+  if (resultone <=32){
+    result.innerHTML += "<br> You need to participate more!";
+  }
+  if(resulttwo <=32){
+    result.innerHTML += "<br> You need to participate more!";
+  }else{
+    result.innerHTML += "<br> Good job!";
+  }
+}
+
+else if (sems <= 5){
+  if (resultone <= 32){
+    result.innerHTML += "<br> You need to be more active than before!";
+  }
+  if (resulttwo <= 32){
+    result.innerHTML += "<br> You need to be more active than before!";
+  }else{
+    result.innerHTML += "<br> Well done!";
+  }
+}
+
+else if (sems == 6){
+  if (resultone <=32){
+    result.innerHTML += "<br> please contact CSDI asap";
+  }
+  if (resulttwo <=32){
+    result.innerHTML += "<br> please contact CSDI asap";
+  }else{
+    result.innerHTML += "<br> Reminder: You need 64 points to graduate";
+  }
+ }
+}
+
+</script>
+</body>
+</html>

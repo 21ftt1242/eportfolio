@@ -38,7 +38,7 @@
 
 <span class="hide1 hideall">Achievement for International</span>
 <div class="hide1  hideall">
-<select name="international" id="international">
+<select name="international" id="international" onchange="reParticipate()">
   <option value="0">select</option>
   <option value="won trophy">won trophy</option>
     <option value="participation">participation</option>
@@ -59,7 +59,7 @@
 
 <span class="hide21  hideall">club activities your role</span>
 <div class="hide21  hideall">
-<select name="clubactivities" id="clubactivities">
+<select name="clubactivities" id="clubactivities" onchange="reClub()">
   <option value="0">select</option>
   <option value="president">president</option>
     <option value="secretary">secretary</option>
@@ -71,7 +71,7 @@
 
 <span class="hide22  hideall">Local event role</span>
 <div class="hide22  hideall">
-<select name="localevents" id="localevents">
+<select name="localevents" id="localevents" onchange="reLocalEv()">
   <option value="0">select</option>
   <option value="organizer">organizer</option>
     <option value="participant">participant</option>
@@ -176,6 +176,14 @@ var show2 = document.getElementsByClassName("hide2");
   }
 }  
 
+//-------------Reset international inputs-------------
+function reParticipate() {
+  document.getElementById("internationalfrequency").value = 0;
+  document.getElementById("semester").selectedIndex = 0;
+  document.getElementById("epstatus").innerHTML = "";
+}
+
+//-------------> National > Activities----------------
 function showActivities() {
   var activity2 = document.getElementById("types").value;
   var clubs = document.getElementsByClassName("hide21");
@@ -223,6 +231,20 @@ function showActivities() {
     localEvent[i].style.display = "block";
     }
   }
+}
+
+//-------------Reset club inputs-------------
+function reClub() {
+  document.getElementById("cafrequency").value = 0;
+  document.getElementById("semester").selectedIndex = 0;
+  document.getElementById("epstatus").innerHTML = "";
+}
+
+//-------------Reset local events inputs-------------
+function reLocalEv() {
+  document.getElementById("lefrequency").value = 0;
+  document.getElementById("semester").selectedIndex = 0;
+  document.getElementById("epstatus").innerHTML = "";
 }
 
 function calculatePoints() {
