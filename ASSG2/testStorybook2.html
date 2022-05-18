@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+	</style>
+
+	<script>
+       function randomStory() {
+
+       	var random = Math.floor(Math.random()*3) + 1; // Generate Random Number 0 - 9
+
+       	alert(random);
+
+       	//COVER PAGE STORY 1
+       	if (random == 1) {
+       		location.href = "coverPage1.html";
+       	}
+
+       	//COVER PAGE STORY 2
+       	else if (random == 2) {
+       		location.href = "coverPage2.html";
+       	}
+
+       	//COVER PAGE STORY 3
+       	else if (random == 3) {
+       		location.href = "coverPage3.html";
+       	}
+
+		}
+    </script>
+</head>
+<body onload="randomStory()">
+
+</body>
+
+</html>
