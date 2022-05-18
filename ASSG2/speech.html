@@ -31,9 +31,12 @@
 
 <!-- Import External Javascript -->
 <script src="storage.js"></script>
-<script type="text/javascript">
-	// Declare variables
 
+<script type="text/javascript">
+
+
+
+	// Declare variables
 const playButton = document.getElementById("play-button");
 const pauseButton = document.getElementById("pause-button");
 const stopButton = document.getElementById("stop-button");
@@ -41,7 +44,14 @@ const voiceSelect = document.getElementById("voice-select");
 const synth = window.speechSynthesis;
 
 // Get Story text
-const text = document.getElementById("story1").innerText;
+var text = document.getElementById("story1").innerText;
+document.getElementById("story1").innerHTML = localStorage.getItem("story-1a");
+
+function nextPage() {
+document.getElementById("story1").innerHTML = localStorage.getItem("story-1b");
+text = document.getElementById("story1").innerText;
+console.log(text);
+}
 
 // Get speak text
 let pageOne = new SpeechSynthesisUtterance(text);
