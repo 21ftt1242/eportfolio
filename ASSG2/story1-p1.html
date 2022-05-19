@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Little Prince</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+
+		.navbar {
+			background-color: rgba(255, 255, 255);
+  			overflow: hidden;
+  			position: fixed;
+  			top: 0%;
+  			width: 100%;
+  			box-shadow: 0px 5px rgba(0, 0, 0, 0.5);
+		}
+
+		.navbar li {
+			display: inline-block;
+  			list-style-type: none;
+  			font-size: 17px;
+			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+			padding-right: 25px;
+		}
+
+		li:nth-child(1) {
+			padding-left: 150px;
+			font-weight: 700;
+			font-size: 20px;
+		}
+
+		.navbar a {
+			text-decoration: none;
+			color: black;
+			padding: 100% 30px;
+			
+		}
+
+		.navbar a.active {
+  			background-color: #FFEA2A;
+  			color: black;
+		}
+
+		.navbar a:hover {
+			background-color: black;
+			color: white;
+		}
+
+		body {
+			margin: 0;
+			background-image: url("images/background1.jpeg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+  			background-size: cover;
+		}
+
+		h1 {
+			font-family: 'Poppins', sans-serif;
+			font-weight: 700;
+			font-size: 3em;
+		}
+
+		h2 {
+			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+			font-size: 1.5em;
+		}
+		
+		#storyPage {
+			background-color: rgba(255, 255, 255, 0.95);
+			margin-top: 100px;
+			margin-bottom: 10px;
+			margin-right: auto;
+			margin-left: auto;
+			width: 80%;
+			height: 800px;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
+			grid-gap: 10px;
+		}
+
+		#storyImageGrid {
+			grid-area: 1 / 1 / 5 / 3;
+			padding: 0;
+		}
+
+		#storyTitleGrid {
+			grid-area: 1 / 3 / 2 / 5;
+			display: grid;
+ 			text-align: center;
+  			align-items: center;
+  			padding: 0;
+		}
+
+		#storyDescription {
+			grid-area: 2 / 3 / 4 / 5;
+			display: grid;
+ 			text-align: center;
+  			align-items: center;
+  			padding: 100px;
+  			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+			padding-top: 50px;
+			overflow: hidden;
+		}
+
+		#storyRating {
+			grid-area: 4 / 3 / 5 / 4;
+			display: grid;
+ 			text-align: center;
+  			align-items: center;
+  			font-family: 'Poppins', sans-serif;
+			font-weight: 700;
+			font-size: 3em;
+		}
+
+		#continueStory {
+			grid-area: 4 / 4 / 5/ 5;
+			display: grid;
+ 			text-align: center;
+  			align-items: center;
+  			padding-left: 50px;
+  			padding-right: 50px;
+		}
+
+		#continueStory2 {
+			display: grid;
+ 			text-align: center;
+  			align-items: center;
+  			background-color: #FFEA2A;
+  			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+			font-size: 1.5em;
+			height: 100px;
+			border-radius: 50px;
+			cursor: pointer;
+			box-shadow: 5px 5px;
+		}
+
+		#continueStory2:hover {
+			background-color: black;
+			color: white;
+		}
+
+		#storyImage {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+	<div class="navbar">
+		<ul>
+			<li><a href="index.html" id="index" onmouseover="index()" onmouseout="index2()">Interactive Story Book</a></li>
+			<li><a href="story1-p1.html" class="active">The Little Prince</a></li>
+			<li><a href="story2-p1.html">Slender Man</a></li>
+			<li><a href="story3-p1.html">Story 3</a></li>
+		</ul>
+	</div>
+	
+	<div id="storyPage">
+		<div id = "storyImageGrid"><img id = "storyImage" src="images/story1-img1.jpeg"></div>
+		<div id = "storyTitleGrid"><h1 id = "storyTitle"><h1>The Little Prince</h1><h2>Antoine De Saint - Exupery</h2></div>
+		<div id = "storyDescription">A pilot stranded in the desert awakes one morning to see, standing before him, the most extraordinary little fellow. "Please," asks the stranger, "draw me a sheep." And the pilot realizes that when life's events are too difficult to understand, there is no choice but to succumb to their mysteries. He pulls out pencil and paper... And thus begins this wise and enchanting fable that, in teaching the secret of what is really important in life, has changed forever the world for its readers.
+	</div>
+		<div id = "storyRating">9 / 10 &#9733;</div>
+		<div id = "continueStory"><div id="continueStory2" onclick="changeStory()">Start Reading</div></div>
+	</div>
+
+	<script>
+
+		function changeStory() {
+			location.href = "story1-p2.html";
+		}
+
+		function index() {
+			document.getElementById("index").innerHTML = "Click for Random Story";
+		}
+
+		function index2() {
+			document.getElementById("index").innerHTML = "Interactice Story Book"; 
+		}
+
+    </script>
+</body>
+
+</html>

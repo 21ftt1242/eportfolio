@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Little Prince</title>
+
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+
+		.navbar {
+			background-color: rgba(255, 255, 255);
+  			overflow: hidden;
+  			position: fixed;
+  			top: 0%;
+  			width: 100%;
+  			box-shadow: 0px 5px rgba(0, 0, 0, 0.5);
+		}
+
+		.navbar li {
+			display: inline-block;
+  			list-style-type: none;
+  			font-size: 17px;
+			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+			padding-right: 25px;
+		}
+
+		li:nth-child(1) {
+			padding-left: 150px;
+			font-weight: 700;
+			font-size: 20px;
+		}
+
+		.navbar a {
+			text-decoration: none;
+			color: black;
+			padding: 100% 30px;
+			
+		}
+
+		.navbar a.active {
+  			background-color: #FFEA2A;
+  			color: black;
+		}
+
+		.navbar a:hover {
+			background-color: black;
+			color: white;
+		}
+
+		body {
+			margin: 0;
+			background-image: url("images/background1.jpeg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+  			background-size: cover;
+		}
+		
+		#storyPage {
+			background-color: rgba(255, 255, 255, 0.95);
+			margin-top: 100px;
+			margin-right: auto;
+			margin-left: auto;
+			width: 80%;
+			height: 800px;
+			display: grid;
+			grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 1fr 100px ;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
+			grid-gap: 10px;
+			/*padding: 10px;*/
+		}
+
+		#storyPage div {
+			display: grid;
+ 			text-align: center;
+  			align-items: center;
+  			margin: 10px;
+  			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+		}
+
+		#prevPage {
+			grid-area: 2 / 1 / 4 / 2;
+		}
+
+		#nextPage {
+			grid-area: 2 / 8 / 4 / 9;
+		}
+
+		#speechDiv {
+			grid-area: 1 / 2 / 2 / 4;
+			width: 200px;
+		}
+
+		#languageDiv {
+			grid-area: 1 / 6 / 2 / 8;
+		}
+
+		#content1 {
+			grid-area: 2 / 2 / 5 / 5;
+			padding: 10px;
+			border-right: 1px solid rgba(0, 0, 0, 0.1);
+			line-height: 2.0;
+			overflow: auto;
+
+		}
+
+		#content2 {
+			grid-area: 2 / 5 / 5 / 8;
+			padding: 10px;
+			border-left: 1px solid rgba(0, 0, 0, 0.1);
+			line-height: 2.0;
+		}
+
+		#visualDiv {
+			grid-area: 1 / 4 / 2 / 6;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+
+		#visualDiv div {
+			padding: 10px;
+		}
+
+		#lightMode {
+			grid-area: 1 / 1 / 2 / 3;
+		}
+
+		#darkMode {
+			grid-area: 1 / 3 / 2 / 5;
+		}
+
+		img {
+			 display: block;
+			 margin-left: auto;
+			 margin-right: auto;
+			 width: 25%;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="navbar">
+		<ul>
+			<li>Interactive Story Book</li>
+			<li><a href="story1-p1.html" class="active">The Little Prince</a></li>
+			<li><a href="story2-p1.html">Slender Man</a></li>
+			<li><a href="story3-p1.html">Story 3</a></li>
+		</ul>
+	</div>
+	
+	<div id="storyPage">
+		<div id="prevPage">Previous<br>Page<br>&#8592;</div>
+		<div id="speechDiv">
+			<button id="play-button" onclick="playText()">Play</button>
+			<button id="pause-button" onclick="pauseText()">Pause</button>
+			<button id="stop-button" onclick="stopText()">Stop</button>
+			<br>
+			<br>
+
+			<select id="voice-select"></select>
+			<button id="save-button" onclick="saveVoice()">Save Voice</button>
+			<button id="reset-button" onclick="resetVoice()">Reset Voice</button>
+		</div>
+		<div id="visualDiv">
+			<div id="lightMode">Light Mode</div>
+			<div id="darkMode" onclick="darkMode()">Dark Mode</div>
+			<div id="fontSetting">Font</div>
+			<div id="smallFont">Small</div>
+			<div id="mediumFont">Medium</div>
+			<div id="largeFont">Large</div>
+		</div>
+		<div id="languageDiv">Language</div>
+		<div id="content1">
+			
+		</div>
+		<div id="content2">I showed my masterpiece to the grown-ups, and asked them whether the drawing frightened them. But they answered: "Frighten? Why should any one be frightened by a hat?" My drawing was not a picture of a hat. It was a picture of a boa constrictor digesting an elephant. But since the grown-ups were not able to understand it, I made another drawing: I drew the inside of the boa constrictor, so that the grown-ups could see it clearly. They always need to have things explained. My Drawing Number Two looked like this:
+			<img src="images/story1-img2.png">
+		</div>
+		<div id="nextPage">Next<br>Page<br>&#8594;</div>
+	</div>
+
+<!-- Import global javascript -->
+<script src="storage.js"></script>
+<script>
+
+		var storyPage = document.getElementById("storyPage");
+		var content1 = document.getElementById("content1");
+		var content2 = document.getElementById("content2");
+		var nextPage = document.getElementById("nextPage");
+		var prevPage = document.getElementById("prevPage");
+
+		function changeStory() {
+			location.href = "testStorybook2.html";
+		}
+
+		function darkMode() {
+			storyPage.style.backgroundColor = "#2C2C2EFF";
+			content1.style.color = "#EBEBF599";
+			content2.style.color = "#EBEBF599";
+			nextPage.style.color = "#EBEBF599";
+			prevPage.style.color = "#EBEBF599";
+		}
+
+    </script>
+</body>
+
+</html>
