@@ -92,11 +92,6 @@
 			grid-area: 2 / 8 / 4 / 9;
 		}
 
-		#speechDiv {
-			grid-area: 1 / 2 / 2 / 4;
-			width: 200px;
-		}
-
 		#languageDiv {
 			grid-area: 1 / 6 / 2 / 8;
 		}
@@ -142,6 +137,36 @@
 			 margin-right: auto;
 			 width: 25%;
 		}
+
+		#speechDiv {
+			grid-area: 1 / 2 / 2 / 4;
+			display: inline-block;
+		}
+		#play-button {
+			width: 50%;
+			margin: 0 auto;
+			display: inline;
+		}
+		#pause-button {
+			width: 50%;
+			margin: 0 auto;
+			display: inline;
+		}
+		#stop-button {
+			width: 50%;
+			margin: 0 auto;
+			display: inline;
+		}
+		#save-button {
+			width: 50%;
+			margin: 0 auto;
+			display: inline;
+		}
+		#reset-button {
+			width: 50%;
+			margin: 0 auto;
+			display: inline;
+		}
 	</style>
 </head>
 <body>
@@ -161,9 +186,6 @@
 			<button id="play-button" onclick="playText()">Play</button>
 			<button id="pause-button" onclick="pauseText()">Pause</button>
 			<button id="stop-button" onclick="stopText()">Stop</button>
-			<br>
-			<br>
-
 			<select id="voice-select"></select>
 			<button id="save-button" onclick="saveVoice()">Save Voice</button>
 			<button id="reset-button" onclick="resetVoice()">Reset Voice</button>
