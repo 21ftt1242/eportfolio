@@ -5,22 +5,10 @@
  localStorage.setItem('story-1a-m', 'Suatu ketika ketika saya berumur enam tahun, saya melihat gambar yang indah dalam sebuah buku, yang disebut Kisah Benar dari Alam, tentang hutan purba. Ia adalah gambar seekor boa constrictor dalam tindakan menelan haiwan. Berikut adalah salinan lukisan tersebut. Dalam buku itu ia berkata: "Boa constrictors menelan mangsa mereka keseluruhan, tanpa mengunyahnya. Selepas itu mereka tidak dapat bergerak, dan mereka tidur melalui enam bulan yang mereka perlukan untuk penghadaman." Saya merenung sedalam-dalamnya, tentang pengembaraan hutan. Dan selepas beberapa kerja dengan pensel warna saya berjaya membuat lukisan pertama saya. Lukisan Saya Nombor Satu. Ia kelihatan seperti ini:');
  localStorage.setItem('story-1b-m', 'Saya menunjukkan karya agung saya kepada orang dewasa, dan bertanya kepada mereka sama ada lukisan itu menakutkan mereka. Tetapi mereka menjawab: "Takut? Mengapa ada orang yang takut dengan topi?" Lukisan saya bukan gambar topi. Ia adalah gambar seekor boa constrictor sedang mencerna seekor gajah. Tetapi kerana orang dewasa tidak dapat memahaminya, saya membuat lukisan lain: Saya melukis bahagian dalam boa constrictor, supaya orang dewasa dapat melihatnya dengan jelas. Mereka sentiasa perlu menjelaskan sesuatu. Lukisan Nombor Dua Saya kelihatan seperti ini:');
 
+// Story 1 variables
+var s1_p1_en = localStorage.getItem("story-1a");
+var s1_p1_mal = localStorage.getItem("story-1a-m");
 
-document.getElementById("content1").innerHTML = localStorage.getItem("story-1a");
-document.getElementById("content2").innerHTML = localStorage.getItem("story-1b");
-var langSelect = document.getElementById("lang-select").value;
-function changeLang() {
-  console.log(langSelect)
-  if (langSelect == "English") {
-    document.getElementById("content1").innerHTML = localStorage.getItem("story-1a");
-    document.getElementById("content2").innerHTML = localStorage.getItem("story-1b");
-  }
-
-  else if (langSelect == "Malay") {
-    document.getElementById("content1").innerHTML = localStorage.getItem("story-1a-m");
-    document.getElementById("content2").innerHTML = localStorage.getItem("story-1b-m");
-  }
-}
 
   // Declare variables
 var playButton = document.getElementById("play-button");
@@ -28,18 +16,42 @@ var pauseButton = document.getElementById("pause-button");
 var stopButton = document.getElementById("stop-button");
 var voiceSelect = document.getElementById("voice-select");
 var synth = window.speechSynthesis;
+var langSelect = document.getElementById("lang-select");
+var text;
+var pageOne;
 
-// Get Story text
-var text = document.getElementById("content1").innerText;
-var text2 = document.getElementById("content2").innerText;
+// Current Story variables
+var currentStoryEN;
+var currentStoryMAL;
+
+function storyLoad() {
+  if (langSelect.value === "english") {
+    document.getElementById("content1").innerHTML = s1_p1_en;
+  } else if (langSelect.value === "malay") {
+    document.getElementById("content1").innerHTML = s1_p1_mal;
+  }
+  text = document.getElementById("content1").innerText;
+  pageOne = new SpeechSynthesisUtterance(text);
+}
+
+
+function changeLang() {
+  if (langSelect.value === "english") {
+    document.getElementById("content1").innerHTML = s1_p1_en;
+  } else if (langSelect.value === "malay") {
+    document.getElementById("content1").innerHTML = s1_p1_mal;
+  }
+  text = document.getElementById("content1").innerText;
+  pageOne = new SpeechSynthesisUtterance(text);
+}
 
 function nextPage() {
 document.getElementById("story1").innerHTML = localStorage.getItem("story-1b");
-console.log(text);
 }
+// Get Story text
 
-// Get speak text
-let pageOne = new SpeechSynthesisUtterance(text);
+
+
 
 // Array of voices
 let voices = [];
@@ -74,6 +86,8 @@ if(synth.onvoiceschanged !== undefined) {
 // ----------Play Button----------
 
 function playText() {
+  text = document.getElementById("content1").innerText;
+  console.log(text);
   let selectedVoice = voiceSelect.selectedOptions[0].getAttribute('data-name');
 
   voices.forEach((voice) => {
@@ -104,20 +118,28 @@ function stopText() {
   speechSynthesis.cancel();
 }
 
-// -----------Save Voice----------
-var inputVoice = document.getElementById("voice-select")
+// -----------Save Voice & Language----------
+var inputVoice = document.getElementById("voice-select");
+var inputLang = document.getElementById("lang-select");
     
   if (localStorage['voice-select']) {
     inputVoice.value = localStorage['voice-select'];
   }
 
+  if (localStorage['lang-select']) {
+  inputLang.value = localStorage['lang-select'];
+  }
+
 function saveVoice() {
  localStorage['voice-select'] = inputVoice.value;
+ localStorage['lang-select'] = inputLang.value;
 }
+
 
 // -----------Reset Voice-----------
 function resetVoice() {
   voiceSelect.selectedIndex = 0;
+  langSelect.selectedIndex = 0;
   localStorage.removeItem('voice-select');
+  localStorage.removeItem('lang-select');
 }
-
