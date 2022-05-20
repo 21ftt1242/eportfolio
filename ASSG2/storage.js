@@ -2,10 +2,25 @@
 
  localStorage.setItem('story-1a', 'Once when I was six years old I saw a magnificent picture in a book, called True Stories from Nature, about the primeval forest. It was a picture of a boa constrictor in the act of swallowing an animal. Here is a copy of the drawing. In the book it said: "Boa constrictors swallow their prey whole, without chewing it. After that they are not able to move, and they sleep through the six months that they need for digestion." I pondered deeply, then, over the adventures of the jungle. And after some work with a colored pencil I succeeded in making my first drawing. My Drawing Number One. It looked like this: <br> <img src="images/story1-img2.png">');
  localStorage.setItem('story-1b', 'I showed my masterpiece to the grown-ups, and asked them whether the drawing frightened them. But they answered: "Frighten? Why should any one be frightened by a hat?" My drawing was not a picture of a hat. It was a picture of a boa constrictor digesting an elephant. But since the grown-ups were not able to understand it, I made another drawing: I drew the inside of the boa constrictor, so that the grown-ups could see it clearly. They always need to have things explained. My Drawing Number Two looked like this: <br> <img src="images/story1-img2.png">');
+ localStorage.setItem('story-1a-m', 'Suatu ketika ketika saya berumur enam tahun, saya melihat gambar yang indah dalam sebuah buku, yang disebut Kisah Benar dari Alam, tentang hutan purba. Ia adalah gambar seekor boa constrictor dalam tindakan menelan haiwan. Berikut adalah salinan lukisan tersebut. Dalam buku itu ia berkata: "Boa constrictors menelan mangsa mereka keseluruhan, tanpa mengunyahnya. Selepas itu mereka tidak dapat bergerak, dan mereka tidur melalui enam bulan yang mereka perlukan untuk penghadaman." Saya merenung sedalam-dalamnya, tentang pengembaraan hutan. Dan selepas beberapa kerja dengan pensel warna saya berjaya membuat lukisan pertama saya. Lukisan Saya Nombor Satu. Ia kelihatan seperti ini:');
+ localStorage.setItem('story-1b-m', 'Saya menunjukkan karya agung saya kepada orang dewasa, dan bertanya kepada mereka sama ada lukisan itu menakutkan mereka. Tetapi mereka menjawab: "Takut? Mengapa ada orang yang takut dengan topi?" Lukisan saya bukan gambar topi. Ia adalah gambar seekor boa constrictor sedang mencerna seekor gajah. Tetapi kerana orang dewasa tidak dapat memahaminya, saya membuat lukisan lain: Saya melukis bahagian dalam boa constrictor, supaya orang dewasa dapat melihatnya dengan jelas. Mereka sentiasa perlu menjelaskan sesuatu. Lukisan Nombor Dua Saya kelihatan seperti ini:');
 
- document.getElementById("content1").innerHTML = localStorage.getItem("story-1a");
+
+document.getElementById("content1").innerHTML = localStorage.getItem("story-1a");
 document.getElementById("content2").innerHTML = localStorage.getItem("story-1b");
+var langSelect = document.getElementById("lang-select").value;
+function changeLang() {
+  console.log(langSelect)
+  if (langSelect == "English") {
+    document.getElementById("content1").innerHTML = localStorage.getItem("story-1a");
+    document.getElementById("content2").innerHTML = localStorage.getItem("story-1b");
+  }
 
+  else if (langSelect == "Malay") {
+    document.getElementById("content1").innerHTML = localStorage.getItem("story-1a-m");
+    document.getElementById("content2").innerHTML = localStorage.getItem("story-1b-m");
+  }
+}
 
   // Declare variables
 var playButton = document.getElementById("play-button");
@@ -31,6 +46,7 @@ let voices = [];
 
 // ----------Call Populate Voice function----------
 populateVoices();
+
 
 // ----------Populate Voice function----------
 function populateVoices() {
@@ -104,3 +120,4 @@ function resetVoice() {
   voiceSelect.selectedIndex = 0;
   localStorage.removeItem('voice-select');
 }
+
