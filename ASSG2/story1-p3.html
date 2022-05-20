@@ -197,9 +197,9 @@
 			<div id="lightMode">Light Mode</div>
 			<div id="darkMode" onclick="darkMode()">Dark Mode</div>
 			<div id="fontSetting">Font</div>
-			<div id="smallFont" onclick="toSmall()">Small</div>
-			<div id="mediumFont" onclick="toMedium()">Medium</div>
-			<div id="largeFont" onclick="toLarge()">Large</div>
+			<div id="smallFont">Small</div>
+			<div id="mediumFont">Medium</div>
+			<div id="largeFont">Large</div>
 		</div>
 		<div id="languageDiv">
 			<div id="languageOptions">Languages Options</div>
@@ -217,11 +217,11 @@
 		</div>
 		<div id="content2">
 		</div>
-		<div id="nextPage" onclick="goNextPage()">Next<br>Page<br>&#8594;</div>
+		<div id="nextPage" a href="story2-p1.html">Next<br>Page<br>&#8594;</div>
 	</div>
 	<script src="storage.js"></script>
 <script>
-		localStorage.setItem('page', '1');
+		localStorage.setItem('page', '2');
 		var storyPage = document.getElementById("storyPage");
 		var content1 = document.getElementById("content1");
 		var content2 = document.getElementById("content2");
@@ -229,11 +229,7 @@
 		var prevPage = document.getElementById("prevPage");
 
 		function goPrevPage() {
-			location.href = "story1-p1.html";
-		}
-
-		function goNextPage() {
-			location.href = "story1-p3.html";
+			location.href = "story1-p2.html";
 		}
 
 		function darkMode() {
