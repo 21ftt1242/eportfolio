@@ -49,11 +49,11 @@ var s3_p1a_mal = localStorage.getItem("story-3a-m");
 var s3_p1b_mal = localStorage.getItem("story-3b-m");
 var s3_p2a_mal = localStorage.getItem("story-3c-m");
 var s3_p2b_mal = localStorage.getItem("story-3d-m");
-var avg1;
+var story1Average;
+var story2Average;
+var story3Average;
+var storyAverage;
 var avg2;
-var avg3;
-
-
 
 // Declare variables
 var playButton = document.getElementById("play-button");
@@ -79,19 +79,20 @@ var currentStoryMAL_2;
 var inputVoice = document.getElementById("voice-select");
 var inputLang = document.getElementById("lang-select");
 var rate = document.getElementById("storyRating"); //rating display
+var grab;
+var grab2;
 
-
+// Array of voices
+let voices = [];
 
 function storyLoad() {
   console.log(pageNum);
-  console.log(avg1);
   switch (pageNum) {
     case '1': 
     currentStoryEN_1 = s1_p1a_en;
     currentStoryEN_2 = s1_p1b_en;
     currentStoryMAL_1 = s1_p1a_mal;
     currentStoryMAL_2 = s1_p1b_mal;
-    console.log("hey test");
     break;
 
     case '2':
@@ -99,7 +100,6 @@ function storyLoad() {
     currentStoryEN_2 = s1_p2b_en;
     currentStoryMAL_1 = s1_p2a_mal;
     currentStoryMAL_2 = s1_p2b_mal; 
-    console.log("hey testtttttt");
     break;
 
     case '3':
@@ -135,6 +135,8 @@ function storyLoad() {
   changeVoice();
   changeLang();
   saveVoice();
+  // ----------Call Populate Voice function----------
+  populateVoices();
 }
 
 function loadSize() {
@@ -178,11 +180,8 @@ function changeVoice() {
 }
 
 
-// Array of voices
-let voices = [];
 
-// ----------Call Populate Voice function----------
-populateVoices();
+
 
 
 // ----------Populate Voice function----------
@@ -274,7 +273,6 @@ function resetVoice() {
   localStorage.removeItem('star3');
   localStorage.removeItem('star4');
   localStorage.removeItem('star5');
-
 }
 
 function toSmall() {
@@ -302,10 +300,6 @@ function toLarge() {
 }
 
   var ratez = document.getElementsByName("rating");
-  var storyAverage;
-  var story1Average;
-  var story2Average;
-  var story3Average;
   var count = 0;
   var star1 = 0;
   var star2 = 0;
@@ -314,7 +308,7 @@ function toLarge() {
   var star5 = 0;
 
 
-
+function countStar(){
 if(localStorage.getItem('count')){
     count = localStorage.getItem('count');
 }else{
@@ -356,10 +350,10 @@ if(localStorage.getItem('count')){
 }else{
     star5 = 0;
      }
-
+}
 
 function confirm(){
-      
+  countStar();
   if (ratez[4].checked) {
     count++;
     localStorage.setItem('count', count)
@@ -392,37 +386,117 @@ function confirm(){
     star5++;
     localStorage.setItem('star5', star5) 
  }
-    storyAverage =  ((((5*parseInt(star5)) + (4*parseInt(star4)) + (3*parseInt(star3)) + (2*parseInt(star2)) + (parseInt(star1)))) / parseInt(count)).toFixed(1);
+    story1Average =  ((((5*parseInt(star5)) + (4*parseInt(star4)) + (3*parseInt(star3)) + (2*parseInt(star2)) + (parseInt(star1)))) / parseInt(count)).toFixed(1);
 
     //alert(average);
     for (var i = 0; i < ratez.length; i++) {
            ratez[i].disabled = true;  
     }
+    getAvg1();
+  }
 
-    switch (pageNum) {
-      case '2':
-      story1Average = storyAverage;
-      localStorage.setItem('avg-s1', story1Average);
-      break;
+  function confirm2(){
+  countStar();
+  if (ratez[4].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star1++;
+    localStorage.setItem('star1', star1)
+    ratez[4].checked = "checked";
+  }
+  else if (ratez[3].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star2++;
+    localStorage.setItem('star2', star2)
+  
+  }
+  else if (ratez[2].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star3++;
+    localStorage.setItem('star3', star3)
+  }
+  else if (ratez[1].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star4++;
+    localStorage.setItem('star4', star4) 
+  }
+  else if (ratez[0].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star5++;
+    localStorage.setItem('star5', star5) 
+ }
+    story2Average =  ((((5*parseInt(star5)) + (4*parseInt(star4)) + (3*parseInt(star3)) + (2*parseInt(star2)) + (parseInt(star1)))) / parseInt(count)).toFixed(1);
 
-      case '4':
-      story2Average = storyAverage;
-      localStorage.setItem('avg-s2', story2Average);
-      break;
-
-      case '6':
-      story3Average = storyAverage;
-      localStorage.setItem('avg-s3', story3Average);
-      break;
+    //alert(average);
+    for (var i = 0; i < ratez.length; i++) {
+           ratez[i].disabled = true;  
     }
-    
-    avg1 = localStorage.getItem('avg-s1');
-    console.log(avg1);
-    avg2 = localStorage.getItem('avg-s2');
-    console.log(avg2);
-    avg3 = localStorage.getItem('avg-s3');
-    console.log(avg3);
+    getAvg2()
+  }
 
+
+  function confirm3(){
+    countStar();
+  if (ratez[4].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star1++;
+    localStorage.setItem('star1', star1)
+    ratez[4].checked = "checked";
+  }
+  else if (ratez[3].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star2++;
+    localStorage.setItem('star2', star2)
+  
+  }
+  else if (ratez[2].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star3++;
+    localStorage.setItem('star3', star3)
+  }
+  else if (ratez[1].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star4++;
+    localStorage.setItem('star4', star4) 
+  }
+  else if (ratez[0].checked) {
+    count++;
+    localStorage.setItem('count', count)
+    star5++;
+    localStorage.setItem('star5', star5) 
+ }
+    story3Average =  ((((5*parseInt(star5)) + (4*parseInt(star4)) + (3*parseInt(star3)) + (2*parseInt(star2)) + (parseInt(star1)))) / parseInt(count)).toFixed(1);
+
+    //alert(average);
+    for (var i = 0; i < ratez.length; i++) {
+           ratez[i].disabled = true;  
+    }
+    getAvg3()
+  }
+  function getAvg1() {
+    localStorage.setItem('avg-s1', story1Average);
+    avg1 = localStorage.getItem('avg-s1');
+    document.getElementById("storyRating").innerHTML += avg1;;
+  }
+
+  function getAvg2() {
+    localStorage.setItem('avg-s2', story2Average);
+    avg2 = localStorage.getItem('avg-s2');
+    document.getElementById("storyRating").innerHTML += avg2;
+  }
+
+  function getAvg3() {
+    localStorage.setItem('avg-s3', story3Average);
+    avg3 = localStorage.getItem('avg-s3');
+    document.getElementById("storyRating").innerHTML += avg3;
   }
 
     

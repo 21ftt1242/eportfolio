@@ -211,7 +211,7 @@
 
 	
 </head>
-<body onload="displayRate()">
+<body onload="getAvg2() ">
 
 	<div class="navbar">
 		<ul>
@@ -230,8 +230,9 @@
 		<div id = "storyRating">&#9733;</div>
 		<div id = "continueStory"><div id="continueStory2" onclick="changeStory()">Start Reading</div></div>
 	</div>
+	<script src="storage.js"></script>
 	<script>
-
+		displayRate2();
 		function changeStory() {
 			location.href = "story2-p2.html";
 		}

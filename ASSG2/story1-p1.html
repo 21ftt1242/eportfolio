@@ -214,7 +214,7 @@
 
 	
 </head>
-<body>
+<body">
 
 	<div class="navbar">
 		<ul>
@@ -233,18 +233,12 @@
 		<div id = "storyRating"> &#9733;</div>
 		<div id = "continueStory"><div id="continueStory2" onclick="goNextPage()">Start Reading</div></div>
 	</div>
+	<script src="storage.js"></script>
 	<script>
-
-		var rate = document.getElementById("storyRating"); //rating display
-		var avg1 = localStorage.getItem('avg-s1');
-		function displayRate() {
-		console.log(avg1);
-    	rate.innerHTML += avg1;
-		}
+		getAvg1();
 		function goNextPage() {
 			location.href = "story1-p2.html";
 		}
-		displayRate();
     </script>
 </body>
 
