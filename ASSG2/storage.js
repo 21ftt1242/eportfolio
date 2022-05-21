@@ -11,7 +11,7 @@
  localStorage.setItem('story-2a', 'Once it was about one in the morning, the three of us headed back up to the room (our other three friends were already up there) and changed to go to sleep. Of course, we\'re all pretty young (no one above 21) so we logically stayed up awhile to talk. Our room was one of those annoying ones where you can\'t do anything to close the curtains, so they were wide open and some of us were just staring out the window while we talked. <br><br>After we\'d been talking awhile, one friend said, “Hey, what\'s that in the window over there?”');
   localStorage.setItem('story-2b', 'All of us sat up to look, but it was hard to see from the beds so we ended up with all six of us crowded at the window, just staring across the way. Over there it was another hotel, where there was this long line (up and down) of windows. Most of the curtains there were closed, lights off, and so on. One window was different though. <br><br>The curtain was open, and we could see a figure standing there. It looked like a guy, sort of swaying back and forth. I brought up that it reminded me of the scene in 1408 and was immediately ordered to shut up. So we kept watching. The figure kept swaying. Someone mentioned Slenderman. It just kept on moving.');
   localStorage.setItem('story-2c', 'I think we were all at the window for a good 15 or 20 minutes, and it just kept moving. I think everyone said at least one thing that it could have been - the worst of which was the idea that someone hanged themselves over there. <br> <br> Eventually we all forced ourselves to go back and lay down, since were all pretty creeped out at that point. Before we fell asleep we mentioned how it would be even worse if it wasn\'t there the next night, because if it wasn\'t there anymore... well, what could it have been? If it was still there, it was just part of the hotel room.');
-  localStorage.setItem('story-2d', 'Once we got back to the room the next night, we checked the window across the way. <br> <br> There was nothing there.')
+  localStorage.setItem('story-2d', 'Once we got back to the room the next night, we checked the window across the way. <br> <br> There was nothing there.');
 // Story 1 variables
 var s1_p1a_en = localStorage.getItem("story-1a");
 var s1_p1b_en = localStorage.getItem("story-1b");
@@ -40,6 +40,7 @@ var text3;
 var pageOne;
 var pageNum = localStorage.getItem('page');
 var saveFont;
+var saveFont2;
 
 // Current Story variables
 var currentStoryEN_1;
@@ -51,6 +52,8 @@ var inputVoice = document.getElementById("voice-select");
 var inputLang = document.getElementById("lang-select");
 
 function storyLoad() {
+  console.log("storyLoad is loaded!");
+  console.log(pageNum);
   switch (pageNum) {
     case '1': 
     currentStoryEN_1 = s1_p1a_en;
@@ -79,11 +82,28 @@ function storyLoad() {
     break;
   }
   //call function on page loads
-  changeVoice()
-  changeLang()
+  loadSize();
+  changeVoice();
+  changeLang();
+  saveVoice();
 }
 
-
+function loadSize() {
+  var text1 = document.getElementById("content1");
+  var text2 = document.getElementById("content2");
+  if (localStorage.getItem('size') == "small") {
+    text1.style.fontSize = "0.5em";
+    text2.style.fontSize = "0.5em";
+  }
+  else if (localStorage.getItem('size') == "medium") {
+    text1.style.fontSize = "1em";
+    text2.style.fontSize = "1em";
+  }
+  else if (localStorage.getItem('size') == "large") {
+    text1.style.fontSize = "2em";
+    text2.style.fontSize = "2em";
+  }
+}
 function changeLang() {
   if (langSelect.value === "english") {
     document.getElementById("content1").innerHTML = currentStoryEN_1;
@@ -172,24 +192,24 @@ function stopText() {
   speechSynthesis.cancel();
 }
 
-// -----------Save Voice & Language----------
-
-    
-  if (localStorage['voice-select']) {
-    inputVoice.value = localStorage['voice-select'];
-  }
-
-  if (localStorage['lang-select']) {
-  inputLang.value = localStorage['lang-select'];
-  }
-
+// -----------Save Preferences----------
 function saveVoice() {
  localStorage['voice-select'] = inputVoice.value;
  localStorage['lang-select'] = inputLang.value;
+ 
+ if (saveFont == 1) {
+  localStorage.setItem('size', 'small');
+ }
+ else if (saveFont == 2) {
+  localStorage.setItem('size', 'medium');
+ }
+ else if (saveFont == 3) {
+  localStorage.setItem('size', 'large');
+ }
 }
 
 
-// -----------Reset Voice-----------
+// -----------Reset Preferences-----------
 function resetVoice() {
   voiceSelect.selectedIndex = 0;
   langSelect.selectedIndex = 0;
@@ -199,7 +219,7 @@ function resetVoice() {
 }
 
 function toSmall() {
-  localStorage.setItem('size', 'small')
+  saveFont = 1;
   var text1 = document.getElementById("content1");
   var text2 = document.getElementById("content2");
   text1.style.fontSize = "0.5em";
@@ -207,7 +227,7 @@ function toSmall() {
 }
 
 function toMedium() {
-  localStorage.setItem('size', 'medium')
+  saveFont = 2;
   var text1 = document.getElementById("content1");
   var text2 = document.getElementById("content2");
   text1.style.fontSize = "1em";
@@ -215,7 +235,7 @@ function toMedium() {
 }
 
 function toLarge() {
-  localStorage.setItem('size', 'large')
+  saveFont = 3;
   var text1 = document.getElementById("content1");
   var text2 = document.getElementById("content2");
   text1.style.fontSize = "2em";
