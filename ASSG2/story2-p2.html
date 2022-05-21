@@ -10,68 +10,34 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 	<style type="text/css">
-
-		.navbar {
-			background-color: rgba(255, 255, 255);
-  			overflow: hidden;
-  			position: fixed;
-  			top: 0%;
-  			width: 100%;
-  			box-shadow: 0px 5px rgba(0, 0, 0, 0.5);
-		}
-
-		.navbar li {
-			display: inline-block;
-  			list-style-type: none;
-  			font-size: 17px;
-			font-family: 'Poppins', sans-serif;
-			font-weight: 400;
-			padding-right: 25px;
-		}
-
-		li:nth-child(1) {
-			padding-left: 150px;
-			font-weight: 700;
-			font-size: 20px;
-		}
-
 		.navbar a {
 			text-decoration: none;
-			color: black;
+			color: white;
 			padding: 100% 30px;
 			
 		}
 
 		.navbar a.active {
-  			background-color: #FFEA2A;
-  			color: black;
+  			background-color: #660000;
+  			color: white;
 		}
 
 		.navbar a:hover {
-			background-color: black;
-			color: white;
+			background-color: white;
+			color: black;
 		}
 
 		body {
 			margin: 0;
-			background-image: url("images/background1.jpeg");
+			background-image: url("images/background2.png");
 			background-repeat: no-repeat;
 			background-attachment: fixed;
   			background-size: cover;
+  			background-position: center;
 		}
 		
 		#storyPage {
 			background-color: rgba(255, 255, 255, 0.95);
-			margin-top: 100px;
-			margin-right: auto;
-			margin-left: auto;
-			width: 80%;
-			height: 800px;
-			display: grid;
-			grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 1fr 100px ;
-			grid-template-rows: auto 1fr 1fr 1fr;
-			grid-gap: 10px;
-			/*padding: 10px;*/
 		}
 
 		#storyPage div {
@@ -81,15 +47,29 @@
   			margin: 10px;
   			font-family: 'Poppins', sans-serif;
 			font-weight: 400;
-/*			border: 2px solid black;*/
 		}
 
 		#prevPage {
-			grid-area: 2 / 1 / 4 / 2;
+			grid-area: 4 / 1 / 5 / 2;
+			background-color: #660000;
+			border-radius: 25px;
+			box-shadow: 5px 5px black;
+			cursor: pointer;
+			color: white;
 		}
 
 		#nextPage {
-			grid-area: 2 / 8 / 4 / 9;
+			grid-area: 4 / 8 / 5 / 9;
+			background-color: #660000;
+			border-radius: 25px;
+			box-shadow: -5px 5px black;
+			cursor: pointer;
+			color: white;
+		}
+
+		#prevPage:hover, #nextPage:hover {
+			background-color: black;
+			color: white;
 		}
 
 		#speechDiv {
@@ -129,7 +109,6 @@
 			border-right: 1px solid rgba(0, 0, 0, 0.1);
 			line-height: 2.0;
 			overflow: auto;
-
 		}
 
 		#content2 {
@@ -143,25 +122,43 @@
 		#visualDiv {
 			grid-area: 1 / 3 / 2 / 5;
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 			grid-template-rows: 30px 1fr 1fr;
 			grid-gap: 5px;
 		}
 
-		#visualDiv div {
+		#visualDiv div:not(:nth-child(1)){
+			background-color: lightgray;
+			cursor: pointer;
+		}
+
+		#visualDiv div:not(:nth-child(1)):hover{
+			background-color: white;
 		}
 
 		#visualOptions {
-			grid-area: 1 / 1 / 2 / 5;
+			grid-area: 1 / 1 / 2 / 7;
 			border-bottom: 2px solid black;
 		}
 
 		#lightMode {
-			grid-area: 2 / 1 / 3 / 3;
+			grid-area: 2 / 1 / 3 / 4;
 		}
 
 		#darkMode {
-			grid-area: 2 / 3 / 3 / 5;
+			grid-area: 2 / 4 / 3 / 7;
+		}
+
+		#smallFont {
+			grid-area: 3 / 1 / 4 / 3;
+		}
+
+		#mediumFont {
+			grid-area: 3 / 3 / 4 / 5;
+		}
+
+		#largeFont {
+			grid-area: 3 / 5 / 4 / 7;
 		}
 
 		img {
@@ -169,6 +166,103 @@
 			 margin-left: auto;
 			 margin-right: auto;
 			 width: 25%;
+		}
+
+		@media only screen and (min-width: 768px) {
+			#storyPage {
+				margin-top: 100px;
+				margin-right: auto;
+				margin-left: auto;
+				width: 80%;
+				height: 800px;
+				display: grid;
+				grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 1fr 100px ;
+				grid-template-rows: auto 1fr 1fr 1fr;
+				grid-gap: 10px;
+			}
+
+			.navbar {
+				background-color: black;
+  				overflow: hidden;
+  				position: fixed;
+  				top: 0%;
+  				width: 100%;
+  				box-shadow: 0px 5px rgba(0, 0, 0, 0.5);
+			}
+
+			.navbar li {
+				display: inline-block;
+  				list-style-type: none;
+  				font-size: 17px;
+				font-family: 'Poppins', sans-serif;
+				font-weight: 400;
+				padding-right: 25px;
+			}
+
+			li:nth-child(1) {
+				padding-left: 150px;
+				font-weight: 700;
+				font-size: 20px;
+			}	
+		}
+
+		@media only screen and (max-width: 768px) {
+
+			.navbar {
+				background-color: black;
+  				overflow: hidden;
+  				position: fixed;
+  				bottom: 0%;
+  				width: 100%;
+  				height: 60px;
+			}
+
+			.navbar li {
+				display: inline-block;
+  				list-style-type: none;
+  				font-size: 10px;
+				font-family: 'Poppins', sans-serif;
+				font-weight: 400;
+			}
+
+			#storyPage {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr 100px;
+				padding-bottom: 100px;
+			}
+
+			#content1 {
+				grid-area: 1 / 1 / 2 / 3;
+			}
+
+			#content2 {
+				grid-area: 2 / 1 / 3 / 3;
+			}
+
+			#prevPage {
+				grid-area: 3 / 1 / 4 / 2;
+			}
+
+			#nextPage {
+				grid-area: 3 / 2 / 4 / 3;
+			}
+
+			#storyPage #speechDiv {
+				display: none;
+			}
+
+			#storyPage #visualDiv {
+				display: none;
+			}
+
+			#storyPage #languageDiv {
+				display: none;
+			}
+
+			#storyPage #saveResetDiv {
+				display: none;
+			}
 		}
 	</style>
 </head>
@@ -196,7 +290,6 @@
 			<div id="visualOptions">Visual Options</div>
 			<div id="lightMode">Light Mode</div>
 			<div id="darkMode" onclick="darkMode()">Dark Mode</div>
-			<div id="fontSetting">Font</div>
 			<div id="smallFont" onclick="toSmall()">Small</div>
 			<div id="mediumFont" onclick="toMedium()">Medium</div>
 			<div id="largeFont" onclick="toLarge()">Large</div>
