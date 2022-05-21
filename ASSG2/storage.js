@@ -12,6 +12,18 @@
   localStorage.setItem('story-2b', 'All of us sat up to look, but it was hard to see from the beds so we ended up with all six of us crowded at the window, just staring across the way. Over there it was another hotel, where there was this long line (up and down) of windows. Most of the curtains there were closed, lights off, and so on. One window was different though. <br><br>The curtain was open, and we could see a figure standing there. It looked like a guy, sort of swaying back and forth. I brought up that it reminded me of the scene in 1408 and was immediately ordered to shut up. So we kept watching. The figure kept swaying. Someone mentioned Slenderman. It just kept on moving.');
   localStorage.setItem('story-2c', 'I think we were all at the window for a good 15 or 20 minutes, and it just kept moving. I think everyone said at least one thing that it could have been - the worst of which was the idea that someone hanged themselves over there. <br> <br> Eventually we all forced ourselves to go back and lay down, since were all pretty creeped out at that point. Before we fell asleep we mentioned how it would be even worse if it wasn\'t there the next night, because if it wasn\'t there anymore... well, what could it have been? If it was still there, it was just part of the hotel room.');
   localStorage.setItem('story-2d', 'Once we got back to the room the next night, we checked the window across the way. <br> <br> There was nothing there.');
+  localStorage.setItem('story-2a-m', 'Sebaik sahaja kira-kira pukul satu pagi, kami bertiga naik semula ke bilik (tiga rakan kami yang lain sudah berada di atas) dan bertukar untuk tidur. Sudah tentu, kami semua agak muda (tiada seorang di atas 21 tahun) jadi secara logiknya kami berjaga sebentar untuk bercakap. Bilik kami adalah salah satu bilik yang menjengkelkan di mana anda tidak boleh berbuat apa-apa untuk menutup langsir, jadi ia terbuka luas dan sesetengah daripada kami hanya merenung ke luar tingkap semasa kami bercakap. <br><br>Selepas kami berbual sebentar, seorang rakan berkata, “Hei, apa yang ada di tingkap sebelah sana?”');
+  localStorage.setItem('story-2b-m', 'Kami semua duduk untuk melihat, tetapi sukar untuk melihat dari katil sehingga kami berakhir dengan kami berenam berkerumun di tingkap, hanya merenung ke seberang jalan. Di sebelah sana ia adalah hotel lain, di mana terdapat barisan panjang (atas dan bawah) tingkap. Kebanyakan langsir di situ ditutup, lampu dimatikan, dan sebagainya. Satu tingkap adalah berbeza. <br><br>Tirai terbuka, dan kami dapat melihat satu figura berdiri di situ. Ia kelihatan seperti seorang lelaki, seperti bergoyang ke sana ke mari. Saya mengemukakan bahawa ia mengingatkan saya tentang kejadian pada 1408 dan segera diarahkan untuk menutup mulut. Jadi kami terus memerhati. Susuk tubuh itu terus bergoyang. Seseorang menyebut Slenderman. Ia terus bergerak.');
+  localStorage.setItem('story-2c-m', 'Saya rasa kami semua berada di tingkap selama 15 atau 20 minit, dan ia terus bergerak. Saya rasa semua orang mengatakan sekurang-kurangnya satu perkara yang mungkin berlaku - yang paling teruk ialah idea bahawa seseorang menggantung diri di sana. <br> <br> Akhirnya kami semua memaksa diri untuk kembali dan berbaring, kerana semuanya agak merayap pada ketika itu. Sebelum kami tertidur, kami telah menyatakan bagaimana ia akan menjadi lebih teruk jika ia tidak ada pada malam berikutnya, kerana jika ia tidak ada lagi... baiklah, apakah yang boleh berlaku? Jika ia masih ada, ia hanyalah sebahagian daripada bilik hotel.');
+  localStorage.setItem('story-2d-m', 'Sebaik sahaja kami kembali ke bilik pada malam berikutnya, kami memeriksa tingkap di seberang jalan. <br> <br> Tiada apa-apa di sana.');
+  localStorage.setItem('story-3a', 'I didn’t know about these things until I started high school, Takao Akizuki thinks. <br> <br> Some stranger’s umbrella is getting the hem of his blazer wet. He can smell the lingering traces of mothballs locked in the fibers of a suit. His back is too warm where someone is pressed against it. An unpleasant wind from the air conditioner is blowing right in his face. It’s been two months since he started riding the crowded morning train, and the idea that three more years of this purgatory await him is like a hopeless weight on his soul. In an attempt to keep from touching the other riders, he plants his feet and grips the ceiling strap hard enough to make his fingertips go numb.');
+  localStorage.setItem('story-3b', 'I don’t belong here, he thinks, irritated. <br> <br> He once read a manga that belonged to his brother about a killer who mowed people down with a machine gun, and right now he envisions himself doing the same. After all, it’s just a thought. If there was a killer, though...Takao promptly reconsiders. I’d be one of the victims. Just a fifteen-year-old kid. Nothing special.');
+  localStorage.setItem('story-3c', 'Outside the small train window and partially blocked by sullen, silent heads, the rain-soaked city streams past. The landscape is dulled by thick rain clouds, except for the sharp lights of the condominiums and mixed-use buildings. Thin slices of other people’s daily lives flicker past him in an unceasing river—the reflection of a TV information program in a table, a tight skirt moving through a kitchenette, faded posters on walls, an umbrella dashing out of a bicycle parking lot—and the unknown world beyond him is overwhelming. And infuriating. <br> <br> He’s fifteen years old. He knows so little.');
+  localStorage.setItem('story-3d', 'Before long, the car leans into a gentle right curve. When he begins to see the ranks of skyscrapers through the gaps between the mixed-use buildings, Takao closes his eyes. He knows what’s coming. One, two, three, four...');
+  localStorage.setItem('story-3a-m', 'Saya tidak tahu tentang perkara ini sehingga saya memulakan sekolah menengah, fikir Takao Akizuki. <br> <br> Beberapa payung orang yang tidak dikenali membuat bahagian bawah blazernya basah. Dia dapat menghidu kesan-kesan ubat gegat yang berlarutan di dalam serabut sut. Punggungnya terlalu panas di mana seseorang ditekan. Angin yang tidak menyenangkan dari penghawa dingin bertiup tepat di mukanya. Sudah dua bulan sejak dia mula menaiki kereta api pagi yang sesak itu, dan idea bahawa tiga tahun lagi api penyucian ini menantinya adalah seperti beban yang tiada harapan di jiwanya. Dalam usaha untuk mengelak daripada menyentuh penunggang lain, dia meletakkan kakinya dan menggenggam tali siling dengan cukup kuat untuk membuat hujung jarinya kebas.');
+  localStorage.setItem('story-3b-m', 'Saya tidak berada di sini, dia fikir, jengkel. <br> <br> Dia pernah membaca manga milik abangnya tentang seorang pembunuh yang membunuh orang dengan senapang mesin, dan sekarang dia membayangkan dirinya melakukan perkara yang sama. Lagipun, ia hanya pemikiran. Jika ada pembunuh, walaupun...Takao segera mempertimbangkan semula. Saya akan menjadi salah seorang mangsa. Hanya seorang kanak-kanak berumur lima belas tahun. Tiada apa-apa yang istimewa.');
+  localStorage.setItem('story-3c-m', 'Di luar tingkap kereta api kecil dan sebahagiannya disekat oleh kepala yang merajuk dan senyap, bandar yang dibasahi hujan mengalir melaluinya. Landskapnya dikuburkan oleh awan hujan tebal, kecuali lampu tajam kondominium dan bangunan bercampur. Potongan nipis kehidupan seharian orang lain berkelip-kelip melewatinya di sungai yang tidak henti-henti—pantulan program maklumat TV di atas meja, skirt ketat bergerak melalui dapur kecil, poster pudar di dinding, payung berlari keluar dari tempat letak basikal—dan dunia yang tidak diketahui di luar dia amat menggembirakan. Dan menimbulkan kemarahan. <br> <br> Dia berumur lima belas tahun. Dia tahu sangat sedikit.');
+  localStorage.setItem('story-3d-m', 'Tidak lama kemudian, kereta itu membelok ke selekoh kanan yang lembut. Apabila dia mula melihat barisan pencakar langit melalui celah antara bangunan bercampur, Takao memejamkan matanya. Dia tahu apa yang akan datang. Satu dua tiga empat...');
 // Story 1 variables
 var s1_p1a_en = localStorage.getItem("story-1a");
 var s1_p1b_en = localStorage.getItem("story-1b");
@@ -25,6 +37,18 @@ var s2_p1a_en = localStorage.getItem("story-2a");
 var s2_p1b_en = localStorage.getItem("story-2b");
 var s2_p2a_en = localStorage.getItem("story-2c");
 var s2_p2b_en = localStorage.getItem("story-2d");
+var s2_p1a_mal = localStorage.getItem("story-2a-m");
+var s2_p1b_mal = localStorage.getItem("story-2b-m");
+var s2_p2a_mal = localStorage.getItem("story-2c-m");
+var s2_p2b_mal = localStorage.getItem("story-2d-m");
+var s3_p1a_en = localStorage.getItem("story-3a");
+var s3_p1b_en = localStorage.getItem("story-3b");
+var s3_p2a_en = localStorage.getItem("story-3c");
+var s3_p2b_en = localStorage.getItem("story-3d");
+var s3_p1a_mal = localStorage.getItem("story-3a-m");
+var s3_p1b_mal = localStorage.getItem("story-3b-m");
+var s3_p2a_mal = localStorage.getItem("story-3c-m");
+var s3_p2b_mal = localStorage.getItem("story-3d-m");
 
 
 // Declare variables
@@ -74,11 +98,29 @@ function storyLoad() {
     case '3':
     currentStoryEN_1 = s2_p1a_en;
     currentStoryEN_2 = s2_p1b_en;
+    currentStoryMAL_1 = s2_p1a_mal;
+    currentStoryMAL_2 = s2_p1b_mal;
     break;
 
     case '4':
     currentStoryEN_1 = s2_p2a_en;
     currentStoryEN_2 = s2_p2b_en;
+    currentStoryMAL_1 = s2_p2a_mal;
+    currentStoryMAL_2 = s2_p2b_mal;
+    break;
+
+    case '5':
+    currentStoryEN_1 = s3_p1a_en;
+    currentStoryEN_2 = s3_p1b_en;
+    currentStoryMAL_1 = s3_p1a_mal;
+    currentStoryMAL_2 = s3_p1b_mal;
+    break;
+
+    case '6':
+    currentStoryEN_1 = s3_p2a_en;
+    currentStoryEN_2 = s3_p2b_en;
+    currentStoryMAL_1 = s3_p2a_mal;
+    currentStoryMAL_2 = s3_p2b_mal;
     break;
   }
   //call function on page loads
