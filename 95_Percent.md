@@ -827,7 +827,7 @@ List all the files inside folder using this command:
 ```
 $ ls
 
-build   favicon.ico index.php   pblog.png   robots.txt
+build   favicon.ico index.php   pblogo.png   robots.txt
 ```
 
 ### 9.2 Changing the default laravel logo
