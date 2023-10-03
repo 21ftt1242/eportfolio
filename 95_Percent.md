@@ -17,6 +17,7 @@ Diploma Level 5 in Information Systems
   * [1. VPS Setup](#1-vps-setup)
     + [1.1 Creating SSH Key using terminal](#11-creating-ssh-key-using-terminal)
     + [1.2 Creating a Digital Ocean Droplet](#12-creating-a-digital-ocean-droplet)
+    + [1.3 Domain Setup](#13-domain-setup)
   * [2. Root Login using terminal](#2-root-login-using-terminal)
     + [2.1 Make new non-root user](#21-make-new-non-root-user)
     + [2.2 Grant Administrative Privileges (Sudo) for non-root user](#22-grant-administrative-privileges--sudo--for-non-root-user)
@@ -24,6 +25,7 @@ Diploma Level 5 in Information Systems
     + [2.4 Setting up firewall](#24-setting-up-firewall)
     + [2.5 SSH Server Configuration](#25-ssh-server-configuration)
     + [2.6 Changing Timezone](#26-changing-timezone)
+    + [2.7 VPS Welcome Message](#27-vps-welcome-message)
   * [3. Create config file for shortcut](#3-create-config-file-for-shortcut)
   * [4. Installing LEMP Stack](#4-installing-lemp-stack)
     + [4.1 Install and enable Nginx Full](#41-install-and-enable-nginx-full)
@@ -106,6 +108,12 @@ This will genereate two keys, one public and one private.
 4. Create Droplet
 
 5. VPS IP Address: `174.138.26.16`
+
+### 1.3 Domain Setup
+Since this assignment uses a domain name rather than the VPS IP Address itself, we must host our own domain. 
+There are quite a lot of options to host domain names such as `NameCheap`, `GoDaddy`, `DuckDNS` and many more. But in this case, since `dottech` gives away free 1 year domain hosting to any student registered under the Github Student Developer Pack, we will just use that instead.
+
+Under the DNS Management, add an `A Record` and paste the VPS IP Address. In this case, my domain name will be `muazharris.tech`.
 
 ---
 ## 2. Root Login using terminal
@@ -210,7 +218,23 @@ System clock synchronized: yes
           RTC in local TZ: no
 ```
 
+### 2.7 VPS Welcome Message
+To change the VPS greeting to greet the user, we must modify the `00-header`.
+Go into this directory:
+```
+$ cd /etc/update-motd.d
+```
+Inside here, open the `00-header` file.
+```
+$ sudo nano 00-header
+```
+Then at the very bottom line, edit the text to include any message, in this case, my student id.
+```
+printf "Welcome to 21ftt1242 %s (%s %s %s)\n" "DISTRIB_DESCRIPTION" "$(uname -o)" "
+```
+Don't forget to `save` and `exit`.
 
+---
 ## 3. Create config file for shortcut
 - Go inside the .ssh directory
 ```
@@ -242,6 +266,8 @@ And the second one is using the shortcut config file:
 ssh as2
 ```
 `Log entry date: 26th September 2023`
+
+---
 ## 4. Installing LEMP Stack
 LEMP stack are group of software that is required/a preqrequisite to install Laravel. It can also be called LAMP stack if the user is using Apache instead of Nginx.
 `L` - Linux OS
@@ -355,6 +381,7 @@ Install these PHP extensions which will provide extra support for dealing with c
 $ sudo apt install php-mbstring php-xml php-bcmath php-curl
 ```
 
+---
 ## 5. Install Composer
 Composer is a dependency management tool for PHP to manage installations and updates for project dependencies.
 
@@ -406,6 +433,7 @@ After installation, to check that composer is now installed, run:
 $ composer
 ```
 
+---
 ## 6. Create a database for the Laravel application
 
 Login to the MySQL console and run:
@@ -460,6 +488,8 @@ Exit MySQL.
 ```
 mysql> quit
 ```
+
+---
 `Log entry date: 28th September 2023`
 ## 7. Creating Laravel Application
 
@@ -616,6 +646,7 @@ $ sudo systemctl reload nginx
 
 Now when visiting the domain, in this case http://muazharris.tech , it will show Laravel's default welcome page.
 
+---
 ## 8. Enabling Email Verification
 ### 8.1 Install Node JS
 A prerequisite to enable email verification is to install Node JS. There are various ways to install Node JS but here we are using the Noder Version Manager.
@@ -802,6 +833,7 @@ Now when registering through the website, the email verification link should be 
 
 So now when the user clicks on the verification link, it will redirect to the Laravel dashboard.
 
+---
 `Log entry date: 30th September 2023`
 ## 9. Changing the default laravel logo to PB logo
 ### 9.1 Copy picture from local to VPS
@@ -953,6 +985,8 @@ Go back to home directory.
 ```
 $ cd ~
 ```
+
+---
 ## 10. Security hardening using Fail2Ban
 ### 10.1 Installing Fail2Ban
 
@@ -1045,6 +1079,7 @@ Sep 29 15:18:02 sop-as2 systemd[1]: Started Fail2Ban Service.
 Sep 29 15:18:03 sop-as2 fail2ban-server[31253]: Server ready
 ```
 
+---
 ## 11. Serve website over HTTPS
 To get HTTPS, we are using `Let's Encrypt` which is a Certificate Authority (CA) that provides an accessible way to obtain and install free TLS/SSL certificates, thereby enabling encrypted HTTPS on web servers. 
 
@@ -1122,3 +1157,17 @@ Donating to EFF:                    https://eff.org/donate-le
 ```
 
 Now when we go to http://muazharris.tech, with or without the `http`, it will automatically redirect the site to a secure `https` version.
+
+### 11.3 Setting up Cron Job
+To make Let's Encrypt to automatically renew its certificate every 30 days, we will use a cron job.
+
+First, enter this command:
+```
+$ crontab -e
+```
+
+Inside here, there will be a lot of commented lines. Go to the very bottom and start a new line. Paste this code:
+```
+0 0 * */1 * /usr/bin/certbot renew --quiet
+```
+What this cron job will do is to run the renew certbot program every 30 days, at 12AM. Now `save` and `exit` the file.
